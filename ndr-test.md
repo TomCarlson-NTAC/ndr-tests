@@ -250,12 +250,12 @@
 		- [12.2.4. Reference and content elements have same meaning](#Reference-and-content-elements-have-same-meaning)
 	- [12.3. Property order and sequence identifiers](#Property-order-and-sequence-identifiers)
 	- [12.4. Instance metadata](#Instance-metadata)
-- [Appendix A. References](#Appendix-A.-References)
-- [Appendix B. Structures namespace](#Appendix-B.-Structures-namespace)
-- [Appendix C. Appinfo namespace](#Appendix-C.-Appinfo-namespace)
-- [Appendix D. Index of definitions](#Appendix-D.-Index-of-definitions)
-- [Appendix E. Index of rules](#Appendix-E.-Index-of-rules)
-- [Appendix F. General index](#Appendix-F.-General-index)
+- [Appendix A. References](#Appendix-A_-References)
+- [Appendix B. Structures namespace](#Appendix-B_-Structures-namespace)
+- [Appendix C. Appinfo namespace](#Appendix-C_-Appinfo-namespace)
+- [Appendix D. Index of definitions](#Appendix-D_-Index-of-definitions)
+- [Appendix E. Index of rules](#Appendix-E_-Index-of-rules)
+- [Appendix F. General index](#Appendix-F_-General-index)
 
 # Table of Figures
 
@@ -348,7 +348,7 @@
 
 ## Document references
 
- This document relies on references to many outside documents. Such references are noted by bold, bracketed inline terms. For example, a reference to RFC 3986 is shown as [RFC 3986](#Appendix-A.-References). All reference documents are recorded in [Appendix A, _References_, below](#Appendix-A.-References).
+ This document relies on references to many outside documents. Such references are noted by bold, bracketed inline terms. For example, a reference to RFC 3986 is shown as [RFC 3986](#Appendix-A.-References). All reference documents are recorded in [Appendix A, _References_, below](#Appendix-A_-References).
 
 
 ## Clark notation and qualified names
@@ -434,15 +434,15 @@
 
 ### Use of normative Schematron
 
- This document defines many normative rules using Schematron rule-based validation syntax, as defined by [Schematron](#Appendix-A.-References). For example, see [Rule 9-29, _Complex type content is explicitly simple or complex_ (REF, EXT), below](#Rule-9-29.-Complex-type-content-is-explicitly-simple-or-complex). Effort has been made to make the rules precise and unambiguous. Very detailed text descriptions of rules can introduce ambiguity, and they are not directly executable by users. Providing NDR rules that are expressed as Schematron rules ensures that the rules are precise, and that they are directly executable through commercially-available and free tools.
+ This document defines many normative rules using Schematron rule-based validation syntax, as defined by [Schematron](#Appendix-A.-References). For example, see [Rule 9-29, _Complex type content is explicitly simple or complex_ (REF, EXT), below](#Rule-9-29_-Complex-type-content-is-explicitly-simple-or-complex). Effort has been made to make the rules precise and unambiguous. Very detailed text descriptions of rules can introduce ambiguity, and they are not directly executable by users. Providing NDR rules that are expressed as Schematron rules ensures that the rules are precise, and that they are directly executable through commercially-available and free tools.
 
  Many rules herein do not have executable Schematron supporting them. Some are not fit for automatic validation, and others may be difficult or cumbersome to express in Schematron. In neither case are such rules any less normative. A rule that has no Schematron is just as normative as a rule that does have Schematron. The level of requirements and recommendations within a rule is expressed using terminology from [BCP 14](#Appendix-A.-References) as described in [Section 3.1, _IETF Best Current Practice 14 terminology_, below](#IETF-Best-Current-Practice-14-terminology).
 
  The Schematron rules are written using XPath2 as defined by [XPath 2](#Appendix-A.-References). These executable rules are normative.
 
- An execution of a Schematron pattern that issues a failed assertion (represented via `sch:assert`) represents a validation error, and signifies that the assessed artifact violates a requirement (i.e., a "MUST") of a conformance rule. An example of a constraint rule that uses Schematron is [Rule 9-10, _Simple type definition is top-level_ (REF, EXT), below](#Rule-9-10.-Simple-type-definition-is-top-level).
+ An execution of a Schematron pattern that issues a failed assertion (represented via `sch:assert`) represents a validation error, and signifies that the assessed artifact violates a requirement (i.e., a "MUST") of a conformance rule. An example of a constraint rule that uses Schematron is [Rule 9-10, _Simple type definition is top-level_ (REF, EXT), below](#Rule-9-10_-Simple-type-definition-is-top-level).
 
- An execution of a Schematron pattern that issues a report (represented via `sch:report`) indicates a warning. This may be an indication that an automated rule has found that the assessed artifact violates a recommendation of the specification (i.e., a "SHOULD", rather than a "MUST"), and that attention should be paid to ensure that the artifact maintains the spirit of the specification. For example, see [Rule 10-42, _Name of element that ends in "Representation" is abstract_ (REF, EXT), below](#Rule-10-42.-Name-of-element-that-ends-in--is-abstract).
+ An execution of a Schematron pattern that issues a report (represented via `sch:report`) indicates a warning. This may be an indication that an automated rule has found that the assessed artifact violates a recommendation of the specification (i.e., a "SHOULD", rather than a "MUST"), and that attention should be paid to ensure that the artifact maintains the spirit of the specification. For example, see [Rule 10-42, _Name of element that ends in "Representation" is abstract_ (REF, EXT), below](#Rule-10-42_-Name-of-element-that-ends-in--is-abstract).
 
  In addition to the exclusive use of `sch:report` for warnings, this document annotates `sch:report` elements with attribute `role="warning"`, which is interpreted by some Schematron platforms to indicate that a failure indicates a warning, rather than an error.
 
@@ -662,14 +662,14 @@
 
  Some characteristics of a _reference schema document_:
 
-- It is explicitly designated as a reference schema via the conformance targets attribute, per [Rule 4-5, _Schema claims reference schema conformance target_ (REF), below](#Rule-4-5.-Schema-claims-reference-schema-conformance-target).
+- It is explicitly designated as a reference schema via the conformance targets attribute, per [Rule 4-5, _Schema claims reference schema conformance target_ (REF), below](#Rule-4-5_-Schema-claims-reference-schema-conformance-target).
 - It provides the broadest, most fundamental definitions of components in its namespace.
 - It provides the authoritative definition of business semantics for components in its namespace.
 - It is intended to serve as the basis for components in information exchanges and extension schema documents.
 - It satisfies all rules specified in the Naming and Design Rules for reference schemas.
  Any schema that defines components that are intended to be incorporated into NIEM Core or a NIEM domain will be defined as a reference schema.
 
- The rules for reference schema documents are more stringent than are the rules for other classes of NIEM-conformant schemas. Reference schema documents are intended to support the broadest reuse. They are very uniform in their structure. As they are the primary definitions for schema components, they do not need to restrict other data definitions, and they are not allowed to use XML Schema’s restriction mechanism (e.g., [Rule 9-30, _Complex content uses extension_ (REF), below](#Rule-9-30.-Complex-content-uses-extension)). Reference schema documents are intended to be as regular and simple as possible.
+ The rules for reference schema documents are more stringent than are the rules for other classes of NIEM-conformant schemas. Reference schema documents are intended to support the broadest reuse. They are very uniform in their structure. As they are the primary definitions for schema components, they do not need to restrict other data definitions, and they are not allowed to use XML Schema’s restriction mechanism (e.g., [Rule 9-30, _Complex content uses extension_ (REF), below](#Rule-9-30_-Complex-content-uses-extension)). Reference schema documents are intended to be as regular and simple as possible.
 
  Many reference schemas are **optional and over-inclusive**. Data definitions in namespaces defined by reference schemas are designed with parts that are intended to be omitted or refined as needed for a particular exchange. Many reference schemas define more complex types than any individual exchange will need and define complex types that have more properties, with broader cardinality, than an individual exchange will need. Data definitions within reference schemas are designed to be a basis that is refined and specialized for a particular exchange. Developers of information exchanges are expected to subset, profile, and extend reference schemas to construct precise data definitions to match their information exchange requirements.
 
@@ -707,15 +707,13 @@
 
 ### Rule 4-1. Schema marked as reference schema document must conform
 
-
-> **[Rule 4-1] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 4-1] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Any _schema document_ with an _effective conformance target identifier_ of `http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument` MUST be a _reference schema document_.
 
 
 ### Rule 4-2. Schema marked as extension schema document must conform
 
-
-> **[Rule 4-2] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 4-2] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Any _schema document_ with an _effective conformance target identifier_ of `http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ExtensionSchemaDocument` MUST be an _extension schema document_.
 
 
@@ -756,17 +754,15 @@
 
 ### Rule 4-3. Schema is CTAS-conformant
 
-
-> **[Rule 4-3] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 4-3] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The schema document MUST be a conformant document as defined by the NIEM Conformance Targets Attribute Specification.
 
  The term "conformant document" is defined by [CTAS](#Appendix-A.-References)       <a target="_blank" href="http://reference.niem.gov/niem/specification/conformance-targets-attribute/3.0/NIEM-CTAS-3.0-2014-07-31.html#section_3.2">Section 3.2, _Conformance to this Specification_</a>.
 
 
-### Rule 4-4. Document element has attribute 
+### Rule 4-4. Document element has attribute `ct:conformanceTargets`
 
-
-> **[Rule 4-4] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 4-4] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -780,8 +776,7 @@
 
 ### Rule 4-5. Schema claims reference schema conformance target
 
-
-> **[Rule 4-5] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 4-5] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -796,8 +791,7 @@
 
 ### Rule 4-6. Schema claims extension conformance target
 
-
-> **[Rule 4-6] (<a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 4-6] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -841,10 +835,9 @@
  This section defines the meaning of NIEM-conformant XML data and schemas through the definition of mappings from XML data and schema to RDF data and schema.
 
 
-### Rule 5-1.  denotes resource identifier
+### Rule 5-1. `structures:uri` denotes resource identifier
 
-
-> **[Rule 5-1] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 5-1] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > The interpretation of a _conformant instance XML document_ MUST be consistent with an RDFS interpretation of the RDF graph composed of the RDF entailed by the XML document and the RDF entailed by the schema.
 
  The interpretation of NIEM-conformant data and schemas are in place to ensure that a precise meaning can be derived from data. That is, the data makes specific assertions, which are well understood since they are derived from the data, the schema, and the NIEM rules.
@@ -1461,8 +1454,7 @@
 
 ### Rule 7-1. Document is an XML document
 
-
-> **[Rule 7-1] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>, <a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 7-1] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets), [INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The document MUST be an XML document.
 
  This document establishes the term _XML document_, by reference to [XML](#Appendix-A.-References).
@@ -1475,8 +1467,7 @@
 
 ### Rule 7-2. Document uses XML namespaces properly
 
-
-> **[Rule 7-2] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>, <a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 7-2] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets), [INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The document MUST be namespace-well-formed and namespace-valid.
 
  The terms _namespace-well-formed_ and _namespace-valid_ are normatively defined by [XML Namespaces](#Appendix-A.-References).
@@ -1489,17 +1480,15 @@
 
 ### Rule 7-3. Document is a schema document
 
-
-> **[Rule 7-3] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 7-3] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The [XML document] MUST be a [schema document].
 
  This document establishes the term _schema document_, by reference to [XML Schema Structures](#Appendix-A.-References).
 
 
-### Rule 7-4. Document element is 
+### Rule 7-4. Document element is `xs:schema`
 
-
-> **[Rule 7-4] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 7-4] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1536,7 +1525,7 @@
 
  An example of a data definition is provided in _Figure 7-1, _Example of data definition of element `nc:Activity`_, below_.
 
- See [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT), below,](#Rule-11-28.-Data-definition-follows-11179-4-requirements) and [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT), below,](#Rule-11-29.-Data-definition-follows-11179-4-recommendations) for application of [ISO 11179-4](#Appendix-A.-References) to constrain NIEM _data definitions_.
+ See [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT), below,](#Rule-11-28_-Data-definition-follows-11179-4-requirements) and [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT), below,](#Rule-11-29_-Data-definition-follows-11179-4-recommendations) for application of [ISO 11179-4](#Appendix-A.-References) to constrain NIEM _data definitions_.
 
 
 ## ISO 11179 Part 5
@@ -1548,8 +1537,7 @@
 
 ### Rule 7-5. Component name follows ISO 11179 Part 5 Annex A
 
-
-> **[Rule 7-5] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 7-5] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > A NIEM component name SHOULD be formed by applying the informative guidelines and examples detailed in Annex A of [ISO 11179-5](#Appendix-A.-References), with exceptions as specified in this document.
 
  The guidelines and examples of [ISO 11179-5](#Appendix-A.-References) provide a simple, consistent syntax for data names that captures context and thereby imparts a reasonable degree of semantic precision.
@@ -1573,9 +1561,9 @@
 
  The following features have been provided to support the use of NIEM-conformant data definitions across the IC, by supporting the use of IC-ISM and IC-NTK within NIEM-defined data:
 
-- NIEM base types defined by the _structures namespace_ incorporate `xs:anyAttribute` declarations, which allow the use of attributes from the ISM and NTK namespaces. See [Appendix B, _Structures namespace_, below,](#Appendix-B.-Structures-namespace) for the reference schema.
-- [Rule 11-23, _Schema uses only known attribute groups_ (REF, EXT), below,](#Rule-11-23.-Schema-uses-only-known-attribute-groups) allows conformant data types to reference attribute groups defined in the ISM and NTK namespaces.
-- Complex types may be constructed that use external attributes, including attributes from the ISM and NTK namespaces. Each such attribute use must be a _documented component_, as specified by [Rule 10-14, _External attribute use has data definition_ (REF, EXT), below](#Rule-10-14.-External-attribute-use-has-data-definition).
+- NIEM base types defined by the _structures namespace_ incorporate `xs:anyAttribute` declarations, which allow the use of attributes from the ISM and NTK namespaces. See [Appendix B, _Structures namespace_, below,](#Appendix-B_-Structures-namespace) for the reference schema.
+- [Rule 11-23, _Schema uses only known attribute groups_ (REF, EXT), below,](#Rule-11-23_-Schema-uses-only-known-attribute-groups) allows conformant data types to reference attribute groups defined in the ISM and NTK namespaces.
+- Complex types may be constructed that use external attributes, including attributes from the ISM and NTK namespaces. Each such attribute use must be a _documented component_, as specified by [Rule 10-14, _External attribute use has data definition_ (REF, EXT), below](#Rule-10-14_-External-attribute-use-has-data-definition).
  These features ensure that payloads that correctly use IC-ISM AND IC-NTK are supported by NIEM-conformant schema definitions.
 
 
@@ -1599,19 +1587,19 @@
 
  This is supported by the rules:
 
-- [Rule 9-10, _Simple type definition is top-level_ (REF, EXT), below](#Rule-9-10.-Simple-type-definition-is-top-level)
-- [Rule 9-25, _Complex type definition is top-level_ (REF, EXT), below](#Rule-9-25.-Complex-type-definition-is-top-level)
-- [Rule 9-36, _Element declaration is top-level_ (REF, EXT), below](#Rule-9-36.-Element-declaration-is-top-level)
-- [Rule 9-48, _Attribute declaration is top-level_ (REF, EXT), below](#Rule-9-48.-Attribute-declaration-is-top-level)
+- [Rule 9-10, _Simple type definition is top-level_ (REF, EXT), below](#Rule-9-10_-Simple-type-definition-is-top-level)
+- [Rule 9-25, _Complex type definition is top-level_ (REF, EXT), below](#Rule-9-25_-Complex-type-definition-is-top-level)
+- [Rule 9-36, _Element declaration is top-level_ (REF, EXT), below](#Rule-9-36_-Element-declaration-is-top-level)
+- [Rule 9-48, _Attribute declaration is top-level_ (REF, EXT), below](#Rule-9-48_-Attribute-declaration-is-top-level)
  Additional restrictions ensure that NIEM components are also defined such that new components may be derived from them and substituted for them. Reference schemas are defined to maximize reuse, while extension schemas are defined to enable a developer to customize schema definitions to match her exchange needs. In reference schemas, the following restrictions help enforce reusability through extension and substitution:
 
-- A _reference schema document_ or _extension schema document_ may not use `blockDefault` (per [Rule 9-86, _No disallowed substitutions_ (REF), below](#Rule-9-86.-No-disallowed-substitutions)) or `finalDefault` (per [Rule 9-87, _No disallowed derivations_ (REF), below](#Rule-9-87.-No-disallowed-derivations)).
+- A _reference schema document_ or _extension schema document_ may not use `blockDefault` (per [Rule 9-86, _No disallowed substitutions_ (REF), below](#Rule-9-86_-No-disallowed-substitutions)) or `finalDefault` (per [Rule 9-87, _No disallowed derivations_ (REF), below](#Rule-9-87_-No-disallowed-derivations)).
 - Element declarations and type definitions in a _reference schema document_ may not use `block` or `final`, per the rules:
 
-	- [Rule 9-34, _No complex type disallowed substitutions_ (REF), below](#Rule-9-34.-No-complex-type-disallowed-substitutions)
-	- [Rule 9-35, _No complex type disallowed derivation_ (REF), below](#Rule-9-35.-No-complex-type-disallowed-derivation)
-	- [Rule 9-43, _No element disallowed substitutions _ (REF), below](#Rule-9-43.-No-element-disallowed-substitutions-)
-	- [Rule 9-44, _No element disallowed derivation_ (REF), below](#Rule-9-44.-No-element-disallowed-derivation)
+	- [Rule 9-34, _No complex type disallowed substitutions_ (REF), below](#Rule-9-34_-No-complex-type-disallowed-substitutions)
+	- [Rule 9-35, _No complex type disallowed derivation_ (REF), below](#Rule-9-35_-No-complex-type-disallowed-derivation)
+	- [Rule 9-43, _No element disallowed substitutions _ (REF), below](#Rule-9-43_-No-element-disallowed-substitutions-)
+	- [Rule 9-44, _No element disallowed derivation_ (REF), below](#Rule-9-44_-No-element-disallowed-derivation)
 
 ## Avoid recursive model groups
 
@@ -1688,11 +1676,10 @@
 
 
 ##### Rule 9-1. No base type in the XML namespace
-
  Although the XML namespace is to be imported as if it is conformant, types from that namespace may not be the _base type definition_ of any type.
 
 
-> **[Rule 9-1] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-1] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1705,10 +1692,9 @@
  The term _base type definition_ has a normative definition.
 
 
-##### Rule 9-2. No base type of 
+##### Rule 9-2. No base type of `xs:ID`
 
-
-> **[Rule 9-2] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-2] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1719,10 +1705,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-3. No base type of 
+##### Rule 9-3. No base type of `xs:IDREF`
 
-
-> **[Rule 9-3] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-3] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1733,10 +1718,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-4. No base type of 
+##### Rule 9-4. No base type of `xs:IDREFS`
 
-
-> **[Rule 9-4] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-4] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1747,10 +1731,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-5. No base type of 
+##### Rule 9-5. No base type of `xs:anyType`
 
-
-> **[Rule 9-5] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-5] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1765,10 +1748,9 @@
  NIEM-conformant schemas must not use `xs:anyType`, because this feature permits the introduction of arbitrary content (i.e., untyped and unconstrained data) into an XML instance. NIEM intends that the schemas describing that instance describe all constructs within the instance.
 
 
-##### Rule 9-6. No base type of 
+##### Rule 9-6. No base type of `xs:anySimpleType`
 
-
-> **[Rule 9-6] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-6] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1783,10 +1765,9 @@
  NIEM-conformant schemas must not use `xs:anySimpleType` because this feature is insufficiently constrained to provide a meaningful starting point for content definitions. Instead, content should be based on one of the more specifically defined simple types defined by XML Schema.
 
 
-##### Rule 9-7. No base type of 
+##### Rule 9-7. No base type of `xs:NOTATION`
 
-
-> **[Rule 9-7] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-7] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1799,10 +1780,9 @@
  XML Schema notations allow the attachment of system and public identifiers on fields of data. The notation mechanism does not play a part in validation of instances and is not supported by NIEM.
 
 
-##### Rule 9-8. No base type of 
+##### Rule 9-8. No base type of `xs:ENTITY`
 
-
-> **[Rule 9-8] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-8] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1813,10 +1793,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-9. No base type of 
+##### Rule 9-9. No base type of `xs:ENTITIES`
 
-
-> **[Rule 9-9] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-9] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1832,8 +1811,7 @@
 
 #### Rule 9-10. Simple type definition is top-level
 
-
-> **[Rule 9-10] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-10] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1848,8 +1826,7 @@
 
 #### Rule 9-11. No simple type disallowed derivation
 
-
-> **[Rule 9-11] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-11] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1862,8 +1839,7 @@
 
 #### Rule 9-12. Simple type has data definition
 
-
-> **[Rule 9-12] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-12] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1877,14 +1853,13 @@
  This document defines the term _data definition_.
 
 
-#### Rule 9-13. No use of  on simple type facets
-
+#### Rule 9-13. No use of <q>fixed</q> on simple type facets
  An attribute `fixed` on a constraining facet (e.g., `xs:maxInclusive`) of a simple type <var>$base</var> prevents a simple type derived from <var>$base</var> from further restricting that facet. For example, if simpleType `nc:LatitudeDegreeSimpleType` uses an `xs:maxInclusive` facet that limits the maximum value to 90, a simple type derived from that type could not further restrict the type to limit the maximum value to 45.
 
  The use of `fixed` on simple type facets violates _**[Principle 17]**, above_, since it prevents an extension schema from constraining a base type. As a result, the `fixed` on simple type facets in reference schemas is prohibited.
 
 
-> **[Rule 9-13] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-13] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1899,8 +1874,7 @@
 
 #### Rule 9-14. Enumeration has data definition
 
-
-> **[Rule 9-14] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-14] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1921,10 +1895,9 @@
  There is no prohibition on `xs:anyType` as a list item type, because xs:anyType is not a simple type.
 
 
-##### Rule 9-15. No list item type of 
+##### Rule 9-15. No list item type of `xs:ID`
 
-
-> **[Rule 9-15] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-15] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1935,10 +1908,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-16. No list item type of 
+##### Rule 9-16. No list item type of `xs:IDREF`
 
-
-> **[Rule 9-16] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-16] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1949,10 +1921,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-17. No list item type of 
+##### Rule 9-17. No list item type of `xs:anySimpleType`
 
-
-> **[Rule 9-17] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-17] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1963,10 +1934,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-18. No list item type of 
+##### Rule 9-18. No list item type of `xs:ENTITY`
 
-
-> **[Rule 9-18] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-18] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -1984,10 +1954,9 @@
  There is no prohibition on `xs:anyType` as a union member type, because xs:anyType is not a simple type.
 
 
-##### Rule 9-19. No union member types of 
+##### Rule 9-19. No union member types of `xs:ID`
 
-
-> **[Rule 9-19] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-19] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2000,10 +1969,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-20. No union member types of 
+##### Rule 9-20. No union member types of `xs:IDREF`
 
-
-> **[Rule 9-20] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-20] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2016,10 +1984,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-21. No union member types of 
+##### Rule 9-21. No union member types of `xs:IDREFS`
 
-
-> **[Rule 9-21] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-21] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2032,10 +1999,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-22. No union member types of 
+##### Rule 9-22. No union member types of `xs:anySimpleType`
 
-
-> **[Rule 9-22] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-22] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2048,10 +2014,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-23. No union member types of 
+##### Rule 9-23. No union member types of `xs:ENTITY`
 
-
-> **[Rule 9-23] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-23] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2064,10 +2029,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-24. No union member types of 
+##### Rule 9-24. No union member types of `xs:ENTITIES`
 
-
-> **[Rule 9-24] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-24] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2085,8 +2049,7 @@
 
 #### Rule 9-25. Complex type definition is top-level
 
-
-> **[Rule 9-25] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-25] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2101,8 +2064,7 @@
 
 #### Rule 9-26. Complex type has data definition
 
-
-> **[Rule 9-26] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-26] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2121,8 +2083,7 @@
 
 ##### Rule 9-27. No mixed content on complex type
 
-
-> **[Rule 9-27] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-27] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2139,8 +2100,7 @@
 
 ##### Rule 9-28. No mixed content on complex content
 
-
-> **[Rule 9-28] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-28] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2150,13 +2110,12 @@
   </sch:rule>
 </sch:pattern>
 ```
- See [Rule 9-27, _No mixed content on complex type_ (REF, EXT), above,](#Rule-9-27.-No-mixed-content-on-complex-type) for the rationale for this rule.
+ See [Rule 9-27, _No mixed content on complex type_ (REF, EXT), above,](#Rule-9-27_-No-mixed-content-on-complex-type) for the rationale for this rule.
 
 
 #### Rule 9-29. Complex type content is explicitly simple or complex
 
-
-> **[Rule 9-29] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-29] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2174,8 +2133,7 @@
 
 ##### Rule 9-30. Complex content uses extension
 
-
-> **[Rule 9-30] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-30] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2197,8 +2155,7 @@
 
 ###### Rule 9-31. Base type of complex type with complex content must have complex content
 
-
-> **[Rule 9-31] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-31] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2215,8 +2172,7 @@
 
 ###### Rule 9-32. Base type of complex type with complex content must have complex content
 
-
-> **[Rule 9-32] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 9-32] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2238,8 +2194,7 @@
 
 ##### Rule 9-33. Simple content uses extension
 
-
-> **[Rule 9-33] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-33] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2254,8 +2209,7 @@
 
 #### Rule 9-34. No complex type disallowed substitutions
 
-
-> **[Rule 9-34] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-34] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2268,8 +2222,7 @@
 
 #### Rule 9-35. No complex type disallowed derivation
 
-
-> **[Rule 9-35] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-35] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2287,15 +2240,14 @@
 
  Every element declaration in a NIEM-conformant schema document is a top-level element; rules prohibit the declaration of local elements.
 
- Within a NIEM-conformant schema document, an element may be declared as abstract. Elements may be defined without a type, but any element declaration that has no type must be declared abstract, as specified by [Rule 9-38, _Untyped element is abstract_ (REF, EXT), below](#Rule-9-38.-Untyped-element-is-abstract).
+ Within a NIEM-conformant schema document, an element may be declared as abstract. Elements may be defined without a type, but any element declaration that has no type must be declared abstract, as specified by [Rule 9-38, _Untyped element is abstract_ (REF, EXT), below](#Rule-9-38_-Untyped-element-is-abstract).
 
- Within an element declaration, the attributes `fixed`, `nillable`, and `substitutionGroup` may be used as per the XML Schema specification. The attribute `form` is irrelevant to NIEM, as NIEM-conformant schemas may not contain local element declarations, as specified by [Rule 9-36, _Element declaration is top-level_ (REF, EXT), below](#Rule-9-36.-Element-declaration-is-top-level).
+ Within an element declaration, the attributes `fixed`, `nillable`, and `substitutionGroup` may be used as per the XML Schema specification. The attribute `form` is irrelevant to NIEM, as NIEM-conformant schemas may not contain local element declarations, as specified by [Rule 9-36, _Element declaration is top-level_ (REF, EXT), below](#Rule-9-36_-Element-declaration-is-top-level).
 
 
 #### Rule 9-36. Element declaration is top-level
 
-
-> **[Rule 9-36] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-36] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2310,8 +2262,7 @@
 
 #### Rule 9-37. Element declaration has data definition
 
-
-> **[Rule 9-37] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-37] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2327,8 +2278,7 @@
 
 #### Rule 9-38. Untyped element is abstract
 
-
-> **[Rule 9-38] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-38] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2342,12 +2292,11 @@
  Untyped element declarations act as wildcards that may carry arbitrary data. By declaring such types abstract, NIEM allows the creation of type independent semantics without allowing arbitrary content to appear in XML instances.
 
 
-#### Rule 9-39. Element of type  is abstract
-
+#### Rule 9-39. Element of type `xs:anySimpleType` is abstract
  The type `xs:anySimpleType` does not have any concrete semantics; The use of `xs:anySimpleType` is limited to the case where an abstract element is of type `xs:anySimpleType`, to act as a base for concrete implementations of the element.
 
 
-> **[Rule 9-39] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-39] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2362,8 +2311,7 @@
 
 #### Rule 9-40. Element type not in the XML Schema namespace
 
-
-> **[Rule 9-40] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-40] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2379,11 +2327,10 @@
 
 
 #### Rule 9-41. Element type not in the XML namespace
-
  The XML namespace may be imported into a conformant schema document as if it were conformant. This specification does not enable a reference to any types that may be defined by any implementation of a schema for that namespace.
 
 
-> **[Rule 9-41] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-41] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2396,8 +2343,7 @@
 
 #### Rule 9-42. Element type is not simple type
 
-
-> **[Rule 9-42] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-42] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2418,8 +2364,7 @@
 
 #### Rule 9-43. No element disallowed substitutions 
 
-
-> **[Rule 9-43] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-43] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2432,8 +2377,7 @@
 
 #### Rule 9-44. No element disallowed derivation
 
-
-> **[Rule 9-44] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-44] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2449,8 +2393,7 @@
 
 ##### Rule 9-45. No element default value
 
-
-> **[Rule 9-45] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-45] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2463,8 +2406,7 @@
 
 ##### Rule 9-46. No element fixed value
 
-
-> **[Rule 9-46] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-46] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2476,13 +2418,12 @@
 ```
 
 #### Rule 9-47. Element declaration is nillable
-
  All elements declared by reference schemas allow a nil value. This enables the ID/IDREF mechanism linking `structures:ref` and `structures:id`, as described by [Section 12.2, _Identifiers and references_, below](#Identifiers-and-references).
 
  A developer may constrain the use of `nil` in an instance by setting `nillable` to false in subset schemas, or by use of non-XML Schema mechanisms, such as Schematron.
 
 
-> **[Rule 9-47] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-47] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2509,8 +2450,7 @@
 
 #### Rule 9-48. Attribute declaration is top-level
 
-
-> **[Rule 9-48] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-48] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2525,8 +2465,7 @@
 
 #### Rule 9-49. Attribute declaration has data definition
 
-
-> **[Rule 9-49] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-49] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2542,8 +2481,7 @@
 
 #### Rule 9-50. Attribute declaration has type
 
-
-> **[Rule 9-50] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-50] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2563,10 +2501,9 @@
  These types are only explicitly prohibited from attributes, not elements, because the case is covered by a general prohibition against elements having simple types.
 
 
-##### Rule 9-51. No attribute type of 
+##### Rule 9-51. No attribute type of `xs:ID`
 
-
-> **[Rule 9-51] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-51] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2577,10 +2514,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-52. No attribute type of 
+##### Rule 9-52. No attribute type of `xs:IDREF`
 
-
-> **[Rule 9-52] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-52] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2591,10 +2527,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-53. No attribute type of 
+##### Rule 9-53. No attribute type of `xs:IDREFS`
 
-
-> **[Rule 9-53] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-53] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2605,10 +2540,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-54. No attribute type of 
+##### Rule 9-54. No attribute type of `xs:ENTITY`
 
-
-> **[Rule 9-54] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-54] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2619,10 +2553,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-55. No attribute type of 
+##### Rule 9-55. No attribute type of `xs:ENTITIES`
 
-
-> **[Rule 9-55] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-55] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2633,10 +2566,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-56. No attribute type of 
+##### Rule 9-56. No attribute type of `xs:anySimpleType`
 
-
-> **[Rule 9-56] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-56] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2652,8 +2584,7 @@
 
 ##### Rule 9-57. No attribute default values
 
-
-> **[Rule 9-57] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-57] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2667,11 +2598,12 @@
 
 
 ##### Rule 9-58. No fixed values for optional attributes
-
  The `fixed` attribute is described by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Attribute_Declaration_details">Section 3.2.1, _The Attribute Declaration Schema Component_</a>:
 
+> _default_ specifies that the attribute is to appear unconditionally in the post-schema-validation infoset, with the supplied value used whenever the attribute is not actually present; _fixed_ indicates that the attribute value if present must equal the supplied constraint value, and if absent receives the supplied value as for _default_.
 
-> **[Rule 9-58] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+
+> **[Rule 9-58] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2690,10 +2622,9 @@
 ### Notation declaration
 
 
-#### Rule 9-59. No use of element 
+#### Rule 9-59. No use of element `xs:notation`
 
-
-> **[Rule 9-59] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-59] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2703,7 +2634,7 @@
   </sch:rule>
 </sch:pattern>
 ```
- See [Rule 9-7, _No base type of `xs:NOTATION`_ (REF, EXT), above,](#Rule-9-7.-No-base-type-of-) for comments about the use of notations.
+ See [Rule 9-7, _No base type of `xs:NOTATION`_ (REF, EXT), above,](#Rule-9-7_-No-base-type-of-) for comments about the use of notations.
 
 
 ## Model group components
@@ -2718,15 +2649,13 @@
 
 #### Rule 9-60. Model group does not affect meaning
 
-
-> **[Rule 9-60] (<a href="#conformance_target_EXT">EXT</a>) (Interpretation)**
+> **[Rule 9-60] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > The use of model groups `xs:all`, `xs:sequence`, and `xs:choice` MUST NOT define the semantics of an instance. The meaning of an element occurrence within an element occurrence MUST be identical, regardless of the model group used to define a _schema component_.
 
 
-#### Rule 9-61. No 
+#### Rule 9-61. No `xs:all`
 
-
-> **[Rule 9-61] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-61] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2742,10 +2671,9 @@
 #### Sequence
 
 
-##### Rule 9-62.  must be child of 
+##### Rule 9-62. `xs:sequence` must be child of `xs:extension`
 
-
-> **[Rule 9-62] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-62] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2756,10 +2684,9 @@
 </sch:pattern>
 ```
 
-##### Rule 9-63.  must be child of  or 
+##### Rule 9-63. `xs:sequence` must be child of `xs:extension` or `xs:restriction`
 
-
-> **[Rule 9-63] (<a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-63] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2773,10 +2700,9 @@
 #### Choice
 
 
-##### Rule 9-64. No 
+##### Rule 9-64. No `xs:choice`
 
-
-> **[Rule 9-64] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-64] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2791,10 +2717,9 @@
  The element `xs:choice` may be used in extension schemas, as it presents a simple way for a schema writer to represent a set of optional content.
 
 
-##### Rule 9-65.  must be child of 
+##### Rule 9-65. `xs:choice` must be child of `xs:sequence`
 
-
-> **[Rule 9-65] (<a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-65] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2821,8 +2746,7 @@
 
 ##### Rule 9-66. Sequence has minimum cardinality 1
 
-
-> **[Rule 9-66] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-66] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2835,8 +2759,7 @@
 
 ##### Rule 9-67. Sequence has maximum cardinality 1
 
-
-> **[Rule 9-67] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-67] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2853,8 +2776,7 @@
 
 ##### Rule 9-68. Choice has minimum cardinality 1
 
-
-> **[Rule 9-68] (<a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-68] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2867,8 +2789,7 @@
 
 ##### Rule 9-69. Choice has maximum cardinality 1
 
-
-> **[Rule 9-69] (<a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-69] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2888,10 +2809,9 @@
 ### Wildcard
 
 
-#### Rule 9-70. No use of 
+#### Rule 9-70. No use of `xs:any`
 
-
-> **[Rule 9-70] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-70] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2904,10 +2824,9 @@
  The `xs:any` particle (see Model Group Restrictions for an informative definition of particle) provides a wildcard that may carry arbitrary content. The particle `xs:any` may appear within an _extension schema document_.
 
 
-#### Rule 9-71. No use of 
+#### Rule 9-71. No use of `xs:anyAttribute`
 
-
-> **[Rule 9-71] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-71] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2927,10 +2846,9 @@
  Note that there is no prohibition on the use of `xs:selector` and `xs:field`, since according to the rules of the _XML Schema definition language_, they can only appear within `xs:key`, `xs:keyref`, and `xs:unique`, which are themselves prohibited.
 
 
-### Rule 9-72. No use of 
+### Rule 9-72. No use of `xs:unique`
 
-
-> **[Rule 9-72] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-72] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2941,10 +2859,9 @@
 </sch:pattern>
 ```
 
-### Rule 9-73. No use of 
+### Rule 9-73. No use of `xs:key`
 
-
-> **[Rule 9-73] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-73] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2955,10 +2872,9 @@
 </sch:pattern>
 ```
 
-### Rule 9-74. No use of 
+### Rule 9-74. No use of `xs:keyref`
 
-
-> **[Rule 9-74] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-74] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2975,10 +2891,9 @@
 ### Model group definition
 
 
-#### Rule 9-75. No use of 
+#### Rule 9-75. No use of `xs:group`
 
-
-> **[Rule 9-75] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-75] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -2995,11 +2910,10 @@
 
 
 #### Rule 9-76. No definition of attribute groups
+ Per [Rule 11-23, _Schema uses only known attribute groups_ (REF, EXT), below](#Rule-11-23_-Schema-uses-only-known-attribute-groups), the only attribute groups used in NIEM-conformant schemas are `structures:SimpleObjectAttributeGroup` and attribute groups defined by the IC-ISM and IC-NTK schemas. Therefore, NIEM-conformant schemas do not define additional attribute groups.
 
- Per [Rule 11-23, _Schema uses only known attribute groups_ (REF, EXT), below](#Rule-11-23.-Schema-uses-only-known-attribute-groups), the only attribute groups used in NIEM-conformant schemas are `structures:SimpleObjectAttributeGroup` and attribute groups defined by the IC-ISM and IC-NTK schemas. Therefore, NIEM-conformant schemas do not define additional attribute groups.
 
-
-> **[Rule 9-76] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-76] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3014,11 +2928,10 @@
 
 
 ### Rule 9-77. Comment is not recommended
-
  Note that this rule is written with a context that is not as precise as it could be. Its context is the parent node of the comment node, in order to avoid error messages when executed with common Schematron implementations.
 
 
-> **[Rule 9-77] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-77] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3033,8 +2946,7 @@
 
 ### Rule 9-78. Documentation element has no element children
 
-
-> **[Rule 9-78] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-78] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3050,10 +2962,9 @@
  XML Schema provides special annotations for support of automatic processing. The XML Schema specification provides the element `xs:appinfo` to carry such content and does not specify what style of content they should carry. In NIEM, `xs:appinfo` elements carry structured XML content.
 
 
-#### Rule 9-79.  children are comments, elements, or whitespace
+#### Rule 9-79. `xs:appinfo` children are comments, elements, or whitespace
 
-
-> **[Rule 9-79] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-79] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3070,8 +2981,7 @@
 
 #### Rule 9-80. Appinfo child elements have namespaces
 
-
-> **[Rule 9-80] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-80] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3086,8 +2996,7 @@
 
 #### Rule 9-81. Appinfo descendants are not XML Schema elements
 
-
-> **[Rule 9-81] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-81] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3107,8 +3016,7 @@
 
 ### Rule 9-82. Schema has data definition
 
-
-> **[Rule 9-82] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-82] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3122,8 +3030,7 @@
 
 ### Rule 9-83. Schema document defines target namespace
 
-
-> **[Rule 9-83] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-83] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3138,15 +3045,13 @@
 
 ### Rule 9-84. Target namespace is absolute URI
 
-
-> **[Rule 9-84] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-84] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The value of the attribute targetNamespace MUST match the production &lt;absolute-URI&gt; as defined by RFC 3986.
 
  Absolute URIs are the only universally meaningful URIs. URIs include both URLs and URNs. Finding the target namespace using standard XML Base technology is complicated and not specified by XML Schema. Relative URIs are not universally identifiable, as they are context-specific. `&lt;absolute-URI&gt;` is a grammar production defined by [RFC 3986](#Appendix-A.-References)       <a target="_blank" href="http://tools.ietf.org/html/rfc3986#section-4.3">Section 4.3, _Absolute URI_</a>. 
 
 
 ### Rule 9-85. Schema has version
-
  It is very useful to be able to tell one version of a schema from another. Apart from the use of namespaces for versioning, it is sometimes necessary to release multiple versions of schema documents. Such use might include:
 
 - Subset schemas and constraint schemas
@@ -3158,7 +3063,7 @@
  An author of an application schema or exchange may use the `version` attribute for these purposes within their schemas.
 
 
-> **[Rule 9-85] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-85] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3172,8 +3077,7 @@
 
 ### Rule 9-86. No disallowed substitutions
 
-
-> **[Rule 9-86] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-86] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3186,8 +3090,7 @@
 
 ### Rule 9-87. No disallowed derivations
 
-
-> **[Rule 9-87] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 9-87] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3201,10 +3104,9 @@
 ## Schema assembly
 
 
-### Rule 9-88. No use of 
+### Rule 9-88. No use of `xs:redefine`
 
-
-> **[Rule 9-88] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-88] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3217,10 +3119,9 @@
  The `xs:redefine` element allows an XML Schema document to restrict and extend components from a namespace, in a separate schema document from the one that initially defined that namespace. Such redefinition introduces duplication of definitions, allowing multiple definitions to exist for components from a single namespace. This violates _**[Principle 9]**, above_, that a single reference schema defines a NIEM-conformant namespace.
 
 
-### Rule 9-89. No use of 
+### Rule 9-89. No use of `xs:include`
 
-
-> **[Rule 9-89] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-89] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3235,10 +3136,9 @@
  Inclusion of schemas that do not have namespaces also complicates schema understanding. This inclusion makes it difficult to find the realization of a specific schema artifact and create aliases for schema components that should be reused. Inclusion of schemas also violates _**[Principle 9]**, above_, as it uses multiple schemas to construct a namespace.
 
 
-### Rule 9-90.  must have namespace
+### Rule 9-90. `xs:import` must have namespace
 
-
-> **[Rule 9-90] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-90] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3252,11 +3152,10 @@
 
 
 ### Rule 9-91. XML Schema document set must be complete
-
  An _XML Schema document set_ defines an _XML Schema_ that may be used to validate an _XML document_. This rule ensures that a schema document set under consideration contains definitions for everything that it references; it has everything necessary to do a complete validation of XML documents, without any unresolved references. Note that some tools may allow validation of documents using partial schemas, when components that are not present are not exercised by the XML document under validation. Such a schema does not meet qualify as a _conformant schema document set_.
 
 
-> **[Rule 9-91] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 9-91] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The schema document set must constitute a complete XML Schema; it must contain the definition of every schema component referenced by any component defined by the schema set.
 
 
@@ -3267,10 +3166,9 @@
  Some tools do not enforce this constraint; one such tool carries imports from a _schema document_ into _schema documents_ that it imports. This has the potential to introduce incompatibility into schema documents and schema document sets that exercise this bug. To maintain compatibility across tool sets, this requirement is an explicit rule for NIEM-conformant schemas.
 
 
-#### Rule 9-92. Namespace referenced by attribute  is imported
+#### Rule 9-92. Namespace referenced by attribute `type` is imported
 
-
-> **[Rule 9-92] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-92] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3284,10 +3182,9 @@
 </sch:pattern>
 ```
 
-#### Rule 9-93. Namespace referenced by attribute  is imported
+#### Rule 9-93. Namespace referenced by attribute `base` is imported
 
-
-> **[Rule 9-93] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-93] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3301,10 +3198,9 @@
 </sch:pattern>
 ```
 
-#### Rule 9-94. Namespace referenced by attribute  is imported
+#### Rule 9-94. Namespace referenced by attribute `itemType` is imported
 
-
-> **[Rule 9-94] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-94] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3318,10 +3214,9 @@
 </sch:pattern>
 ```
 
-#### Rule 9-95. Namespaces referenced by attribute  is imported
+#### Rule 9-95. Namespaces referenced by attribute `memberTypes` is imported
 
-
-> **[Rule 9-95] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-95] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3336,10 +3231,9 @@
 </sch:pattern>
 ```
 
-#### Rule 9-96. Namespace referenced by attribute  is imported
+#### Rule 9-96. Namespace referenced by attribute `ref` is imported
 
-
-> **[Rule 9-96] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-96] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3352,10 +3246,9 @@
 </sch:pattern>
 ```
 
-#### Rule 9-97. Namespace referenced by attribute  is imported
+#### Rule 9-97. Namespace referenced by attribute `substitutionGroup` is imported
 
-
-> **[Rule 9-97] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 9-97] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3406,8 +3299,7 @@
 
 ### Rule 10-1. Complex type has a category
 
-
-> **[Rule 10-1] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-1] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Within the schema, a complex type definition MUST be one of the following:
 
  This rule establishes the categories of NIEM complex types. It is a limited set, and each category has distinct semantics, as described by following sections.
@@ -3433,10 +3325,9 @@
 #### Object types with complex content
 
 
-##### Rule 10-2. Object type with complex content is derived from 
+##### Rule 10-2. Object type with complex content is derived from `structures:ObjectType`
 
-
-> **[Rule 10-2] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-2] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3457,7 +3348,7 @@
   </sch:rule>
 </sch:pattern>
 ```
- A _base type definition_ with a {target namespace} that is the XML namespace is prohibited by [Rule 9-1, _No base type in the XML namespace_ (REF, EXT), above](#Rule-9-1.-No-base-type-in-the-XML-namespace). A _base type definition_ with a {target namespace} that is not imported as conformant is prohibited by [Rule 11-3, _Base type definition defined by conformant schema_ (REF, EXT), below](#Rule-11-3.-Base-type-definition-defined-by-conformant-schema).
+ A _base type definition_ with a {target namespace} that is the XML namespace is prohibited by [Rule 9-1, _No base type in the XML namespace_ (REF, EXT), above](#Rule-9-1_-No-base-type-in-the-XML-namespace). A _base type definition_ with a {target namespace} that is not imported as conformant is prohibited by [Rule 11-3, _Base type definition defined by conformant schema_ (REF, EXT), below](#Rule-11-3_-Base-type-definition-defined-by-conformant-schema).
 
 
 ### Role types and roles
@@ -3503,8 +3394,7 @@
 
 #### Rule 10-3. RoleOf element type is an object type
 
-
-> **[Rule 10-3] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-3] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3518,13 +3408,12 @@
   </sch:rule>
 </sch:pattern>
 ```
- Note that by [Rule 11-13, _Element type is from conformant namespace_ (REF, EXT), below](#Rule-11-13.-Element-type-is-from-conformant-namespace), the element’s type must be from a conformant namespace.
+ Note that by [Rule 11-13, _Element type is from conformant namespace_ (REF, EXT), below](#Rule-11-13_-Element-type-is-from-conformant-namespace), the element’s type must be from a conformant namespace.
 
 
 #### Rule 10-4. Only object type has RoleOf element
 
-
-> **[Rule 10-4] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-4] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3545,15 +3434,13 @@
 
 #### Rule 10-5. RoleOf elements indicate the base types of a role type
 
-
-> **[Rule 10-5] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>, <a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 10-5] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets), [INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > An _element declaration_ that has a local name that begins with the string "RoleOf" MUST represent a base type, of which the containing element instance represents a role.
 
 
 #### Rule 10-6. Instance of RoleOf element indicates a role object
 
-
-> **[Rule 10-6] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 10-6] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > When a parent element has a child element valid to an _element declaration_ that is a _RoleOf element_,
 
  An instance of a _RoleOf element_ indicates the base object of a role. The prefix "RoleOf" on the element ensures that a role object may be distinguished from other objects and that its link to the base object is also distinguishable from the additional properties that are characteristics or other data of the role.
@@ -3581,7 +3468,7 @@
 
  To construct such a component, a NIEM-conformant schema must import the namespace defined by the _external schema document_.
 
- [Rule 11-50, _Reference schema document imports reference schema document_ (SET), below,](#Rule-11-50.-Reference-schema-document-imports-reference-schema-document) and [Rule 11-51, _Extension schema document imports reference or extension schema document_ (SET), below,](#Rule-11-51.-Extension-schema-document-imports-reference-or-extension-schema-document) require that `xs:import` elements be consistent with an importing _schema document_.
+ [Rule 11-50, _Reference schema document imports reference schema document_ (SET), below,](#Rule-11-50_-Reference-schema-document-imports-reference-schema-document) and [Rule 11-51, _Extension schema document imports reference or extension schema document_ (SET), below,](#Rule-11-51_-Extension-schema-document-imports-reference-or-extension-schema-document) require that `xs:import` elements be consistent with an importing _schema document_.
 
  A NIEM-conformant schema has well-known documentation points. Therefore, a schema that imports a NIEM-conformant namespace need not provide additional documentation for the imported namespace. However, when an external schema document is imported, appropriate documentation must be provided on the `xs:import` element. This ensures that documentation for all external schema documents will be both available and accessible in a consistent manner.
 
@@ -3591,8 +3478,7 @@
 
 ##### Rule 10-7. Import of external namespace has data definition
 
-
-> **[Rule 10-7] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-7] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3613,8 +3499,7 @@
 
 ##### Rule 10-8. External adapter type has indicator
 
-
-> **[Rule 10-8] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Interpretation)**
+> **[Rule 10-8] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > A type is an _external adapter type_ if and only if it is a complex type with application information of attribute `appinfo:externalAdapterTypeIndicator` with a value of `true`.
 
  An external adapter type should contain the information from an external standard to express a complete concept. This expression should be composed of content entirely from an external schema document. Most likely, the external schema document will be based on an external standard with its own legacy support.
@@ -3626,8 +3511,7 @@
 
 ##### Rule 10-9. Structure of external adapter type definition follows pattern
 
-
-> **[Rule 10-9] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-9] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3642,8 +3526,7 @@
 
 ##### Rule 10-10. Element use from external adapter type defined by external schema documents
 
-
-> **[Rule 10-10] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-10] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3660,8 +3543,7 @@
 
 ##### Rule 10-11. External adapter type not a base type
 
-
-> **[Rule 10-11] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-11] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3678,8 +3560,7 @@
 
 ##### Rule 10-12. External adapter type not a base type
 
-
-> **[Rule 10-12] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 10-12] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3702,11 +3583,10 @@
 
 
 ##### Rule 10-13. External attribute use only in external adapter type
+ A complex type that is defined by a _reference schema document_ is permitted to contain an attribute use schema component only if it is an _external adapter type_. This does not apply to a complex type defined by an _extension schema document_, which is permitted to use external attributes, as long as each attribute use is a _documented component_, per [Rule 10-14, _External attribute use has data definition_ (REF, EXT), below](#Rule-10-14_-External-attribute-use-has-data-definition).
 
- A complex type that is defined by a _reference schema document_ is permitted to contain an attribute use schema component only if it is an _external adapter type_. This does not apply to a complex type defined by an _extension schema document_, which is permitted to use external attributes, as long as each attribute use is a _documented component_, per [Rule 10-14, _External attribute use has data definition_ (REF, EXT), below](#Rule-10-14.-External-attribute-use-has-data-definition).
 
-
-> **[Rule 10-13] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 10-13] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3724,8 +3604,7 @@
 
 ##### Rule 10-14. External attribute use has data definition
 
-
-> **[Rule 10-14] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-14] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3743,11 +3622,10 @@
 
 
 ##### Rule 10-15. External attribute use not an ID
-
  NIEM schemas use `structures:id` to enable references between components. Each NIEM-defined complex type must incorporate a definition for `structures:id`. [XML](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#one-id-per-el">Section 3.3.1, _Attribute Types_</a> entails that a complex type may have no more than one ID attribute. This means that an external attribute use must not be an ID attribute.
 
 
-> **[Rule 10-15] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 10-15] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > An attribute use schema component MUST NOT have an {attribute declaration} with an ID type.
 
  The term "attribute use schema component" is defined by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#AU_details">Section 3.5.1, _The Attribute Use Schema Component_</a>. Attribute type ID is defined by [XML](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-attribute-types">Section 3.3.1, _Attribute Types_</a>.
@@ -3758,8 +3636,7 @@
 
 ##### Rule 10-16. External element use has data definition
 
-
-> **[Rule 10-16] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-16] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3788,10 +3665,9 @@
  Many code types have simple content composed of `xs:enumeration` values. Code types may also be constructed using the _<a target="_blank" href="https://reference.niem.gov/niem/specification/code-lists/4.0/niem-code-lists-4.0.html">NIEM Code Lists Specification</a>_       [Code Lists](#Appendix-A.-References), which supports code lists defined using a variety of methods, including CSV spreadsheets.
 
 
-#### Rule 10-17. Name of code type ends in 
+#### Rule 10-17. Name of code type ends in <q>CodeType</q>
 
-
-> **[Rule 10-17] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-17] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3810,15 +3686,13 @@
 
 #### Rule 10-18. Code type corresponds to a code list
 
-
-> **[Rule 10-18] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-18] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > A complex type SHOULD have a name ending in "CodeType" if and only if it has a correspondence to a list of distinct conceptual entities.
 
 
 #### Rule 10-19. Element of code type has code representation term
 
-
-> **[Rule 10-19] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-19] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3841,8 +3715,7 @@
 
 #### Rule 10-20. Proxy type has designated structure
 
-
-> **[Rule 10-20] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-20] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3891,10 +3764,9 @@
 ### Association types
 
 
-#### Rule 10-21. Association type derived from 
+#### Rule 10-21. Association type derived from `structures:AssociationType`
 
-
-> **[Rule 10-21] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-21] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3917,8 +3789,7 @@
 
 #### Rule 10-22. Association element type is an association type
 
-
-> **[Rule 10-22] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-22] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -3983,7 +3854,7 @@
 
  This method can be used by an information exchange developer to define individual attributes that can be applied to any augmentable type.
 
- Note that the augmentation method can introduce an additional element into every _object type_ or _association type_ in an exchange, which provides opportunity for some errors in schema development. It is important that developers of exchanges not introduce elements substitutable for an augmentation point into complex types multiple ways, as it can introduce XML Schema’s Unique Particle Attribution errors. A single complex type should not introduce an element via both element substitution and element reference. This constraint is also supported by [Rule 11-20, _Element or attribute declaration introduced only once into a type_ (REF, EXT), below](#Rule-11-20.-Element-or-attribute-declaration-introduced-only-once-into-a-type).
+ Note that the augmentation method can introduce an additional element into every _object type_ or _association type_ in an exchange, which provides opportunity for some errors in schema development. It is important that developers of exchanges not introduce elements substitutable for an augmentation point into complex types multiple ways, as it can introduce XML Schema’s Unique Particle Attribution errors. A single complex type should not introduce an element via both element substitution and element reference. This constraint is also supported by [Rule 11-20, _Element or attribute declaration introduced only once into a type_ (REF, EXT), below](#Rule-11-20_-Element-or-attribute-declaration-introduced-only-once-into-a-type).
 
 
 ### Augmentable types
@@ -3995,8 +3866,7 @@
 
 #### Rule 10-23. Augmentable type has augmentation point element
 
-
-> **[Rule 10-23] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 10-23] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4017,8 +3887,7 @@
 
 #### Rule 10-24. Augmentable type has at most one augmentation point element
 
-
-> **[Rule 10-24] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-24] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4042,8 +3911,7 @@
 
 #### Rule 10-25. Augmentation point element corresponds to its base type
 
-
-> **[Rule 10-25] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-25] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4067,8 +3935,7 @@
 
 #### Rule 10-26. An augmentation point element has no type
 
-
-> **[Rule 10-26] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-26] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4079,13 +3946,12 @@
   </sch:rule>
 </sch:pattern>
 ```
- Because an augmentation point element has no type, it will be abstract, per [Rule 9-38, _Untyped element is abstract_ (REF, EXT), above](#Rule-9-38.-Untyped-element-is-abstract)
+ Because an augmentation point element has no type, it will be abstract, per [Rule 9-38, _Untyped element is abstract_ (REF, EXT), above](#Rule-9-38_-Untyped-element-is-abstract)
 
 
 #### Rule 10-27. An augmentation point element has no substitution group
 
-
-> **[Rule 10-27] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-27] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4102,8 +3968,7 @@
 
 #### Rule 10-28. Augmentation point element is only referenced by its base type
 
-
-> **[Rule 10-28] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-28] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4119,8 +3984,7 @@
 
 #### Rule 10-29. Augmentation point element use is optional
 
-
-> **[Rule 10-29] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 10-29] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4134,8 +3998,7 @@
 
 #### Rule 10-30. Augmentation point element use is unbounded
 
-
-> **[Rule 10-30] (<a href="#conformance_target_REF">REF</a>) (Constraint)**
+> **[Rule 10-30] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4149,8 +4012,7 @@
 
 #### Rule 10-31. Augmentation point element use must be last element in its base type
 
-
-> **[Rule 10-31] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-31] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4177,26 +4039,23 @@
 
 #### Rule 10-32. Element within instance of augmentation type modifies base
 
-
-> **[Rule 10-32] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 10-32] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > Given:
 
 > Element <var>$relationship</var> establishes a relationship between <var>$base-value</var> and the value of <var>$relationship</var>.
 
 
-#### Rule 10-33. Only an augmentation type name ends in 
+#### Rule 10-33. Only an augmentation type name ends in <q>AugmentationType</q>
 
-
-> **[Rule 10-33] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Interpretation)**
+> **[Rule 10-33] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > A _schema component_ that has a name that ends in "AugmentationType" MUST be an _augmentation type_.
 
  The primary indicator that a complex type is an _augmentation type_ is its name. Using the qualifier `Augmentation` immediately identifies a type as an augmentation type.
 
 
-#### Rule 10-34. Schema component with name ending in  is an augmentation type
+#### Rule 10-34. Schema component with name ending in <q>AugmentationType</q> is an augmentation type
 
-
-> **[Rule 10-34] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-34] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4208,13 +4067,12 @@
   </sch:rule>
 </sch:pattern>
 ```
- The _base type definition_ of an augmentation type is required to be from a conformant namespace by [Rule 11-3, _Base type definition defined by conformant schema_ (REF, EXT), below](#Rule-11-3.-Base-type-definition-defined-by-conformant-schema).
+ The _base type definition_ of an augmentation type is required to be from a conformant namespace by [Rule 11-3, _Base type definition defined by conformant schema_ (REF, EXT), below](#Rule-11-3_-Base-type-definition-defined-by-conformant-schema).
 
 
-#### Rule 10-35. Type derived from  is an augmentation type
+#### Rule 10-35. Type derived from `structures:AugmentationType` is an augmentation type
 
-
-> **[Rule 10-35] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-35] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4233,8 +4091,7 @@
 
 #### Rule 10-36. Augmentation element type is an augmentation type
 
-
-> **[Rule 10-36] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-36] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4250,8 +4107,7 @@
 
 #### Rule 10-37. Augmentation elements are not used directly
 
-
-> **[Rule 10-37] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 10-37] ([REF](#Applicability-of-rules-to-conformance-targets), [SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Within a _reference schema document_, a complex type definition MUST NOT have an element use of
 
 
@@ -4271,17 +4127,15 @@
 
 #### Rule 10-38. Metadata type has data about data
 
-
-> **[Rule 10-38] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-38] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Within the schema, a metadata type MUST contain elements appropriate for a specific class of data about data.
 
  A metadata type establishes a specific, named aggregation of data about data. Any type transitively derived from `structures:MetadataType` is a metadata type. Such metadata types should be used as is and additional metadata types defined for additional content.
 
 
-#### Rule 10-39. Metadata types are derived from 
+#### Rule 10-39. Metadata types are derived from `structures:MetadataType`
 
-
-> **[Rule 10-39] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-39] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4309,8 +4163,7 @@
 
 #### Rule 10-40. Metadata element declaration type is a metadata type
 
-
-> **[Rule 10-40] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-40] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4325,11 +4178,10 @@
 
 
 #### Rule 10-41. Metadata element has applicable elements
-
  Each metadata element declaration may be applied to a set of elements. Any element to which a metadata element may be validly applied is called an "applicable element" for the metadata element. A metadata element that does not explicitly specify applicability information may be applied to any NIEM-conformant element.
 
 
-> **[Rule 10-41] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>, <a href="#conformance_target_SET">SET</a>) (Interpretation)**
+> **[Rule 10-41] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets), [SET](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > The set of applicable elements for a metadata element declaration are as follows:
 
  _Figure 10-14, _Sample use of `appinfo:appliesToTypes`_, below,_ shows an example of `appinfo:appliesToTypes`, defining a metadata element that is applicable to all objects and all associations.
@@ -4381,10 +4233,9 @@
 > A **representation element declaration** is an _element declaration_ that is abstract, and that has a {name} that ends in "Representation".
 
 
-### Rule 10-42. Name of element that ends in  is abstract
+### Rule 10-42. Name of element that ends in <q>Representation</q> is abstract
 
-
-> **[Rule 10-42] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-42] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4398,8 +4249,7 @@
 
 ## Rule 10-43. A substitution for a representation element declaration is a value for a type
 
-
-> **[Rule 10-43] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Interpretation)**
+> **[Rule 10-43] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > Any element declaration that is substitutable for a representation element declaration represents an optional representation of a value of a type that carries the representation element.
 
 
@@ -4410,19 +4260,17 @@
 
 ### Rule 10-44. Schema component name composed of English words
 
-
-> **[Rule 10-44] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-44] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The name of any XML Schema component defined by the schema SHOULD be composed of words from the English language, using the prevalent U.S. spelling, as provided by [OED](#Appendix-A.-References).
 
  The English language has many spelling variations for the same word. For example, American English "program" has a corresponding British spelling "programme." This variation has the potential to cause interoperability problems when XML components are exchanged because of the different names used by the same elements. Providing users with a dictionary standard for spelling will mitigate this potential interoperability issue.
 
 
-### Rule 10-45. Schema component name has 
-
+### Rule 10-45. Schema component name has `xml:lang`
  [XML](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-lang-tag">Section 2.12, _Language Identification_</a> defines attribute `xml:lang`, which establishes the language used in the contents and attributes of an XML document. To facilitate clarity and future support for languages other than US English, each component name defined in a conformant schema is in the scope of an occurrence of `xml:lang`, which defines the language used in the component name.
 
 
-> **[Rule 10-45] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-45] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4437,8 +4285,7 @@
 
 ### Rule 10-46. Schema component names have only specific characters
 
-
-> **[Rule 10-46] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-46] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4461,13 +4308,12 @@
 
 ### Rule 10-47. Punctuation in component name is a separator
 
-
-> **[Rule 10-47] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-47] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The characters hyphen ("`-`"), underscore ("`_`") MAY appear in a component name only when used as a separator between parts of a word, phrase, or value, which would otherwise be incomprehensible without the use of a separator. The period character ("`.`") MAY appear in component names only when appearing as a separator (as above) or as a decimal within a numeric value. A punctuation character MUST NOT be used as a substitute for camel case in component names, or as a method to avoid camel case in component names.
 
  Names of standards and specifications, in particular, tend to consist of series of discrete numbers. Such names require some explicit separator to keep the values from running together.
 
- Names of NIEM components follow the rules of XML Schema, by [Rule 7-3, _Document is a schema document_ (REF, EXT), above](#Rule-7-3.-Document-is-a-schema-document). NIEM components also follow the rules specified herein for each type of XML Schema component.
+ Names of NIEM components follow the rules of XML Schema, by [Rule 7-3, _Document is a schema document_ (REF, EXT), above](#Rule-7-3_-Document-is-a-schema-document). NIEM components also follow the rules specified herein for each type of XML Schema component.
 
 
 ### Character case
@@ -4477,15 +4323,13 @@
 
 #### Rule 10-48. Names use camel case
 
-
-> **[Rule 10-48] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-48] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The name of any XML Schema component defined by the schema MUST use the camel case formatting convention.
 
 
 #### Rule 10-49. Attribute name begins with lower case letter
 
-
-> **[Rule 10-49] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-49] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4499,8 +4343,7 @@
 
 #### Rule 10-50. Name of schema component other than attribute and proxy type begins with upper case letter
 
-
-> **[Rule 10-50] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-50] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4529,8 +4372,7 @@
 
 #### Rule 10-51. Names use common abbreviations
 
-
-> **[Rule 10-51] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-51] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The schema SHOULD use, in defined names, the abbreviations identified by _Table 10-1, _Abbreviations used in schema component names__, rather than their full meanings.
 
  Consistent, controlled, and documented abridged terms that are commonly used in place of full terms can support readability, clarity, and reduction of name length.
@@ -4551,15 +4393,13 @@
 
 ##### Rule 10-52. Local term declaration is local to its schema document
 
-
-> **[Rule 10-52] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Interpretation)**
+> **[Rule 10-52] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > An element `appinfo:LocalTerm` MUST establish the meaning of a _local term_ only within the XML Schema document in which it occurs. There MUST NOT be any transitive inheritance of local terminology within schema documents that import the containing schema document.
 
 
 ##### Rule 10-53. Local terminology interpretation
 
-
-> **[Rule 10-53] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Interpretation)**
+> **[Rule 10-53] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > An element information item `appinfo:LocalTerm` MUST establish a term as follows:
 
 
@@ -4568,33 +4408,29 @@
 
 #### Rule 10-54. Singular form is preferred in name
 
-
-> **[Rule 10-54] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-54] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > A noun used as a term in the name of an XML Schema component MUST be in singular form unless the concept itself is plural.
 
 
 #### Rule 10-55. Present tense is preferred in name
 
-
-> **[Rule 10-55] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-55] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > A verb used as a term in the name of an XML Schema component MUST be used in the present tense unless the concept itself is past tense.
 
 
 #### Rule 10-56. Name does not have nonessential words
 
-
-> **[Rule 10-56] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-56] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Articles, conjunctions, and prepositions MUST NOT be used in NIEM component names except where they are required for clarity or by standard convention.
 
  Articles (e.g., a, an, the), conjunctions (e.g., and, or, but), and prepositions (e.g., at, by, for, from, in, of, to) are all disallowed in NIEM component names, unless they are required. For example, `PowerOfAttorneyCode` requires the preposition. These rules constrain slight variations in word forms and types to improve consistency and reduce potentially ambiguous or confusing component names.
 
 
 ### Rule 10-57. Element or attribute name follows pattern
-
  Elements and attributes in NIEM-conformant schemas are given names that follow a specific pattern. This pattern comes from [ISO 11179-5](#Appendix-A.-References).
 
 
-> **[Rule 10-57] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-57] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Except as specified elsewhere in this document, any element or attribute defined within the schema SHOULD have a name that takes the form:
 
  Consistent naming rules are helpful for users who wish to understand components with which they are unfamiliar, as well as for users to find components with known semantics. This rule establishes the basic structure for an element or attribute name, in line with the rules for names under [ISO 11179-5](#Appendix-A.-References). Note that many elements with complex type should not have a representation term.
@@ -4607,8 +4443,7 @@
 
 #### Rule 10-58. Object-class term identifies concrete category
 
-
-> **[Rule 10-58] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-58] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The object-class term of a NIEM component MUST consist of a term identifying a category of concrete concepts or entities.
 
  The object-class term indicates the object category that this data component describes or represents. This term provides valuable context and narrows the scope of the component to an actual class of things or concepts.
@@ -4623,8 +4458,7 @@
 
 #### Rule 10-59. Property term describes characteristic or subpart
 
-
-> **[Rule 10-59] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-59] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > A property term MUST describe or represent a characteristic or subpart of an entity or concept.
 
  The property term describes the central meaning of the data component.
@@ -4637,22 +4471,19 @@
 
 #### Rule 10-60. Name may have multiple qualifier terms
 
-
-> **[Rule 10-60] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-60] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Multiple qualifier terms MAY be used within a component name as necessary to ensure clarity and uniqueness within its namespace and usage context.
 
 
 #### Rule 10-61. Name has minimum necessary number of qualifier terms
 
-
-> **[Rule 10-61] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-61] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The number of qualifier terms SHOULD be limited to the absolute minimum required to make the component name unique and understandable.
 
 
 #### Rule 10-62. Order of qualifiers is not significant
 
-
-> **[Rule 10-62] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-62] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The order of qualifiers MUST NOT be used to differentiate names.
 
  Very large vocabularies may have many similar and closely related properties and concepts. The use of object, property, and representation terms alone is often not sufficient to construct meaningful names that can uniquely distinguish such components. Qualifier terms provide additional context to resolve these subtleties. However, swapping the order of qualifiers rarely (if ever) changes meaning; qualifier ordering is no substitute for meaningful terms.
@@ -4665,8 +4496,7 @@
 
 #### Rule 10-63. Redundant term in name is omitted
 
-
-> **[Rule 10-63] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-63] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > If any word in the representation term is redundant with any word in the property term, one occurrence SHOULD be deleted.
 
  This rule, carried over from 11179, is designed to prevent repeating terms unnecessarily within component names. For example, this rule allows designers to avoid naming an element "PersonFirstNameName."
@@ -4676,17 +4506,15 @@
 
 #### Rule 10-64. Element with simple content has representation term
 
-
-> **[Rule 10-64] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-64] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Within the schema, the name of an element declaration that is of simple content SHOULD use an appropriate representation term as found in _Table 10-2, _Property representation terms__.
 
- This rule is also supported by [Rule 11-15, _Name of element declaration with simple content has representation term_ (REF, EXT), below,](#Rule-11-15.-Name-of-element-declaration-with-simple-content-has-representation-term) and [Rule 11-16, _Name of element declaration with simple content has representation term_ (SET), below](#Rule-11-16.-Name-of-element-declaration-with-simple-content-has-representation-term), which provide tests that a top-level declaration has a representation term.
+ This rule is also supported by [Rule 11-15, _Name of element declaration with simple content has representation term_ (REF, EXT), below,](#Rule-11-15_-Name-of-element-declaration-with-simple-content-has-representation-term) and [Rule 11-16, _Name of element declaration with simple content has representation term_ (SET), below](#Rule-11-16_-Name-of-element-declaration-with-simple-content-has-representation-term), which provide tests that a top-level declaration has a representation term.
 
 
 #### Rule 10-65. Element with complex content has representation term when appropriate
 
-
-> **[Rule 10-65] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-65] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Within the schema, the name of an element declaration that is of complex content, and that corresponds to a concept listed in _Table 10-2, _Property representation terms__, SHOULD use a representation term from that table.
 
  An element that represents a value listed in the table should have a representation term. It should do so even if its type is complex with multiple parts. For example, a type with multiple fields may represent an audio binary, a date, or a name.
@@ -4694,8 +4522,7 @@
 
 #### Rule 10-66. Element with complex content has representation term only when appropriate
 
-
-> **[Rule 10-66] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-66] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Within the schema, the name of an element declaration that is of complex content and that does not correspond to a concept listed in _Table 10-2, _Property representation terms__ SHOULD NOT use a representation term.
 
 
@@ -4724,8 +4551,7 @@
 
 ### Rule 10-67. Machine-readable annotations are valid
 
-
-> **[Rule 10-67] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-67] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Every element information item or attribute information item that appears as a machine-readable annotation in a schema MUST be a valid instance, according to its specification.
 
  The specification for an element or attribute may be via an XML Schema, a Schematron schema, via a DTD, by some other specification, or by other means. This rule is intended to allow NIEM schema developers to leverage relevant vocabularies without being limited by the vocabulary’s method of specification, while ensuring that developers do not subvert or misuse those vocabularies.
@@ -4739,7 +4565,7 @@
 > **<a name="definition_appinfo_namespace"/>[Definition: <dfn>appinfo namespace</dfn>]**
 > The **appinfo namespace** is the namespace represented by the URI "`http://release.niem.gov/niem/appinfo/5.0/`".
 
- The _appinfo namespace_ defines attributes which provide additional semantics for components built by NIEM-conformant schemas. The XML Schema document for the appinfo namespace appears in [Appendix C, _Appinfo namespace_, below](#Appendix-C.-Appinfo-namespace).
+ The _appinfo namespace_ defines attributes which provide additional semantics for components built by NIEM-conformant schemas. The XML Schema document for the appinfo namespace appears in [Appendix C, _Appinfo namespace_, below](#Appendix-C_-Appinfo-namespace).
 
 
 #### Deprecation
@@ -4755,8 +4581,7 @@
 
 ##### Rule 10-68. Component marked as deprecated is deprecated component
 
-
-> **[Rule 10-68] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Interpretation)**
+> **[Rule 10-68] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > A _schema component_ that has an attribute `appinfo:deprecated` with a value of "true" MUST be a _deprecated component_.
 
  Deprecation can allow version management to be more consistent; versions of schema may be incrementally improved without introducing validation problems and incompatibility. As XML Schema lacks a deprecation mechanism, NIEM defines such a mechanism.
@@ -4764,8 +4589,7 @@
 
 ##### Rule 10-69. Deprecated annotates schema component
 
-
-> **[Rule 10-69] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-69] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4783,8 +4607,7 @@
 
 ##### Rule 10-70. External import indicator annotates import
 
-
-> **[Rule 10-70] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-70] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4797,8 +4620,7 @@
 
 ##### Rule 10-71. External adapter type indicator annotates complex type
 
-
-> **[Rule 10-71] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-71] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4812,10 +4634,9 @@
 ####  annotation
 
 
-##### Rule 10-72.  annotates metadata element
+##### Rule 10-72. `appinfo:appliesToTypes` annotates metadata element
 
-
-> **[Rule 10-72] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-72] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4827,10 +4648,9 @@
 </sch:pattern>
 ```
 
-##### Rule 10-73.  references types
+##### Rule 10-73. `appinfo:appliesToTypes` references types
 
-
-> **[Rule 10-73] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 10-73] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4845,10 +4665,9 @@
 ####  annotation
 
 
-##### Rule 10-74.  annotates metadata element
+##### Rule 10-74. `appinfo:appliesToElements` annotates metadata element
 
-
-> **[Rule 10-74] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-74] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4861,10 +4680,9 @@
 </sch:pattern>
 ```
 
-##### Rule 10-75.  references elements
+##### Rule 10-75. `appinfo:appliesToElements` references elements
 
-
-> **[Rule 10-75] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 10-75] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4879,10 +4697,9 @@
 ### Local terminology
 
 
-#### Rule 10-76.  annotates schema
+#### Rule 10-76. `appinfo:LocalTerm` annotates schema
 
-
-> **[Rule 10-76] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-76] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4895,10 +4712,9 @@
  This document defines the term _application information_.
 
 
-#### Rule 10-77.  has literal or definition
+#### Rule 10-77. `appinfo:LocalTerm` has literal or definition
 
-
-> **[Rule 10-77] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 10-77] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4922,9 +4738,8 @@
 
 ### Rule 10-78. Use structures consistent with specification
 
-
-> **[Rule 10-78] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>, <a href="#conformance_target_INS">INS</a>, <a href="#conformance_target_SET">SET</a>) (Constraint)**
-> Any schema or instance MUST use the NIEM _structures namespace_ consistent with the schema as it is defined in [Appendix B, _Structures namespace_, below](#Appendix-B.-Structures-namespace).
+> **[Rule 10-78] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets), [INS](#Applicability-of-rules-to-conformance-targets), [SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> Any schema or instance MUST use the NIEM _structures namespace_ consistent with the schema as it is defined in [Appendix B, _Structures namespace_, below](#Appendix-B_-Structures-namespace).
 
  This rule further enforces uniform and consistent use of the NIEM `structures` namespace, without addition. Users are not allowed to insert types, attributes, etc. that are not specified by this document. However, users may profile the structures namespace, as needed.
 
@@ -4937,10 +4752,9 @@
 ## Type definition components
 
 
-### Rule 11-1. Name of type ends in 
+### Rule 11-1. Name of type ends in <q>Type</q>
 
-
-> **[Rule 11-1] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-1] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4961,10 +4775,9 @@
  Note that the first `sch:rule` and subsequent `sch:report` serve to provide an exception to the rule for proxy types. It does not establish a constraint on the data.
 
 
-### Rule 11-2. Only types have name ending in  or 
+### Rule 11-2. Only types have name ending in <q>Type</q> or <q>SimpleType</q>
 
-
-> **[Rule 11-2] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-2] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -4986,8 +4799,7 @@
 
 #### Rule 11-3. Base type definition defined by conformant schema
 
-
-> **[Rule 11-3] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-3] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5005,10 +4817,9 @@
 ### Simple type definition
 
 
-#### Rule 11-4. Name of simple type ends in 
+#### Rule 11-4. Name of simple type ends in <q>SimpleType</q>
 
-
-> **[Rule 11-4] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-4] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5026,8 +4837,7 @@
 
 ##### Rule 11-5. Use lists only when data is uniform
 
-
-> **[Rule 11-5] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-5] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Within the schema, a simple type definition that uses `xs:list` SHOULD NOT be defined if any member of the list requires a property or metadata that is different than other members of the list. All members of the list SHOULD have the same metadata, and should be related via the same properties.
 
  The use of lists should be reserved for cases where the data is fairly uniform.
@@ -5037,8 +4847,7 @@
 
 ##### Rule 11-6. List item type defined by conformant schemas
 
-
-> **[Rule 11-6] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-6] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5058,8 +4867,7 @@
 
 ##### Rule 11-7. Union member types defined by conformant schemas
 
-
-> **[Rule 11-7] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-7] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5086,10 +4894,9 @@
  Many code simple types are composed of `xs:enumeration` values. Code simple types may also be constructed using the _<a target="_blank" href="https://reference.niem.gov/niem/specification/code-lists/4.0/niem-code-lists-4.0.html">NIEM Code Lists Specification</a>_        [Code Lists](#Appendix-A.-References), which supports code lists defined using a variety of methods, including CSV spreadsheets.
 
 
-##### Rule 11-8. Name of a code simple type ends in 
+##### Rule 11-8. Name of a code simple type ends in <q>CodeSimpleType</q>
 
-
-> **[Rule 11-8] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-8] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5104,15 +4911,13 @@
 
 ##### Rule 11-9. Code simple type corresponds to a code list
 
-
-> **[Rule 11-9] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-9] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > A simple type SHOULD have a name ending in "CodeSimpleType" if and only if it has a correspondence to a list of distinct conceptual entities.
 
 
 ##### Rule 11-10. Attribute of code simple type has code representation term
 
-
-> **[Rule 11-10] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-10] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5128,14 +4933,13 @@
 ### Complex type definition
 
 
-#### Rule 11-11. Complex type with simple content has 
-
+#### Rule 11-11. Complex type with simple content has `structures:SimpleObjectAttributeGroup`
  Within a _reference schema document_, a complex type with simple content can be created in one of two ways:
 
  Both of these methods use the element `xs:extension`. Although these two methods have similar syntax, there are subtle differences. NIEM’s conformance rules ensure that any complex type has the necessary attributes for representing IDs, references, metadata, and relationship metadata. Case 1 does not require adding these attributes, as they are guaranteed to occur in the base type. However, in case 2, in which a new complex type is created from a simple type, the attributes for complex types must be added. This is done by reference to the attribute group `structures:SimpleObjectAttributeGroup`.
 
 
-> **[Rule 11-11] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-11] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5161,11 +4965,10 @@
 
 
 #### Rule 11-12. Element type does not have a simple type name
+ This rule, in conjunction with [Rule 11-4, _Name of simple type ends in "SimpleType"_ (REF, EXT), above](#Rule-11-4_-Name-of-simple-type-ends-in-), ensures that all conformant elements will have complex types that contain attributes from the structures namespace, enabling a consistent approach for using IDs, references, metadata, relationship metadata, and security markup data.
 
- This rule, in conjunction with [Rule 11-4, _Name of simple type ends in "SimpleType"_ (REF, EXT), above](#Rule-11-4.-Name-of-simple-type-ends-in-), ensures that all conformant elements will have complex types that contain attributes from the structures namespace, enabling a consistent approach for using IDs, references, metadata, relationship metadata, and security markup data.
 
-
-> **[Rule 11-12] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-12] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5180,8 +4983,7 @@
 
 #### Rule 11-13. Element type is from conformant namespace
 
-
-> **[Rule 11-13] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-13] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5198,13 +5000,12 @@
 ```
  This document defines the term _element declaration_.
 
- Additional prohibitions on element types are defined by [Rule 9-41, _Element type not in the XML namespace_ (REF, EXT), above,](#Rule-9-41.-Element-type-not-in-the-XML-namespace) and [Rule 9-42, _Element type is not simple type_ (REF, EXT), above](#Rule-9-42.-Element-type-is-not-simple-type).
+ Additional prohibitions on element types are defined by [Rule 9-41, _Element type not in the XML namespace_ (REF, EXT), above,](#Rule-9-41_-Element-type-not-in-the-XML-namespace) and [Rule 9-42, _Element type is not simple type_ (REF, EXT), above](#Rule-9-42_-Element-type-is-not-simple-type).
 
 
-#### Rule 11-14. Name of element that ends in  is abstract
+#### Rule 11-14. Name of element that ends in <q>Abstract</q> is abstract
 
-
-> **[Rule 11-14] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-14] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5226,8 +5027,7 @@
 
 ##### Rule 11-15. Name of element declaration with simple content has representation term
 
-
-> **[Rule 11-15] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-15] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5243,15 +5043,14 @@
   </sch:rule>
 </sch:pattern>
 ```
- Representation terms are defined by _Table 10-2, _Property representation terms_, above_. This Schematron rule supports [Rule 10-64, _Element with simple content has representation term_ (REF, EXT), above](#Rule-10-64.-Element-with-simple-content-has-representation-term).
+ Representation terms are defined by _Table 10-2, _Property representation terms_, above_. This Schematron rule supports [Rule 10-64, _Element with simple content has representation term_ (REF, EXT), above](#Rule-10-64_-Element-with-simple-content-has-representation-term).
 
 
 ##### Rule 11-16. Name of element declaration with simple content has representation term
-
  This rule only checks the cases not testable in the (REF, EXT) version.
 
 
-> **[Rule 11-16] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 11-16] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5269,7 +5068,7 @@
   </sch:rule>
 </sch:pattern>
 ```
- Representation terms are defined by _Table 10-2, _Property representation terms_, above_. This rule supports [Rule 10-64, _Element with simple content has representation term_ (REF, EXT), above](#Rule-10-64.-Element-with-simple-content-has-representation-term).
+ Representation terms are defined by _Table 10-2, _Property representation terms_, above_. This rule supports [Rule 10-64, _Element with simple content has representation term_ (REF, EXT), above](#Rule-10-64_-Element-with-simple-content-has-representation-term).
 
 
 ### Element substitution group
@@ -5277,8 +5076,7 @@
 
 #### Rule 11-17. Element substitution group defined by conformant schema
 
-
-> **[Rule 11-17] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-17] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5298,8 +5096,7 @@
 
 #### Rule 11-18. Attribute type defined by conformant schema
 
-
-> **[Rule 11-18] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-18] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5316,8 +5113,7 @@
 
 #### Rule 11-19. Attribute name uses representation term
 
-
-> **[Rule 11-19] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-19] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5352,8 +5148,7 @@
 
 ##### Rule 11-20. Element or attribute declaration introduced only once into a type
 
-
-> **[Rule 11-20] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-20] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Within the schema, an element declaration or attribute declaration MUST NOT be introduced more than once into a type definition. This applies to content acquired by a type by any means, including from a base type definition, via element substitution groups, or through the use of attribute groups.
 
  This rule ensures that a type definition does not incorporate a component multiple times. As information exchange specifications often contain multiple versions of schemas, including reference schemas as well as subset and constraint schemas, it may be easy to omit an element or attribute in one version of the schema, only to reincorporate it via an extension. This can cause difficulties in integrating such schemas, as it may be impossible to use a reference schema if an attribute is added twice, in both a base type and an extension type, since that would make it an invalid schema.
@@ -5365,8 +5160,7 @@
 
 ##### Rule 11-21. Element reference defined by conformant schema
 
-
-> **[Rule 11-21] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-21] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5388,8 +5182,7 @@
 
 #### Rule 11-22. Referenced attribute defined by conformant schemas
 
-
-> **[Rule 11-22] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-22] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5410,11 +5203,10 @@
 
 
 ##### Rule 11-23. Schema uses only known attribute groups
-
  In conformant schemas, use of attribute groups is restricted. The only attribute group defined by NIEM for use in conformant schemas is `structures:SimpleObjectAttributeGroup`. This attribute group provides the attributes necessary for IDs, references, metadata, and relationship metadata. In addition, there are attributes defined by ISM and NTK namespaces, which may be used in conformant schemas. Rationale for this use is provided in [Section 7.6, _IC-ISM and IC-NTK_, above](#IC-ISM-and-IC-NTK).
 
 
-> **[Rule 11-23] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-23] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5460,13 +5252,12 @@
 
 ### Human-readable documentation
 
- Note that [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT), below,](#Rule-11-28.-Data-definition-follows-11179-4-requirements) and [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT), below,](#Rule-11-29.-Data-definition-follows-11179-4-recommendations) apply [ISO 11179-4](#Appendix-A.-References) definition rules to documented components.
+ Note that [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT), below,](#Rule-11-28_-Data-definition-follows-11179-4-requirements) and [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT), below,](#Rule-11-29_-Data-definition-follows-11179-4-recommendations) apply [ISO 11179-4](#Appendix-A.-References) definition rules to documented components.
 
 
 #### Rule 11-24. Data definition does not introduce ambiguity
 
-
-> **[Rule 11-24] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-24] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Words or synonyms for the words within a data definition MUST NOT be reused as terms in the corresponding component name if those words dilute the semantics and understanding of, or impart ambiguity to, the entity or concept that the component represents.
 
  This document defines the term _data definition_.
@@ -5474,15 +5265,13 @@
 
 #### Rule 11-25. Object class has only one meaning
 
-
-> **[Rule 11-25] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-25] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > An object class MUST have one and only one associated semantic meaning (i.e., a single word sense) as described in the definition of the component that represents that object class.
 
 
 #### Rule 11-26. Data definition of a part does not redefine the whole
 
-
-> **[Rule 11-26] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-26] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > An object class MUST NOT be redefined within the definitions of the components that represent properties or subparts of that entity or class.
 
  Data definitions should be concise, precise, and unambiguous without embedding additional definitions of data elements that have already been defined once elsewhere (such as object classes). [ISO 11179-4](#Appendix-A.-References) says that definitions should not be nested inside other definitions. Furthermore, a data dictionary is not a language dictionary. It is acceptable to reuse terms (object class, property term, and qualifier terms) from a component name within its corresponding definition to enhance clarity, as long as the requirements and recommendations of [ISO 11179-4](#Appendix-A.-References) are not violated. This further enhances brevity and precision.
@@ -5490,8 +5279,7 @@
 
 #### Rule 11-27. Do not leak representation into data definition
 
-
-> **[Rule 11-27] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-27] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > A data definition SHOULD NOT contain explicit representational or data typing information such as number of characters, classes of characters, range of mathematical values, etc., unless the very nature of the component can be described only by such information.
 
  A component definition is intended to describe semantic meaning only, not representation or structure. How a component with simple content is represented is indicated through the representation term, but the primary source of representational information should come from the XML Schema definition of the types themselves. A developer should try to keep a component’s data definition decoupled from its representation.
@@ -5499,24 +5287,21 @@
 
 #### Rule 11-28. Data definition follows 11179-4 requirements
 
-
-> **[Rule 11-28] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-28] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Each _data definition_ MUST conform to the requirements for data definitions provided by [ISO 11179-4](#Appendix-A.-References) Section 5.2, _Requirements_.
 
 
 #### Rule 11-29. Data definition follows 11179-4 recommendations
 
-
-> **[Rule 11-29] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-29] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Each _data definition_ SHOULD conform to the recommendations for data definitions provided by [ISO 11179-4](#Appendix-A.-References) Section 5.3, _Recommendations_.
 
 
-#### Rule 11-30.  has 
-
+#### Rule 11-30. `xs:documentation` has `xml:lang`
  [XML](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-lang-tag">Section 2.12, _Language Identification_</a> defines attribute `xml:lang`, which establishes the language used in the contents and attributes of an XML document. To facilitate clarity and future support for languages other than US English, each occurrence of `xs:documentation` in a conformant schema is in the scope of an occurrence of `xml:lang`, which defines the language used in the documentation.
 
 
-> **[Rule 11-30] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-30] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5539,8 +5324,7 @@
 
 ###### Rule 11-31. Standard opening phrase for augmentation point element data definition
 
-
-> **[Rule 11-31] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-31] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5554,8 +5338,7 @@
 
 ###### Rule 11-32. Standard opening phrase for augmentation element data definition
 
-
-> **[Rule 11-32] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-32] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5571,8 +5354,7 @@
 
 ###### Rule 11-33. Standard opening phrase for metadata element data definition
 
-
-> **[Rule 11-33] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-33] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5587,8 +5369,7 @@
 
 ###### Rule 11-34. Standard opening phrase for association element data definition
 
-
-> **[Rule 11-34] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-34] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5603,8 +5384,7 @@
 
 ###### Rule 11-35. Standard opening phrase for abstract element data definition
 
-
-> **[Rule 11-35] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-35] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5619,8 +5399,7 @@
 
 ###### Rule 11-36. Standard opening phrase for date element or attribute data definition
 
-
-> **[Rule 11-36] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-36] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5636,8 +5415,7 @@
 
 ###### Rule 11-37. Standard opening phrase for quantity element or attribute data definition
 
-
-> **[Rule 11-37] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-37] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5653,8 +5431,7 @@
 
 ###### Rule 11-38. Standard opening phrase for picture element or attribute data definition
 
-
-> **[Rule 11-38] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-38] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5670,8 +5447,7 @@
 
 ###### Rule 11-39. Standard opening phrase for indicator element or attribute data definition
 
-
-> **[Rule 11-39] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-39] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5687,8 +5463,7 @@
 
 ###### Rule 11-40. Standard opening phrase for identification element or attribute data definition
 
-
-> **[Rule 11-40] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-40] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5704,8 +5479,7 @@
 
 ###### Rule 11-41. Standard opening phrase for name element or attribute data definition
 
-
-> **[Rule 11-41] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-41] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5721,8 +5495,7 @@
 
 ###### Rule 11-42. Standard opening phrase for element or attribute data definition
 
-
-> **[Rule 11-42] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-42] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5745,8 +5518,7 @@
 
 ###### Rule 11-43. Standard opening phrase for association type data definition
 
-
-> **[Rule 11-43] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-43] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5760,8 +5532,7 @@
 
 ###### Rule 11-44. Standard opening phrase for augmentation type data definition
 
-
-> **[Rule 11-44] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-44] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5776,8 +5547,7 @@
 
 ###### Rule 11-45. Standard opening phrase for metadata type data definition
 
-
-> **[Rule 11-45] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-45] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5792,8 +5562,7 @@
 
 ###### Rule 11-46. Standard opening phrase for complex type data definition
 
-
-> **[Rule 11-46] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-46] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5807,8 +5576,7 @@
 
 ##### Rule 11-47. Standard opening phrase for simple type data definition
 
-
-> **[Rule 11-47] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-47] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5828,15 +5596,13 @@
 
 #### Rule 11-48. Same namespace means same components
 
-
-> **[Rule 11-48] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Interpretation)**
+> **[Rule 11-48] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > Two XML Schema documents MUST have the same value for attribute `targetNamespace` carried by the element `xs:schema`, if and only if they represent the same set of components.
 
 
 #### Rule 11-49. Different version means different view
 
-
-> **[Rule 11-49] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Interpretation)**
+> **[Rule 11-49] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > Two XML Schema documents MUST have the same value for attribute `targetNamespace` carried by the element `xs:schema`, and different values for attribute `version` carried by the element `xs:schema` if and only if they are profiles of the same set of components.
 
  These rules embody the basic philosophy behind NIEM’s use of components with namespaces: A component is uniquely identified by its class (e.g. element, attribute, type), its namespace (a URI), and its local name (an unqualified string). Any two matching component identifiers refer to the same component, even if the versions of the schemas containing each are different.
@@ -5847,8 +5613,7 @@
 
 ### Rule 11-50. Reference schema document imports reference schema document
 
-
-> **[Rule 11-50] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 11-50] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5869,8 +5634,7 @@
 
 ### Rule 11-51. Extension schema document imports reference or extension schema document
 
-
-> **[Rule 11-51] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 11-51] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5897,8 +5661,7 @@
 
 #### Rule 11-52. Structures imported as conformant
 
-
-> **[Rule 11-52] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-52] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5912,8 +5675,7 @@
 
 #### Rule 11-53. XML namespace imported as conformant
 
-
-> **[Rule 11-53] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-53] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5927,8 +5689,7 @@
 
 ### Rule 11-54. Each namespace may have only a single root schema in a schema set
 
-
-> **[Rule 11-54] (<a href="#conformance_target_SET">SET</a>) (Constraint)**
+> **[Rule 11-54] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5943,11 +5704,10 @@
 ```
 
 ### Rule 11-55. Consistently marked namespace imports
-
  XML Schemas allows multiple xs:import elements for the same namespace, which allows for multiple sets of annotations and schema locations. 
 
 
-> **[Rule 11-55] (<a href="#conformance_target_REF">REF</a>, <a href="#conformance_target_EXT">EXT</a>) (Constraint)**
+> **[Rule 11-55] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -5971,8 +5731,7 @@
 
 ## Rule 12-1. Instance must be schema-valid
 
-
-> **[Rule 12-1] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-1] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The XML document MUST be schema-valid, as assessed against a _conformant schema document set_, composed of authoritative, comprehensive schema documents for the relevant namespaces.
 
  The schemas that define the exchange must be authoritative. Each is the reference schema or extension schema for the namespace it defines. Application developers may use other schemas for various purposes, but for the purposes of determining conformance, the authoritative schemas are relevant.
@@ -5995,8 +5754,7 @@
 
 ### Rule 12-2. Empty content has no meaning
 
-
-> **[Rule 12-2] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 12-2] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > Within the instance, the meaning of an element with no content is that additional properties are not asserted. There MUST NOT be additional meaning interpreted for an element with no content.
 
  Elements without content only show a lack of asserted information. That is, all that is asserted is what is explicitly stated, through a combination of XML instance data and its schema. Data that is not present makes no claims. It may be absent due to lack of availability, lack of knowledge, or deliberate withholding of information. These cases should be modeled explicitly, if they are required.
@@ -6013,8 +5771,7 @@
 
 ### Rule 12-3. Element has only one resource identifying attribute
 
-
-> **[Rule 12-3] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-3] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -6038,12 +5795,11 @@
  Note that rules below establish that relationships established using `structures:id` and `structures:ref` have the exact same meaning as relationships established using nested elements. An information exchange specification may constrain them differently, or prefer one over the other, but from a NIEM perspective, they have the same meaning.
 
 
-#### Rule 12-4. Attribute  must reference 
-
+#### Rule 12-4. Attribute `structures:ref` must reference `structures:id`
  Although many attributes with ID and IDREF semantics are defined by many vocabularies, for consistency, within a NIEM XML document any attribute `structures:ref` must refer to an attribute `structures:id`, and not any other attribute.
 
 
-> **[Rule 12-4] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-4] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -6058,11 +5814,10 @@
 
 
 #### Rule 12-5. Linked elements have same validation root
-
  NIEM supports type-safe references: references using `structures:ref` and `structures:id` must preserve the type constraints that would apply if nested elements were used instead of a reference. For example, an element of type `nc:PersonType` must always refer to another element of type `nc:PersonType`, or a type derived from `nc:PersonType`, when using `structures:ref` to establish the relationship.
 
 
-> **[Rule 12-5] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-5] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Given that:
 
 > Every element that has an attribute `structures:ref` MUST have a referencing element validation root that is equal to the referenced element validation root.
@@ -6070,10 +5825,9 @@
  The term "validation root" is defined by [XML Schema Structures](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-vr">Section 5.2, _Assessing Schema-Validity_</a>. It is established as a part of validity assessment of an XML document. It is required because relationships between the types of elements cannot be established if those elements were not assessed together.
 
 
-#### Rule 12-6. Attribute  references element of correct type
+#### Rule 12-6. Attribute `structures:ref` references element of correct type
 
-
-> **[Rule 12-6] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-6] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Given that:
 
 > Every element that has an attribute `structures:ref` MUST have a _referenced element type definition_ that is validly derived from the _referencing element type definition_.
@@ -6092,10 +5846,9 @@
  As described in [Section 5.4, _Unique identification of data objects_, above](#Unique-identification-of-data-objects), `structures:uri`, `structures:id`, and `structures:ref` each denote a resource identifier. Although a `structures:ref` must always refer to a `structures:id`, and a value of `structures:id` must be unique within its document, a `structures:uri` may refer to any of `structures:uri`, `structures:ref`, or `structures:id`.
 
 
-#### Rule 12-7.  denotes resource identifier
+#### Rule 12-7. `structures:uri` denotes resource identifier
 
-
-> **[Rule 12-7] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 12-7] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > The value of an attribute `structures:uri` is a URI-reference, as defined by [RFC 3986](#Appendix-A.-References), which denotes a resource identifier on the element holding the attribute, in accordance with evaluation consistent with [RFC 3986](#Appendix-A.-References) and [XML Base](#Appendix-A.-References).
 
  The following example shows a reference to an absolute URI, using the URN namespace for UUIDs:
@@ -6107,10 +5860,9 @@
  The attributes `structures:id` and `structures:ref` each have a mapping to equivalent values of `structures:uri`.
 
 
-#### Rule 12-8.  and  denote resource identifier
+#### Rule 12-8. `structures:id` and `structures:ref` denote resource identifier
 
-
-> **[Rule 12-8] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 12-8] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > The value of an attribute `structures:id` with a value of <var>$value</var>, or an attribute `structures:ref` with a value of <var>$value</var>, denotes a resource identifier on the element holding the attribute, as would be denoted by an attribute `structures:uri` with a value of "`#`"<var>$value</var>.
 
  For example, `structures:id="hello"` and `structures:ref="hello"` each denote the same resource identifier for an element as if it held an attribute `structures:uri="#hello"`.
@@ -6143,8 +5895,7 @@
 
 #### Rule 12-9. Nested elements and references have the same meaning.
 
-
-> **[Rule 12-9] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 12-9] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > There MUST NOT be any difference in meaning between a relationship established via an element declaration instantiated by a nested element, and that element declaration instantiated via reference.
 
  There is no difference in meaning between relationships established by sub-elements and those established by references. They are simply two mechanisms for expressing connections between objects. Neither mechanism implies that properties are intrinsic or extrinsic; such characteristics must be explicitly stated in property definitions.
@@ -6175,12 +5926,11 @@
  The use of instance-based sequencing, including the use of `structures:sequenceID`, is preferred over efforts to sequence data definitions. For example, the use of "address line 1", "address line 2", "address line 3", etc., is not recommended. Instead, a single "address line" would be preferred, with order expressed in the XML instance.
 
 
-### Rule 12-10. Order of properties is expressed via 
-
+### Rule 12-10. Order of properties is expressed via `structures:sequenceID`
  The order of properties within an object may be expressed through the use of attribute `structures:sequenceID`.
 
 
-> **[Rule 12-10] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 12-10] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > Given two properties of object <var>$Object</var>,
 
 > If <var>$Value1</var> is less than <var>$Value2</var>, then <var>$Property1</var> MUST be interpreted as occurring before <var>$Property2</var> within <var>$Object</var>.
@@ -6218,49 +5968,43 @@
 
 ### Rule 12-11. Metadata applies to referring entity
 
-
-> **[Rule 12-11] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 12-11] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > Within an element instance, when an object <var>$O</var> links to a metadata object via an attribute `structures:metadata`, the information in the metadata object MUST be applied to the object <var>$O</var>.
 
  `structures:metadata` applies metadata to an object.
 
 
-### Rule 12-12. Referent of  annotates relationship
+### Rule 12-12. Referent of `structures:relationshipMetadata` annotates relationship
 
-
-> **[Rule 12-12] (<a href="#conformance_target_INS">INS</a>) (Interpretation)**
+> **[Rule 12-12] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
 > Within an element instance, when an object <var>$O1</var> contains an element <var>$E</var>, with content object <var>$O2</var> or with a reference to object <var>$O2</var>, and <var>$O2</var> links to a metadata object via an attribute `structures:relationshipMetadata`, the information in the metadata object MUST be applied to the relationship <var>$E</var> between <var>$O1</var> and <var>$O2</var>.
 
  `structures:relationshipMetadata` applies metadata to a relationship between two objects.
 
 
-### Rule 12-13. Values of  refer to values of 
+### Rule 12-13. Values of `structures:metadata` refer to values of `structures:id`
 
-
-> **[Rule 12-13] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-13] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Given that each IDREF in the value of an attribute `structures:metadata` must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute `structures:id`.
 
 
-### Rule 12-14. Values of  refer to values of 
+### Rule 12-14. Values of `structures:relationshipMetadata` refer to values of `structures:id`
 
-
-> **[Rule 12-14] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-14] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Given that each IDREF in the value of an attribute `structures:relationshipMetadata` must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute `structures:id`.
 
 
-### Rule 12-15.  and  refer to metadata elements
+### Rule 12-15. `structures:metadata` and `structures:relationshipMetadata` refer to metadata elements
 
-
-> **[Rule 12-15] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-15] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Each element referenced by an attribute `structures:metadata` or an attribute `structures:relationshipMetadata` MUST have [element declaration] that is a _metadata element declaration_.
 
- Although not implemented in Schematron, this rule covers the cases not covered by [Rule 12-16, _Attribute `structures:metadata` references metadata element_ (INS), below](#Rule-12-16.-Attribute--references-metadata-element).
+ Although not implemented in Schematron, this rule covers the cases not covered by [Rule 12-16, _Attribute `structures:metadata` references metadata element_ (INS), below](#Rule-12-16_-Attribute--references-metadata-element).
 
 
-### Rule 12-16. Attribute  references metadata element
+### Rule 12-16. Attribute `structures:metadata` references metadata element
 
-
-> **[Rule 12-16] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-16] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -6275,10 +6019,9 @@
  Note that this will NOT diagnose a scenario in which the element with a name ending in "Metadata" is an external element; additional tests would be required to catch that.
 
 
-### Rule 12-17. Attribute  references metadata element
+### Rule 12-17. Attribute `structures:relationshipMetadata` references metadata element
 
-
-> **[Rule 12-17] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-17] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
 ```
 <sch:pattern>
@@ -6295,11 +6038,10 @@
 
 ### Rule 12-18. Metadata is applicable to element
 
-
-> **[Rule 12-18] (<a href="#conformance_target_INS">INS</a>) (Constraint)**
+> **[Rule 12-18] ([INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Given that an element <var>$SUBJECT-ELEMENT</var> uses a metadata element <var>$METADATA-ELEMENT</var> through a value in either an attribute `structures:metadata` or an attribute `structures:relationshipMetadata`, the element <var>$SUBJECT-ELEMENT</var> MUST be an applicable element for <var>$METADATA-ELEMENT</var>.
 
- The applicable elements for a metadata element are identified by [Rule 10-41, _Metadata element has applicable elements_ (REF, EXT, SET), above](#Rule-10-41.-Metadata-element-has-applicable-elements).
+ The applicable elements for a metadata element are identified by [Rule 10-41, _Metadata element has applicable elements_ (REF, EXT, SET), above](#Rule-10-41_-Metadata-element-has-applicable-elements).
 
 
 # Appendix A. References
@@ -6637,266 +6379,266 @@
 
 # Appendix E. Index of rules
 
-- [Rule 4-1, _Schema marked as reference schema document must conform_ (SET)](#Rule-4-1.-Schema-marked-as-reference-schema-document-must-conform): [Section 4.1, _Conformance targets defined_](#Conformance-targets-defined)
-- [Rule 4-2, _Schema marked as extension schema document must conform_ (SET)](#Rule-4-2.-Schema-marked-as-extension-schema-document-must-conform): [Section 4.1, _Conformance targets defined_](#Conformance-targets-defined)
-- [Rule 4-3, _Schema is CTAS-conformant_ (REF, EXT)](#Rule-4-3.-Schema-is-CTAS-conformant): [Section 4.3, _Conformance target identifiers_](#Conformance-target-identifiers)
-- [Rule 4-4, _Document element has attribute `ct:conformanceTargets`_ (REF, EXT)](#Rule-4-4.-Document-element-has-attribute-): [Section 4.3, _Conformance target identifiers_](#Conformance-target-identifiers)
-- [Rule 4-5, _Schema claims reference schema conformance target_ (REF)](#Rule-4-5.-Schema-claims-reference-schema-conformance-target): [Section 4.3, _Conformance target identifiers_](#Conformance-target-identifiers)
-- [Rule 4-6, _Schema claims extension conformance target_ (EXT)](#Rule-4-6.-Schema-claims-extension-conformance-target): [Section 4.3, _Conformance target identifiers_](#Conformance-target-identifiers)
-- [Rule 5-1, _`structures:uri` denotes resource identifier_ (INS)](#Rule-5-1.--denotes-resource-identifier): [Section 5.1, _Purpose of the NIEM conceptual model_](#Purpose-of-the-NIEM-conceptual-model)
-- [Rule 7-1, _Document is an XML document_ (REF, EXT, INS)](#Rule-7-1.-Document-is-an-XML-document): [Section 7.1, _Conformance to XML_](#Conformance-to-XML)
-- [Rule 7-2, _Document uses XML namespaces properly_ (REF, EXT, INS)](#Rule-7-2.-Document-uses-XML-namespaces-properly): [Section 7.2, _Conformance to XML Namespaces_](#Conformance-to-XML-Namespaces)
-- [Rule 7-3, _Document is a schema document_ (REF, EXT)](#Rule-7-3.-Document-is-a-schema-document): [Section 7.3, _Conformance to XML Schema_](#Conformance-to-XML-Schema)
-- [Rule 7-4, _Document element is `xs:schema`_ (REF, EXT)](#Rule-7-4.-Document-element-is-): [Section 7.3, _Conformance to XML Schema_](#Conformance-to-XML-Schema)
-- [Rule 7-5, _Component name follows ISO 11179 Part 5 Annex A_ (REF, EXT)](#Rule-7-5.-Component-name-follows-ISO-11179-Part-5-Annex-A): [Section 7.5, _ISO 11179 Part 5_](#ISO-11179-Part-5)
-- [Rule 9-1, _No base type in the XML namespace_ (REF, EXT)](#Rule-9-1.-No-base-type-in-the-XML-namespace): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
-- [Rule 9-2, _No base type of `xs:ID`_ (REF, EXT)](#Rule-9-2.-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
-- [Rule 9-3, _No base type of `xs:IDREF`_ (REF, EXT)](#Rule-9-3.-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
-- [Rule 9-4, _No base type of `xs:IDREFS`_ (REF, EXT)](#Rule-9-4.-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
-- [Rule 9-5, _No base type of `xs:anyType`_ (REF, EXT)](#Rule-9-5.-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
-- [Rule 9-6, _No base type of `xs:anySimpleType`_ (REF, EXT)](#Rule-9-6.-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
-- [Rule 9-7, _No base type of `xs:NOTATION`_ (REF, EXT)](#Rule-9-7.-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
-- [Rule 9-8, _No base type of `xs:ENTITY`_ (REF, EXT)](#Rule-9-8.-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
-- [Rule 9-9, _No base type of `xs:ENTITIES`_ (REF, EXT)](#Rule-9-9.-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
-- [Rule 9-10, _Simple type definition is top-level_ (REF, EXT)](#Rule-9-10.-Simple-type-definition-is-top-level): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
-- [Rule 9-11, _No simple type disallowed derivation_ (REF)](#Rule-9-11.-No-simple-type-disallowed-derivation): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
-- [Rule 9-12, _Simple type has data definition_ (REF, EXT)](#Rule-9-12.-Simple-type-has-data-definition): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
-- [Rule 9-13, _No use of "fixed" on simple type facets_ (REF)](#Rule-9-13.-No-use-of--on-simple-type-facets): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
-- [Rule 9-14, _Enumeration has data definition_ (REF, EXT)](#Rule-9-14.-Enumeration-has-data-definition): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
-- [Rule 9-15, _No list item type of `xs:ID`_ (REF, EXT)](#Rule-9-15.-No-list-item-type-of-): [Section 9.1.2.1, _Simple types prohibited as list item types_](#Simple-types-prohibited-as-list-item-types)
-- [Rule 9-16, _No list item type of `xs:IDREF`_ (REF, EXT)](#Rule-9-16.-No-list-item-type-of-): [Section 9.1.2.1, _Simple types prohibited as list item types_](#Simple-types-prohibited-as-list-item-types)
-- [Rule 9-17, _No list item type of `xs:anySimpleType`_ (REF, EXT)](#Rule-9-17.-No-list-item-type-of-): [Section 9.1.2.1, _Simple types prohibited as list item types_](#Simple-types-prohibited-as-list-item-types)
-- [Rule 9-18, _No list item type of `xs:ENTITY`_ (REF, EXT)](#Rule-9-18.-No-list-item-type-of-): [Section 9.1.2.1, _Simple types prohibited as list item types_](#Simple-types-prohibited-as-list-item-types)
-- [Rule 9-19, _No union member types of `xs:ID`_ (REF, EXT)](#Rule-9-19.-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
-- [Rule 9-20, _No union member types of `xs:IDREF`_ (REF, EXT)](#Rule-9-20.-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
-- [Rule 9-21, _No union member types of `xs:IDREFS`_ (REF, EXT)](#Rule-9-21.-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
-- [Rule 9-22, _No union member types of `xs:anySimpleType`_ (REF, EXT)](#Rule-9-22.-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
-- [Rule 9-23, _No union member types of `xs:ENTITY`_ (REF, EXT)](#Rule-9-23.-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
-- [Rule 9-24, _No union member types of `xs:ENTITIES`_ (REF, EXT)](#Rule-9-24.-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
-- [Rule 9-25, _Complex type definition is top-level_ (REF, EXT)](#Rule-9-25.-Complex-type-definition-is-top-level): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
-- [Rule 9-26, _Complex type has data definition_ (REF, EXT)](#Rule-9-26.-Complex-type-has-data-definition): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
-- [Rule 9-27, _No mixed content on complex type_ (REF, EXT)](#Rule-9-27.-No-mixed-content-on-complex-type): [Section 9.1.3.1, _No mixed content_](#No-mixed-content)
-- [Rule 9-28, _No mixed content on complex content_ (REF, EXT)](#Rule-9-28.-No-mixed-content-on-complex-content): [Section 9.1.3.1, _No mixed content_](#No-mixed-content)
-- [Rule 9-29, _Complex type content is explicitly simple or complex_ (REF, EXT)](#Rule-9-29.-Complex-type-content-is-explicitly-simple-or-complex): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
-- [Rule 9-30, _Complex content uses extension_ (REF)](#Rule-9-30.-Complex-content-uses-extension): [Section 9.1.3.2, _Complex content_](#Complex-content)
-- [Rule 9-31, _Base type of complex type with complex content must have complex content_ (REF, EXT)](#Rule-9-31.-Base-type-of-complex-type-with-complex-content-must-have-complex-content): [Section 9.1.3.2.1, _Base type of complex type with complex content has complex content_](#Base-type-of-complex-type-with-complex-content-has-complex-content)
-- [Rule 9-32, _Base type of complex type with complex content must have complex content_ (SET)](#Rule-9-32.-Base-type-of-complex-type-with-complex-content-must-have-complex-content): [Section 9.1.3.2.1, _Base type of complex type with complex content has complex content_](#Base-type-of-complex-type-with-complex-content-has-complex-content)
-- [Rule 9-33, _Simple content uses extension_ (REF)](#Rule-9-33.-Simple-content-uses-extension): [Section 9.1.3.3, _Simple content_](#Simple-content)
-- [Rule 9-34, _No complex type disallowed substitutions_ (REF)](#Rule-9-34.-No-complex-type-disallowed-substitutions): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
-- [Rule 9-35, _No complex type disallowed derivation_ (REF)](#Rule-9-35.-No-complex-type-disallowed-derivation): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
-- [Rule 9-36, _Element declaration is top-level_ (REF, EXT)](#Rule-9-36.-Element-declaration-is-top-level): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-37, _Element declaration has data definition_ (REF, EXT)](#Rule-9-37.-Element-declaration-has-data-definition): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-38, _Untyped element is abstract_ (REF, EXT)](#Rule-9-38.-Untyped-element-is-abstract): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-39, _Element of type `xs:anySimpleType` is abstract_ (REF, EXT)](#Rule-9-39.-Element-of-type--is-abstract): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-40, _Element type not in the XML Schema namespace_ (REF, EXT)](#Rule-9-40.-Element-type-not-in-the-XML-Schema-namespace): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-41, _Element type not in the XML namespace_ (REF, EXT)](#Rule-9-41.-Element-type-not-in-the-XML-namespace): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-42, _Element type is not simple type_ (REF, EXT)](#Rule-9-42.-Element-type-is-not-simple-type): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-43, _No element disallowed substitutions _ (REF)](#Rule-9-43.-No-element-disallowed-substitutions-): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-44, _No element disallowed derivation_ (REF)](#Rule-9-44.-No-element-disallowed-derivation): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-45, _No element default value_ (REF, EXT)](#Rule-9-45.-No-element-default-value): [Section 9.2.1.1, _No element value constraints_](#No-element-value-constraints)
-- [Rule 9-46, _No element fixed value_ (REF, EXT)](#Rule-9-46.-No-element-fixed-value): [Section 9.2.1.1, _No element value constraints_](#No-element-value-constraints)
-- [Rule 9-47, _Element declaration is nillable_ (REF)](#Rule-9-47.-Element-declaration-is-nillable): [Section 9.2.1, _Element declaration_](#Element-declaration)
-- [Rule 9-48, _Attribute declaration is top-level_ (REF, EXT)](#Rule-9-48.-Attribute-declaration-is-top-level): [Section 9.2.3, _Attribute declaration_](#Attribute-declaration)
-- [Rule 9-49, _Attribute declaration has data definition_ (REF, EXT)](#Rule-9-49.-Attribute-declaration-has-data-definition): [Section 9.2.3, _Attribute declaration_](#Attribute-declaration)
-- [Rule 9-50, _Attribute declaration has type_ (REF, EXT)](#Rule-9-50.-Attribute-declaration-has-type): [Section 9.2.3, _Attribute declaration_](#Attribute-declaration)
-- [Rule 9-51, _No attribute type of `xs:ID`_ (REF, EXT)](#Rule-9-51.-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
-- [Rule 9-52, _No attribute type of `xs:IDREF`_ (REF, EXT)](#Rule-9-52.-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
-- [Rule 9-53, _No attribute type of `xs:IDREFS`_ (REF, EXT)](#Rule-9-53.-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
-- [Rule 9-54, _No attribute type of `xs:ENTITY`_ (REF, EXT)](#Rule-9-54.-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
-- [Rule 9-55, _No attribute type of `xs:ENTITIES`_ (REF, EXT)](#Rule-9-55.-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
-- [Rule 9-56, _No attribute type of `xs:anySimpleType`_ (REF, EXT)](#Rule-9-56.-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
-- [Rule 9-57, _No attribute default values_ (REF, EXT)](#Rule-9-57.-No-attribute-default-values): [Section 9.2.3.2, _No attribute value constraints_](#No-attribute-value-constraints)
-- [Rule 9-58, _No fixed values for optional attributes_ (REF, EXT)](#Rule-9-58.-No-fixed-values-for-optional-attributes): [Section 9.2.3.2, _No attribute value constraints_](#No-attribute-value-constraints)
-- [Rule 9-59, _No use of element `xs:notation`_ (REF, EXT)](#Rule-9-59.-No-use-of-element-): [Section 9.2.4, _Notation declaration_](#Notation-declaration)
-- [Rule 9-60, _Model group does not affect meaning_ (EXT)](#Rule-9-60.-Model-group-does-not-affect-meaning): [Section 9.3.1, _Model group_](#Model-group)
-- [Rule 9-61, _No `xs:all`_ (REF, EXT)](#Rule-9-61.-No-): [Section 9.3.1, _Model group_](#Model-group)
-- [Rule 9-62, _`xs:sequence` must be child of `xs:extension`_ (REF)](#Rule-9-62.--must-be-child-of-): [Section 9.3.1.1, _Sequence_](#Sequence)
-- [Rule 9-63, _`xs:sequence` must be child of `xs:extension` or `xs:restriction`_ (EXT)](#Rule-9-63.--must-be-child-of--or-): [Section 9.3.1.1, _Sequence_](#Sequence)
-- [Rule 9-64, _No `xs:choice`_ (REF)](#Rule-9-64.-No-): [Section 9.3.1.2, _Choice_](#Choice)
-- [Rule 9-65, _`xs:choice` must be child of `xs:sequence`_ (EXT)](#Rule-9-65.--must-be-child-of-): [Section 9.3.1.2, _Choice_](#Choice)
-- [Rule 9-66, _Sequence has minimum cardinality 1_ (REF, EXT)](#Rule-9-66.-Sequence-has-minimum-cardinality-1): [Section 9.3.2.1, _Sequence cardinality_](#Sequence-cardinality)
-- [Rule 9-67, _Sequence has maximum cardinality 1_ (REF, EXT)](#Rule-9-67.-Sequence-has-maximum-cardinality-1): [Section 9.3.2.1, _Sequence cardinality_](#Sequence-cardinality)
-- [Rule 9-68, _Choice has minimum cardinality 1_ (EXT)](#Rule-9-68.-Choice-has-minimum-cardinality-1): [Section 9.3.2.2, _Choice cardinality_](#Choice-cardinality)
-- [Rule 9-69, _Choice has maximum cardinality 1_ (EXT)](#Rule-9-69.-Choice-has-maximum-cardinality-1): [Section 9.3.2.2, _Choice cardinality_](#Choice-cardinality)
-- [Rule 9-70, _No use of `xs:any`_ (REF)](#Rule-9-70.-No-use-of-): [Section 9.3.4, _Wildcard_](#Wildcard)
-- [Rule 9-71, _No use of `xs:anyAttribute`_ (REF)](#Rule-9-71.-No-use-of-): [Section 9.3.4, _Wildcard_](#Wildcard)
-- [Rule 9-72, _No use of `xs:unique`_ (REF, EXT)](#Rule-9-72.-No-use-of-): [Section 9.4, _Identity-constraint definition components_](#Identity-constraint-definition-components)
-- [Rule 9-73, _No use of `xs:key`_ (REF, EXT)](#Rule-9-73.-No-use-of-): [Section 9.4, _Identity-constraint definition components_](#Identity-constraint-definition-components)
-- [Rule 9-74, _No use of `xs:keyref`_ (REF, EXT)](#Rule-9-74.-No-use-of-): [Section 9.4, _Identity-constraint definition components_](#Identity-constraint-definition-components)
-- [Rule 9-75, _No use of `xs:group`_ (REF, EXT)](#Rule-9-75.-No-use-of-): [Section 9.5.1, _Model group definition_](#Model-group-definition)
-- [Rule 9-76, _No definition of attribute groups_ (REF, EXT)](#Rule-9-76.-No-definition-of-attribute-groups): [Section 9.5.2, _Attribute group definition_](#Attribute-group-definition)
-- [Rule 9-77, _Comment is not recommended_ (REF, EXT)](#Rule-9-77.-Comment-is-not-recommended): [Section 9.6, _Annotation components_](#Annotation-components)
-- [Rule 9-78, _Documentation element has no element children_ (REF, EXT)](#Rule-9-78.-Documentation-element-has-no-element-children): [Section 9.6, _Annotation components_](#Annotation-components)
-- [Rule 9-79, _`xs:appinfo` children are comments, elements, or whitespace_ (REF, EXT)](#Rule-9-79.--children-are-comments_-elements_-or-whitespace): [Section 9.6.1, _Application information annotation_](#Application-information-annotation)
-- [Rule 9-80, _Appinfo child elements have namespaces_ (REF, EXT)](#Rule-9-80.-Appinfo-child-elements-have-namespaces): [Section 9.6.1, _Application information annotation_](#Application-information-annotation)
-- [Rule 9-81, _Appinfo descendants are not XML Schema elements_ (REF, EXT)](#Rule-9-81.-Appinfo-descendants-are-not-XML-Schema-elements): [Section 9.6.1, _Application information annotation_](#Application-information-annotation)
-- [Rule 9-82, _Schema has data definition_ (REF, EXT)](#Rule-9-82.-Schema-has-data-definition): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
-- [Rule 9-83, _Schema document defines target namespace_ (REF, EXT)](#Rule-9-83.-Schema-document-defines-target-namespace): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
-- [Rule 9-84, _Target namespace is absolute URI_ (REF, EXT)](#Rule-9-84.-Target-namespace-is-absolute-URI): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
-- [Rule 9-85, _Schema has version_ (REF, EXT)](#Rule-9-85.-Schema-has-version): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
-- [Rule 9-86, _No disallowed substitutions_ (REF)](#Rule-9-86.-No-disallowed-substitutions): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
-- [Rule 9-87, _No disallowed derivations_ (REF)](#Rule-9-87.-No-disallowed-derivations): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
-- [Rule 9-88, _No use of `xs:redefine`_ (REF, EXT)](#Rule-9-88.-No-use-of-): [Section 9.8, _Schema assembly_](#Schema-assembly)
-- [Rule 9-89, _No use of `xs:include`_ (REF, EXT)](#Rule-9-89.-No-use-of-): [Section 9.8, _Schema assembly_](#Schema-assembly)
-- [Rule 9-90, _`xs:import` must have namespace_ (REF, EXT)](#Rule-9-90.--must-have-namespace): [Section 9.8, _Schema assembly_](#Schema-assembly)
-- [Rule 9-91, _XML Schema document set must be complete_ (SET)](#Rule-9-91.-XML-Schema-document-set-must-be-complete): [Section 9.8, _Schema assembly_](#Schema-assembly)
-- [Rule 9-92, _Namespace referenced by attribute `type` is imported_ (REF, EXT)](#Rule-9-92.-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
-- [Rule 9-93, _Namespace referenced by attribute `base` is imported_ (REF, EXT)](#Rule-9-93.-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
-- [Rule 9-94, _Namespace referenced by attribute `itemType` is imported_ (REF, EXT)](#Rule-9-94.-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
-- [Rule 9-95, _Namespaces referenced by attribute `memberTypes` is imported_ (REF, EXT)](#Rule-9-95.-Namespaces-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
-- [Rule 9-96, _Namespace referenced by attribute `ref` is imported_ (REF, EXT)](#Rule-9-96.-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
-- [Rule 9-97, _Namespace referenced by attribute `substitutionGroup` is imported_ (REF, EXT)](#Rule-9-97.-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
-- [Rule 10-1, _Complex type has a category_ (REF, EXT)](#Rule-10-1.-Complex-type-has-a-category): [Section 10.1, _Categories of NIEM type definitions_](#Categories-of-NIEM-type-definitions)
-- [Rule 10-2, _Object type with complex content is derived from `structures:ObjectType`_ (REF, EXT)](#Rule-10-2.-Object-type-with-complex-content-is-derived-from-): [Section 10.2.1.1, _Object types with complex content_](#Object-types-with-complex-content)
-- [Rule 10-3, _RoleOf element type is an object type_ (REF, EXT)](#Rule-10-3.-RoleOf-element-type-is-an-object-type): [Section 10.2.2, _Role types and roles_](#Role-types-and-roles)
-- [Rule 10-4, _Only object type has RoleOf element_ (REF, EXT)](#Rule-10-4.-Only-object-type-has-RoleOf-element): [Section 10.2.2, _Role types and roles_](#Role-types-and-roles)
-- [Rule 10-5, _RoleOf elements indicate the base types of a role type_ (REF, EXT, INS)](#Rule-10-5.-RoleOf-elements-indicate-the-base-types-of-a-role-type): [Section 10.2.2, _Role types and roles_](#Role-types-and-roles)
-- [Rule 10-6, _Instance of RoleOf element indicates a role object_ (INS)](#Rule-10-6.-Instance-of-RoleOf-element-indicates-a-role-object): [Section 10.2.2, _Role types and roles_](#Role-types-and-roles)
-- [Rule 10-7, _Import of external namespace has data definition_ (REF, EXT)](#Rule-10-7.-Import-of-external-namespace-has-data-definition): [Section 10.2.3.1, _Import of external namespace_](#Import-of-external-namespace)
-- [Rule 10-8, _External adapter type has indicator_ (REF, EXT)](#Rule-10-8.-External-adapter-type-has-indicator): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
-- [Rule 10-9, _Structure of external adapter type definition follows pattern_ (REF, EXT)](#Rule-10-9.-Structure-of-external-adapter-type-definition-follows-pattern): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
-- [Rule 10-10, _Element use from external adapter type defined by external schema documents_ (REF, EXT)](#Rule-10-10.-Element-use-from-external-adapter-type-defined-by-external-schema-documents): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
-- [Rule 10-11, _External adapter type not a base type_ (REF, EXT)](#Rule-10-11.-External-adapter-type-not-a-base-type): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
-- [Rule 10-12, _External adapter type not a base type_ (SET)](#Rule-10-12.-External-adapter-type-not-a-base-type): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
-- [Rule 10-13, _External attribute use only in external adapter type_ (REF)](#Rule-10-13.-External-attribute-use-only-in-external-adapter-type): [Section 10.2.3.3, _External attribute use_](#External-attribute-use)
-- [Rule 10-14, _External attribute use has data definition_ (REF, EXT)](#Rule-10-14.-External-attribute-use-has-data-definition): [Section 10.2.3.3, _External attribute use_](#External-attribute-use)
-- [Rule 10-15, _External attribute use not an ID_ (SET)](#Rule-10-15.-External-attribute-use-not-an-ID): [Section 10.2.3.3, _External attribute use_](#External-attribute-use)
-- [Rule 10-16, _External element use has data definition_ (REF, EXT)](#Rule-10-16.-External-element-use-has-data-definition): [Section 10.2.3.4, _External element use_](#External-element-use)
-- [Rule 10-17, _Name of code type ends in "CodeType"_ (REF, EXT)](#Rule-10-17.-Name-of-code-type-ends-in-): [Section 10.2.4, _Code types_](#Code-types)
-- [Rule 10-18, _Code type corresponds to a code list_ (REF, EXT)](#Rule-10-18.-Code-type-corresponds-to-a-code-list): [Section 10.2.4, _Code types_](#Code-types)
-- [Rule 10-19, _Element of code type has code representation term_ (REF, EXT)](#Rule-10-19.-Element-of-code-type-has-code-representation-term): [Section 10.2.4, _Code types_](#Code-types)
-- [Rule 10-20, _Proxy type has designated structure_ (REF, EXT)](#Rule-10-20.-Proxy-type-has-designated-structure): [Section 10.2.5, _Proxy types_](#Proxy-types)
-- [Rule 10-21, _Association type derived from `structures:AssociationType`_ (REF, EXT)](#Rule-10-21.-Association-type-derived-from-): [Section 10.3.1, _Association types_](#Association-types)
-- [Rule 10-22, _Association element type is an association type_ (REF, EXT)](#Rule-10-22.-Association-element-type-is-an-association-type): [Section 10.3.2, _Association element declarations_](#Association-element-declarations)
-- [Rule 10-23, _Augmentable type has augmentation point element_ (REF)](#Rule-10-23.-Augmentable-type-has-augmentation-point-element): [Section 10.4.1, _Augmentable types_](#Augmentable-types)
-- [Rule 10-24, _Augmentable type has at most one augmentation point element_ (REF, EXT)](#Rule-10-24.-Augmentable-type-has-at-most-one-augmentation-point-element): [Section 10.4.1, _Augmentable types_](#Augmentable-types)
-- [Rule 10-25, _Augmentation point element corresponds to its base type_ (REF, EXT)](#Rule-10-25.-Augmentation-point-element-corresponds-to-its-base-type): [Section 10.4.2, _Augmentation point element declarations_](#Augmentation-point-element-declarations)
-- [Rule 10-26, _An augmentation point element has no type_ (REF, EXT)](#Rule-10-26.-An-augmentation-point-element-has-no-type): [Section 10.4.2, _Augmentation point element declarations_](#Augmentation-point-element-declarations)
-- [Rule 10-27, _An augmentation point element has no substitution group_ (REF, EXT)](#Rule-10-27.-An-augmentation-point-element-has-no-substitution-group): [Section 10.4.2, _Augmentation point element declarations_](#Augmentation-point-element-declarations)
-- [Rule 10-28, _Augmentation point element is only referenced by its base type_ (REF, EXT)](#Rule-10-28.-Augmentation-point-element-is-only-referenced-by-its-base-type): [Section 10.4.3, _Augmentation point element use_](#Augmentation-point-element-use)
-- [Rule 10-29, _Augmentation point element use is optional_ (REF)](#Rule-10-29.-Augmentation-point-element-use-is-optional): [Section 10.4.3, _Augmentation point element use_](#Augmentation-point-element-use)
-- [Rule 10-30, _Augmentation point element use is unbounded_ (REF)](#Rule-10-30.-Augmentation-point-element-use-is-unbounded): [Section 10.4.3, _Augmentation point element use_](#Augmentation-point-element-use)
-- [Rule 10-31, _Augmentation point element use must be last element in its base type_ (REF, EXT)](#Rule-10-31.-Augmentation-point-element-use-must-be-last-element-in-its-base-type): [Section 10.4.3, _Augmentation point element use_](#Augmentation-point-element-use)
-- [Rule 10-32, _Element within instance of augmentation type modifies base_ (INS)](#Rule-10-32.-Element-within-instance-of-augmentation-type-modifies-base): [Section 10.4.4, _Augmentation types_](#Augmentation-types)
-- [Rule 10-33, _Only an augmentation type name ends in "AugmentationType"_ (REF, EXT)](#Rule-10-33.-Only-an-augmentation-type-name-ends-in-): [Section 10.4.4, _Augmentation types_](#Augmentation-types)
-- [Rule 10-34, _Schema component with name ending in "AugmentationType" is an augmentation type_ (REF, EXT)](#Rule-10-34.-Schema-component-with-name-ending-in--is-an-augmentation-type): [Section 10.4.4, _Augmentation types_](#Augmentation-types)
-- [Rule 10-35, _Type derived from `structures:AugmentationType` is an augmentation type_ (REF, EXT)](#Rule-10-35.-Type-derived-from--is-an-augmentation-type): [Section 10.4.4, _Augmentation types_](#Augmentation-types)
-- [Rule 10-36, _Augmentation element type is an augmentation type_ (REF, EXT)](#Rule-10-36.-Augmentation-element-type-is-an-augmentation-type): [Section 10.4.5, _Augmentation element declarations_](#Augmentation-element-declarations)
-- [Rule 10-37, _Augmentation elements are not used directly_ (REF, SET)](#Rule-10-37.-Augmentation-elements-are-not-used-directly): [Section 10.4.5, _Augmentation element declarations_](#Augmentation-element-declarations)
-- [Rule 10-38, _Metadata type has data about data_ (REF, EXT)](#Rule-10-38.-Metadata-type-has-data-about-data): [Section 10.5.1, _Metadata types_](#Metadata-types)
-- [Rule 10-39, _Metadata types are derived from `structures:MetadataType`_ (REF, EXT)](#Rule-10-39.-Metadata-types-are-derived-from-): [Section 10.5.1, _Metadata types_](#Metadata-types)
-- [Rule 10-40, _Metadata element declaration type is a metadata type_ (REF, EXT)](#Rule-10-40.-Metadata-element-declaration-type-is-a-metadata-type): [Section 10.5.2, _Metadata element declarations_](#Metadata-element-declarations)
-- [Rule 10-41, _Metadata element has applicable elements_ (REF, EXT, SET)](#Rule-10-41.-Metadata-element-has-applicable-elements): [Section 10.5.2, _Metadata element declarations_](#Metadata-element-declarations)
-- [Rule 10-42, _Name of element that ends in "Representation" is abstract_ (REF, EXT)](#Rule-10-42.-Name-of-element-that-ends-in--is-abstract): [Section 10.7, _The "Representation" pattern_](#The--pattern)
-- [Rule 10-43, _A substitution for a representation element declaration is a value for a type_ (REF, EXT)](#Rule-10-43.-A-substitution-for-a-representation-element-declaration-is-a-value-for-a-type): [Section 10, _Rules for NIEM modeling, by NIEM concept_](#Rules-for-NIEM-modeling_-by-NIEM-concept)
-- [Rule 10-44, _Schema component name composed of English words_ (REF, EXT)](#Rule-10-44.-Schema-component-name-composed-of-English-words): [Section 10.8, _Naming rules_](#Naming-rules)
-- [Rule 10-45, _Schema component name has `xml:lang`_ (REF, EXT)](#Rule-10-45.-Schema-component-name-has-): [Section 10.8, _Naming rules_](#Naming-rules)
-- [Rule 10-46, _Schema component names have only specific characters_ (REF, EXT)](#Rule-10-46.-Schema-component-names-have-only-specific-characters): [Section 10.8, _Naming rules_](#Naming-rules)
-- [Rule 10-47, _Punctuation in component name is a separator_ (REF, EXT)](#Rule-10-47.-Punctuation-in-component-name-is-a-separator): [Section 10.8, _Naming rules_](#Naming-rules)
-- [Rule 10-48, _Names use camel case_ (REF, EXT)](#Rule-10-48.-Names-use-camel-case): [Section 10.8.1, _Character case_](#Character-case)
-- [Rule 10-49, _Attribute name begins with lower case letter_ (REF, EXT)](#Rule-10-49.-Attribute-name-begins-with-lower-case-letter): [Section 10.8.1, _Character case_](#Character-case)
-- [Rule 10-50, _Name of schema component other than attribute and proxy type begins with upper case letter_ (REF, EXT)](#Rule-10-50.-Name-of-schema-component-other-than-attribute-and-proxy-type-begins-with-upper-case-letter): [Section 10.8.1, _Character case_](#Character-case)
-- [Rule 10-51, _Names use common abbreviations_ (REF, EXT)](#Rule-10-51.-Names-use-common-abbreviations): [Section 10.8.2, _Use of acronyms and abbreviations_](#Use-of-acronyms-and-abbreviations)
-- [Rule 10-52, _Local term declaration is local to its schema document_ (REF, EXT)](#Rule-10-52.-Local-term-declaration-is-local-to-its-schema-document): [Section 10.8.2.1, _Use of Acronyms, Initialisms, Abbreviations, and Jargon_](#Use-of-Acronyms_-Initialisms_-Abbreviations_-and-Jargon)
-- [Rule 10-53, _Local terminology interpretation_ (REF, EXT)](#Rule-10-53.-Local-terminology-interpretation): [Section 10.8.2.1, _Use of Acronyms, Initialisms, Abbreviations, and Jargon_](#Use-of-Acronyms_-Initialisms_-Abbreviations_-and-Jargon)
-- [Rule 10-54, _Singular form is preferred in name_ (REF, EXT)](#Rule-10-54.-Singular-form-is-preferred-in-name): [Section 10.8.3, _Word forms_](#Word-forms)
-- [Rule 10-55, _Present tense is preferred in name_ (REF, EXT)](#Rule-10-55.-Present-tense-is-preferred-in-name): [Section 10.8.3, _Word forms_](#Word-forms)
-- [Rule 10-56, _Name does not have nonessential words_ (REF, EXT)](#Rule-10-56.-Name-does-not-have-nonessential-words): [Section 10.8.3, _Word forms_](#Word-forms)
-- [Rule 10-57, _Element or attribute name follows pattern_ (REF, EXT)](#Rule-10-57.-Element-or-attribute-name-follows-pattern): [Section 10.8, _Naming rules_](#Naming-rules)
-- [Rule 10-58, _Object-class term identifies concrete category_ (REF, EXT)](#Rule-10-58.-Object-class-term-identifies-concrete-category): [Section 10.8.4, _Object-class term_](#Object-class-term)
-- [Rule 10-59, _Property term describes characteristic or subpart_ (REF, EXT)](#Rule-10-59.-Property-term-describes-characteristic-or-subpart): [Section 10.8.5, _Property term_](#Property-term)
-- [Rule 10-60, _Name may have multiple qualifier terms_ (REF, EXT)](#Rule-10-60.-Name-may-have-multiple-qualifier-terms): [Section 10.8.6, _Qualifier terms_](#Qualifier-terms)
-- [Rule 10-61, _Name has minimum necessary number of qualifier terms_ (REF, EXT)](#Rule-10-61.-Name-has-minimum-necessary-number-of-qualifier-terms): [Section 10.8.6, _Qualifier terms_](#Qualifier-terms)
-- [Rule 10-62, _Order of qualifiers is not significant_ (REF, EXT)](#Rule-10-62.-Order-of-qualifiers-is-not-significant): [Section 10.8.6, _Qualifier terms_](#Qualifier-terms)
-- [Rule 10-63, _Redundant term in name is omitted_ (REF, EXT)](#Rule-10-63.-Redundant-term-in-name-is-omitted): [Section 10.8.7, _Representation terms_](#Representation-terms)
-- [Rule 10-64, _Element with simple content has representation term_ (REF, EXT)](#Rule-10-64.-Element-with-simple-content-has-representation-term): [Section 10.8.7, _Representation terms_](#Representation-terms)
-- [Rule 10-65, _Element with complex content has representation term when appropriate_ (REF, EXT)](#Rule-10-65.-Element-with-complex-content-has-representation-term-when-appropriate): [Section 10.8.7, _Representation terms_](#Representation-terms)
-- [Rule 10-66, _Element with complex content has representation term only when appropriate_ (REF, EXT)](#Rule-10-66.-Element-with-complex-content-has-representation-term-only-when-appropriate): [Section 10.8.7, _Representation terms_](#Representation-terms)
-- [Rule 10-67, _Machine-readable annotations are valid_ (REF, EXT)](#Rule-10-67.-Machine-readable-annotations-are-valid): [Section 10.9, _Machine-readable annotations_](#Machine-readable-annotations)
-- [Rule 10-68, _Component marked as deprecated is deprecated component_ (REF, EXT)](#Rule-10-68.-Component-marked-as-deprecated-is-deprecated-component): [Section 10.9.1.1, _Deprecation_](#Deprecation)
-- [Rule 10-69, _Deprecated annotates schema component_ (REF, EXT)](#Rule-10-69.-Deprecated-annotates-schema-component): [Section 10.9.1.1, _Deprecation_](#Deprecation)
-- [Rule 10-70, _External import indicator annotates import_ (REF, EXT)](#Rule-10-70.-External-import-indicator-annotates-import): [Section 10.9.1.2, _External adapters_](#External-adapters)
-- [Rule 10-71, _External adapter type indicator annotates complex type_ (REF, EXT)](#Rule-10-71.-External-adapter-type-indicator-annotates-complex-type): [Section 10.9.1.2, _External adapters_](#External-adapters)
-- [Rule 10-72, _`appinfo:appliesToTypes` annotates metadata element_ (REF, EXT)](#Rule-10-72.--annotates-metadata-element): [Section 10.9.1.3, _`appinfo:appliesToTypes` annotation_](#-annotation)
-- [Rule 10-73, _`appinfo:appliesToTypes` references types_ (SET)](#Rule-10-73.--references-types): [Section 10.9.1.3, _`appinfo:appliesToTypes` annotation_](#-annotation)
-- [Rule 10-74, _`appinfo:appliesToElements` annotates metadata element_ (REF, EXT)](#Rule-10-74.--annotates-metadata-element): [Section 10.9.1.4, _`appinfo:appliesToElements` annotation_](#-annotation)
-- [Rule 10-75, _`appinfo:appliesToElements` references elements_ (SET)](#Rule-10-75.--references-elements): [Section 10.9.1.4, _`appinfo:appliesToElements` annotation_](#-annotation)
-- [Rule 10-76, _`appinfo:LocalTerm` annotates schema_ (REF, EXT)](#Rule-10-76.--annotates-schema): [Section 10.9.2, _Local terminology_](#Local-terminology)
-- [Rule 10-77, _`appinfo:LocalTerm` has literal or definition_ (REF, EXT)](#Rule-10-77.--has-literal-or-definition): [Section 10.9.2, _Local terminology_](#Local-terminology)
-- [Rule 10-78, _Use structures consistent with specification_ (REF, EXT, INS, SET)](#Rule-10-78.-Use-structures-consistent-with-specification): [Section 10.10, _NIEM structural facilities_](#NIEM-structural-facilities)
-- [Rule 11-1, _Name of type ends in "Type"_ (REF, EXT)](#Rule-11-1.-Name-of-type-ends-in-): [Section 11.1, _Type definition components_](#Type-definition-components)
-- [Rule 11-2, _Only types have name ending in "Type" or "SimpleType"_ (REF, EXT)](#Rule-11-2.-Only-types-have-name-ending-in--or-): [Section 11.1, _Type definition components_](#Type-definition-components)
-- [Rule 11-3, _Base type definition defined by conformant schema_ (REF, EXT)](#Rule-11-3.-Base-type-definition-defined-by-conformant-schema): [Section 11.1.1, _Type definition hierarchy_](#Type-definition-hierarchy)
-- [Rule 11-4, _Name of simple type ends in "SimpleType"_ (REF, EXT)](#Rule-11-4.-Name-of-simple-type-ends-in-): [Section 11.1.2, _Simple type definition_](#Simple-type-definition)
-- [Rule 11-5, _Use lists only when data is uniform_ (REF, EXT)](#Rule-11-5.-Use-lists-only-when-data-is-uniform): [Section 11.1.2.1, _Derivation by list_](#Derivation-by-list)
-- [Rule 11-6, _List item type defined by conformant schemas_ (REF, EXT)](#Rule-11-6.-List-item-type-defined-by-conformant-schemas): [Section 11.1.2.1, _Derivation by list_](#Derivation-by-list)
-- [Rule 11-7, _Union member types defined by conformant schemas_ (REF, EXT)](#Rule-11-7.-Union-member-types-defined-by-conformant-schemas): [Section 11.1.2.2, _Derivation by union_](#Derivation-by-union)
-- [Rule 11-8, _Name of a code simple type ends in "CodeSimpleType"_ (REF, EXT)](#Rule-11-8.-Name-of-a-code-simple-type-ends-in-): [Section 11.1.2.3, _Code simple types_](#Code-simple-types)
-- [Rule 11-9, _Code simple type corresponds to a code list_ (REF, EXT)](#Rule-11-9.-Code-simple-type-corresponds-to-a-code-list): [Section 11.1.2.3, _Code simple types_](#Code-simple-types)
-- [Rule 11-10, _Attribute of code simple type has code representation term_ (REF, EXT)](#Rule-11-10.-Attribute-of-code-simple-type-has-code-representation-term): [Section 11.1.2.3, _Code simple types_](#Code-simple-types)
-- [Rule 11-11, _Complex type with simple content has `structures:SimpleObjectAttributeGroup`_ (REF, EXT)](#Rule-11-11.-Complex-type-with-simple-content-has-): [Section 11.1.3, _Complex type definition_](#Complex-type-definition)
-- [Rule 11-12, _Element type does not have a simple type name_ (REF, EXT)](#Rule-11-12.-Element-type-does-not-have-a-simple-type-name): [Section 11.2.1, _Element declaration_](#Element-declaration)
-- [Rule 11-13, _Element type is from conformant namespace_ (REF, EXT)](#Rule-11-13.-Element-type-is-from-conformant-namespace): [Section 11.2.1, _Element declaration_](#Element-declaration)
-- [Rule 11-14, _Name of element that ends in "Abstract" is abstract_ (REF, EXT)](#Rule-11-14.-Name-of-element-that-ends-in--is-abstract): [Section 11.2.1, _Element declaration_](#Element-declaration)
-- [Rule 11-15, _Name of element declaration with simple content has representation term_ (REF, EXT)](#Rule-11-15.-Name-of-element-declaration-with-simple-content-has-representation-term): [Section 11.2.1.1, _Object element declarations_](#Object-element-declarations)
-- [Rule 11-16, _Name of element declaration with simple content has representation term_ (SET)](#Rule-11-16.-Name-of-element-declaration-with-simple-content-has-representation-term): [Section 11.2.1.1, _Object element declarations_](#Object-element-declarations)
-- [Rule 11-17, _Element substitution group defined by conformant schema_ (REF, EXT)](#Rule-11-17.-Element-substitution-group-defined-by-conformant-schema): [Section 11.2.2, _Element substitution group_](#Element-substitution-group)
-- [Rule 11-18, _Attribute type defined by conformant schema_ (REF, EXT)](#Rule-11-18.-Attribute-type-defined-by-conformant-schema): [Section 11.2.3, _Attribute declaration_](#Attribute-declaration)
-- [Rule 11-19, _Attribute name uses representation term_ (REF, EXT)](#Rule-11-19.-Attribute-name-uses-representation-term): [Section 11.2.3, _Attribute declaration_](#Attribute-declaration)
-- [Rule 11-20, _Element or attribute declaration introduced only once into a type_ (REF, EXT)](#Rule-11-20.-Element-or-attribute-declaration-introduced-only-once-into-a-type): [Section 11.3.2.1, _Element use_](#Element-use)
-- [Rule 11-21, _Element reference defined by conformant schema_ (REF, EXT)](#Rule-11-21.-Element-reference-defined-by-conformant-schema): [Section 11.3.2.1, _Element use_](#Element-use)
-- [Rule 11-22, _Referenced attribute defined by conformant schemas_ (REF, EXT)](#Rule-11-22.-Referenced-attribute-defined-by-conformant-schemas): [Section 11.3.3, _Attribute use_](#Attribute-use)
-- [Rule 11-23, _Schema uses only known attribute groups_ (REF, EXT)](#Rule-11-23.-Schema-uses-only-known-attribute-groups): [Section 11.3.3.1, _Attribute group use_](#Attribute-group-use)
-- [Rule 11-24, _Data definition does not introduce ambiguity_ (REF, EXT)](#Rule-11-24.-Data-definition-does-not-introduce-ambiguity): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
-- [Rule 11-25, _Object class has only one meaning_ (REF, EXT)](#Rule-11-25.-Object-class-has-only-one-meaning): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
-- [Rule 11-26, _Data definition of a part does not redefine the whole_ (REF, EXT)](#Rule-11-26.-Data-definition-of-a-part-does-not-redefine-the-whole): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
-- [Rule 11-27, _Do not leak representation into data definition_ (REF, EXT)](#Rule-11-27.-Do-not-leak-representation-into-data-definition): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
-- [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT)](#Rule-11-28.-Data-definition-follows-11179-4-requirements): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
-- [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT)](#Rule-11-29.-Data-definition-follows-11179-4-recommendations): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
-- [Rule 11-30, _`xs:documentation` has `xml:lang`_ (REF, EXT)](#Rule-11-30.--has-): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
-- [Rule 11-31, _Standard opening phrase for augmentation point element data definition_ (REF, EXT)](#Rule-11-31.-Standard-opening-phrase-for-augmentation-point-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-32, _Standard opening phrase for augmentation element data definition_ (REF, EXT)](#Rule-11-32.-Standard-opening-phrase-for-augmentation-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-33, _Standard opening phrase for metadata element data definition_ (REF, EXT)](#Rule-11-33.-Standard-opening-phrase-for-metadata-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-34, _Standard opening phrase for association element data definition_ (REF, EXT)](#Rule-11-34.-Standard-opening-phrase-for-association-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-35, _Standard opening phrase for abstract element data definition_ (REF, EXT)](#Rule-11-35.-Standard-opening-phrase-for-abstract-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-36, _Standard opening phrase for date element or attribute data definition_ (REF, EXT)](#Rule-11-36.-Standard-opening-phrase-for-date-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-37, _Standard opening phrase for quantity element or attribute data definition_ (REF, EXT)](#Rule-11-37.-Standard-opening-phrase-for-quantity-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-38, _Standard opening phrase for picture element or attribute data definition_ (REF, EXT)](#Rule-11-38.-Standard-opening-phrase-for-picture-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-39, _Standard opening phrase for indicator element or attribute data definition_ (REF, EXT)](#Rule-11-39.-Standard-opening-phrase-for-indicator-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-40, _Standard opening phrase for identification element or attribute data definition_ (REF, EXT)](#Rule-11-40.-Standard-opening-phrase-for-identification-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-41, _Standard opening phrase for name element or attribute data definition_ (REF, EXT)](#Rule-11-41.-Standard-opening-phrase-for-name-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-42, _Standard opening phrase for element or attribute data definition_ (REF, EXT)](#Rule-11-42.-Standard-opening-phrase-for-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
-- [Rule 11-43, _Standard opening phrase for association type data definition_ (REF, EXT)](#Rule-11-43.-Standard-opening-phrase-for-association-type-data-definition): [Section 11.6.1.1.2, _Complex type opening phrases_](#Complex-type-opening-phrases)
-- [Rule 11-44, _Standard opening phrase for augmentation type data definition_ (REF, EXT)](#Rule-11-44.-Standard-opening-phrase-for-augmentation-type-data-definition): [Section 11.6.1.1.2, _Complex type opening phrases_](#Complex-type-opening-phrases)
-- [Rule 11-45, _Standard opening phrase for metadata type data definition_ (REF, EXT)](#Rule-11-45.-Standard-opening-phrase-for-metadata-type-data-definition): [Section 11.6.1.1.2, _Complex type opening phrases_](#Complex-type-opening-phrases)
-- [Rule 11-46, _Standard opening phrase for complex type data definition_ (REF, EXT)](#Rule-11-46.-Standard-opening-phrase-for-complex-type-data-definition): [Section 11.6.1.1.2, _Complex type opening phrases_](#Complex-type-opening-phrases)
-- [Rule 11-47, _Standard opening phrase for simple type data definition_ (REF, EXT)](#Rule-11-47.-Standard-opening-phrase-for-simple-type-data-definition): [Section 11.6.1.1, _Data definition opening phrases_](#Data-definition-opening-phrases)
-- [Rule 11-48, _Same namespace means same components_ (REF, EXT)](#Rule-11-48.-Same-namespace-means-same-components): [Section 11.7.1, _`xs:schema` document element restrictions_](#-document-element-restrictions)
-- [Rule 11-49, _Different version means different view_ (REF, EXT)](#Rule-11-49.-Different-version-means-different-view): [Section 11.7.1, _`xs:schema` document element restrictions_](#-document-element-restrictions)
-- [Rule 11-50, _Reference schema document imports reference schema document_ (SET)](#Rule-11-50.-Reference-schema-document-imports-reference-schema-document): [Section 11.8, _Schema assembly_](#Schema-assembly)
-- [Rule 11-51, _Extension schema document imports reference or extension schema document_ (SET)](#Rule-11-51.-Extension-schema-document-imports-reference-or-extension-schema-document): [Section 11.8, _Schema assembly_](#Schema-assembly)
-- [Rule 11-52, _Structures imported as conformant_ (REF, EXT)](#Rule-11-52.-Structures-imported-as-conformant): [Section 11.8.1, _Supporting namespaces are imported as conformant_](#Supporting-namespaces-are-imported-as-conformant)
-- [Rule 11-53, _XML namespace imported as conformant_ (REF, EXT)](#Rule-11-53.-XML-namespace-imported-as-conformant): [Section 11.8.1, _Supporting namespaces are imported as conformant_](#Supporting-namespaces-are-imported-as-conformant)
-- [Rule 11-54, _Each namespace may have only a single root schema in a schema set_ (SET)](#Rule-11-54.-Each-namespace-may-have-only-a-single-root-schema-in-a-schema-set): [Section 11.8, _Schema assembly_](#Schema-assembly)
-- [Rule 11-55, _Consistently marked namespace imports_ (REF, EXT)](#Rule-11-55.-Consistently-marked-namespace-imports): [Section 11.8, _Schema assembly_](#Schema-assembly)
-- [Rule 12-1, _Instance must be schema-valid_ (INS)](#Rule-12-1.-Instance-must-be-schema-valid): [Section 12, _XML instance document rules_](#XML-instance-document-rules)
-- [Rule 12-2, _Empty content has no meaning_ (INS)](#Rule-12-2.-Empty-content-has-no-meaning): [Section 12.1, _The meaning of NIEM data_](#The-meaning-of-NIEM-data)
-- [Rule 12-3, _Element has only one resource identifying attribute_ (INS)](#Rule-12-3.-Element-has-only-one-resource-identifying-attribute): [Section 12.2, _Identifiers and references_](#Identifiers-and-references)
-- [Rule 12-4, _Attribute `structures:ref` must reference `structures:id`_ (INS)](#Rule-12-4.-Attribute--must-reference-): [Section 12.2.1, _Local identifiers and references_](#Local-identifiers-and-references)
-- [Rule 12-5, _Linked elements have same validation root_ (INS)](#Rule-12-5.-Linked-elements-have-same-validation-root): [Section 12.2.1, _Local identifiers and references_](#Local-identifiers-and-references)
-- [Rule 12-6, _Attribute `structures:ref` references element of correct type_ (INS)](#Rule-12-6.-Attribute--references-element-of-correct-type): [Section 12.2.1, _Local identifiers and references_](#Local-identifiers-and-references)
-- [Rule 12-7, _`structures:uri` denotes resource identifier_ (INS)](#Rule-12-7.--denotes-resource-identifier): [Section 12.2.2, _Uniform resource identifiers in NIEM data_](#Uniform-resource-identifiers-in-NIEM-data)
-- [Rule 12-8, _`structures:id` and `structures:ref` denote resource identifier_ (INS)](#Rule-12-8.--and--denote-resource-identifier): [Section 12.2.2, _Uniform resource identifiers in NIEM data_](#Uniform-resource-identifiers-in-NIEM-data)
-- [Rule 12-9, _Nested elements and references have the same meaning._ (INS)](#Rule-12-9.-Nested-elements-and-references-have-the-same-meaning.): [Section 12.2.4, _Reference and content elements have same meaning_](#Reference-and-content-elements-have-same-meaning)
-- [Rule 12-10, _Order of properties is expressed via `structures:sequenceID`_ (INS)](#Rule-12-10.-Order-of-properties-is-expressed-via-): [Section 12.3, _Property order and sequence identifiers_](#Property-order-and-sequence-identifiers)
-- [Rule 12-11, _Metadata applies to referring entity_ (INS)](#Rule-12-11.-Metadata-applies-to-referring-entity): [Section 12.4, _Instance metadata_](#Instance-metadata)
-- [Rule 12-12, _Referent of `structures:relationshipMetadata` annotates relationship_ (INS)](#Rule-12-12.-Referent-of--annotates-relationship): [Section 12.4, _Instance metadata_](#Instance-metadata)
-- [Rule 12-13, _Values of `structures:metadata` refer to values of `structures:id`_ (INS)](#Rule-12-13.-Values-of--refer-to-values-of-): [Section 12.4, _Instance metadata_](#Instance-metadata)
-- [Rule 12-14, _Values of `structures:relationshipMetadata` refer to values of `structures:id`_ (INS)](#Rule-12-14.-Values-of--refer-to-values-of-): [Section 12.4, _Instance metadata_](#Instance-metadata)
-- [Rule 12-15, _`structures:metadata` and `structures:relationshipMetadata` refer to metadata elements_ (INS)](#Rule-12-15.--and--refer-to-metadata-elements): [Section 12.4, _Instance metadata_](#Instance-metadata)
-- [Rule 12-16, _Attribute `structures:metadata` references metadata element_ (INS)](#Rule-12-16.-Attribute--references-metadata-element): [Section 12.4, _Instance metadata_](#Instance-metadata)
-- [Rule 12-17, _Attribute `structures:relationshipMetadata` references metadata element_ (INS)](#Rule-12-17.-Attribute--references-metadata-element): [Section 12.4, _Instance metadata_](#Instance-metadata)
-- [Rule 12-18, _Metadata is applicable to element_ (INS)](#Rule-12-18.-Metadata-is-applicable-to-element): [Section 12.4, _Instance metadata_](#Instance-metadata)
+- [Rule 4-1, _Schema marked as reference schema document must conform_ (SET)](#Rule-4-1_-Schema-marked-as-reference-schema-document-must-conform): [Section 4.1, _Conformance targets defined_](#Conformance-targets-defined)
+- [Rule 4-2, _Schema marked as extension schema document must conform_ (SET)](#Rule-4-2_-Schema-marked-as-extension-schema-document-must-conform): [Section 4.1, _Conformance targets defined_](#Conformance-targets-defined)
+- [Rule 4-3, _Schema is CTAS-conformant_ (REF, EXT)](#Rule-4-3_-Schema-is-CTAS-conformant): [Section 4.3, _Conformance target identifiers_](#Conformance-target-identifiers)
+- [Rule 4-4, _Document element has attribute `ct:conformanceTargets`_ (REF, EXT)](#Rule-4-4_-Document-element-has-attribute-): [Section 4.3, _Conformance target identifiers_](#Conformance-target-identifiers)
+- [Rule 4-5, _Schema claims reference schema conformance target_ (REF)](#Rule-4-5_-Schema-claims-reference-schema-conformance-target): [Section 4.3, _Conformance target identifiers_](#Conformance-target-identifiers)
+- [Rule 4-6, _Schema claims extension conformance target_ (EXT)](#Rule-4-6_-Schema-claims-extension-conformance-target): [Section 4.3, _Conformance target identifiers_](#Conformance-target-identifiers)
+- [Rule 5-1, _`structures:uri` denotes resource identifier_ (INS)](#Rule-5-1_--denotes-resource-identifier): [Section 5.1, _Purpose of the NIEM conceptual model_](#Purpose-of-the-NIEM-conceptual-model)
+- [Rule 7-1, _Document is an XML document_ (REF, EXT, INS)](#Rule-7-1_-Document-is-an-XML-document): [Section 7.1, _Conformance to XML_](#Conformance-to-XML)
+- [Rule 7-2, _Document uses XML namespaces properly_ (REF, EXT, INS)](#Rule-7-2_-Document-uses-XML-namespaces-properly): [Section 7.2, _Conformance to XML Namespaces_](#Conformance-to-XML-Namespaces)
+- [Rule 7-3, _Document is a schema document_ (REF, EXT)](#Rule-7-3_-Document-is-a-schema-document): [Section 7.3, _Conformance to XML Schema_](#Conformance-to-XML-Schema)
+- [Rule 7-4, _Document element is `xs:schema`_ (REF, EXT)](#Rule-7-4_-Document-element-is-): [Section 7.3, _Conformance to XML Schema_](#Conformance-to-XML-Schema)
+- [Rule 7-5, _Component name follows ISO 11179 Part 5 Annex A_ (REF, EXT)](#Rule-7-5_-Component-name-follows-ISO-11179-Part-5-Annex-A): [Section 7.5, _ISO 11179 Part 5_](#ISO-11179-Part-5)
+- [Rule 9-1, _No base type in the XML namespace_ (REF, EXT)](#Rule-9-1_-No-base-type-in-the-XML-namespace): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
+- [Rule 9-2, _No base type of `xs:ID`_ (REF, EXT)](#Rule-9-2_-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
+- [Rule 9-3, _No base type of `xs:IDREF`_ (REF, EXT)](#Rule-9-3_-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
+- [Rule 9-4, _No base type of `xs:IDREFS`_ (REF, EXT)](#Rule-9-4_-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
+- [Rule 9-5, _No base type of `xs:anyType`_ (REF, EXT)](#Rule-9-5_-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
+- [Rule 9-6, _No base type of `xs:anySimpleType`_ (REF, EXT)](#Rule-9-6_-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
+- [Rule 9-7, _No base type of `xs:NOTATION`_ (REF, EXT)](#Rule-9-7_-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
+- [Rule 9-8, _No base type of `xs:ENTITY`_ (REF, EXT)](#Rule-9-8_-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
+- [Rule 9-9, _No base type of `xs:ENTITIES`_ (REF, EXT)](#Rule-9-9_-No-base-type-of-): [Section 9.1.1.1, _Types prohibited as base types_](#Types-prohibited-as-base-types)
+- [Rule 9-10, _Simple type definition is top-level_ (REF, EXT)](#Rule-9-10_-Simple-type-definition-is-top-level): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
+- [Rule 9-11, _No simple type disallowed derivation_ (REF)](#Rule-9-11_-No-simple-type-disallowed-derivation): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
+- [Rule 9-12, _Simple type has data definition_ (REF, EXT)](#Rule-9-12_-Simple-type-has-data-definition): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
+- [Rule 9-13, _No use of "fixed" on simple type facets_ (REF)](#Rule-9-13_-No-use-of--on-simple-type-facets): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
+- [Rule 9-14, _Enumeration has data definition_ (REF, EXT)](#Rule-9-14_-Enumeration-has-data-definition): [Section 9.1.2, _Simple type definition_](#Simple-type-definition)
+- [Rule 9-15, _No list item type of `xs:ID`_ (REF, EXT)](#Rule-9-15_-No-list-item-type-of-): [Section 9.1.2.1, _Simple types prohibited as list item types_](#Simple-types-prohibited-as-list-item-types)
+- [Rule 9-16, _No list item type of `xs:IDREF`_ (REF, EXT)](#Rule-9-16_-No-list-item-type-of-): [Section 9.1.2.1, _Simple types prohibited as list item types_](#Simple-types-prohibited-as-list-item-types)
+- [Rule 9-17, _No list item type of `xs:anySimpleType`_ (REF, EXT)](#Rule-9-17_-No-list-item-type-of-): [Section 9.1.2.1, _Simple types prohibited as list item types_](#Simple-types-prohibited-as-list-item-types)
+- [Rule 9-18, _No list item type of `xs:ENTITY`_ (REF, EXT)](#Rule-9-18_-No-list-item-type-of-): [Section 9.1.2.1, _Simple types prohibited as list item types_](#Simple-types-prohibited-as-list-item-types)
+- [Rule 9-19, _No union member types of `xs:ID`_ (REF, EXT)](#Rule-9-19_-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
+- [Rule 9-20, _No union member types of `xs:IDREF`_ (REF, EXT)](#Rule-9-20_-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
+- [Rule 9-21, _No union member types of `xs:IDREFS`_ (REF, EXT)](#Rule-9-21_-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
+- [Rule 9-22, _No union member types of `xs:anySimpleType`_ (REF, EXT)](#Rule-9-22_-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
+- [Rule 9-23, _No union member types of `xs:ENTITY`_ (REF, EXT)](#Rule-9-23_-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
+- [Rule 9-24, _No union member types of `xs:ENTITIES`_ (REF, EXT)](#Rule-9-24_-No-union-member-types-of-): [Section 9.1.2.2, _Simple types prohibited as union member types_](#Simple-types-prohibited-as-union-member-types)
+- [Rule 9-25, _Complex type definition is top-level_ (REF, EXT)](#Rule-9-25_-Complex-type-definition-is-top-level): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
+- [Rule 9-26, _Complex type has data definition_ (REF, EXT)](#Rule-9-26_-Complex-type-has-data-definition): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
+- [Rule 9-27, _No mixed content on complex type_ (REF, EXT)](#Rule-9-27_-No-mixed-content-on-complex-type): [Section 9.1.3.1, _No mixed content_](#No-mixed-content)
+- [Rule 9-28, _No mixed content on complex content_ (REF, EXT)](#Rule-9-28_-No-mixed-content-on-complex-content): [Section 9.1.3.1, _No mixed content_](#No-mixed-content)
+- [Rule 9-29, _Complex type content is explicitly simple or complex_ (REF, EXT)](#Rule-9-29_-Complex-type-content-is-explicitly-simple-or-complex): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
+- [Rule 9-30, _Complex content uses extension_ (REF)](#Rule-9-30_-Complex-content-uses-extension): [Section 9.1.3.2, _Complex content_](#Complex-content)
+- [Rule 9-31, _Base type of complex type with complex content must have complex content_ (REF, EXT)](#Rule-9-31_-Base-type-of-complex-type-with-complex-content-must-have-complex-content): [Section 9.1.3.2.1, _Base type of complex type with complex content has complex content_](#Base-type-of-complex-type-with-complex-content-has-complex-content)
+- [Rule 9-32, _Base type of complex type with complex content must have complex content_ (SET)](#Rule-9-32_-Base-type-of-complex-type-with-complex-content-must-have-complex-content): [Section 9.1.3.2.1, _Base type of complex type with complex content has complex content_](#Base-type-of-complex-type-with-complex-content-has-complex-content)
+- [Rule 9-33, _Simple content uses extension_ (REF)](#Rule-9-33_-Simple-content-uses-extension): [Section 9.1.3.3, _Simple content_](#Simple-content)
+- [Rule 9-34, _No complex type disallowed substitutions_ (REF)](#Rule-9-34_-No-complex-type-disallowed-substitutions): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
+- [Rule 9-35, _No complex type disallowed derivation_ (REF)](#Rule-9-35_-No-complex-type-disallowed-derivation): [Section 9.1.3, _Complex type definition_](#Complex-type-definition)
+- [Rule 9-36, _Element declaration is top-level_ (REF, EXT)](#Rule-9-36_-Element-declaration-is-top-level): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-37, _Element declaration has data definition_ (REF, EXT)](#Rule-9-37_-Element-declaration-has-data-definition): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-38, _Untyped element is abstract_ (REF, EXT)](#Rule-9-38_-Untyped-element-is-abstract): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-39, _Element of type `xs:anySimpleType` is abstract_ (REF, EXT)](#Rule-9-39_-Element-of-type--is-abstract): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-40, _Element type not in the XML Schema namespace_ (REF, EXT)](#Rule-9-40_-Element-type-not-in-the-XML-Schema-namespace): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-41, _Element type not in the XML namespace_ (REF, EXT)](#Rule-9-41_-Element-type-not-in-the-XML-namespace): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-42, _Element type is not simple type_ (REF, EXT)](#Rule-9-42_-Element-type-is-not-simple-type): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-43, _No element disallowed substitutions _ (REF)](#Rule-9-43_-No-element-disallowed-substitutions-): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-44, _No element disallowed derivation_ (REF)](#Rule-9-44_-No-element-disallowed-derivation): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-45, _No element default value_ (REF, EXT)](#Rule-9-45_-No-element-default-value): [Section 9.2.1.1, _No element value constraints_](#No-element-value-constraints)
+- [Rule 9-46, _No element fixed value_ (REF, EXT)](#Rule-9-46_-No-element-fixed-value): [Section 9.2.1.1, _No element value constraints_](#No-element-value-constraints)
+- [Rule 9-47, _Element declaration is nillable_ (REF)](#Rule-9-47_-Element-declaration-is-nillable): [Section 9.2.1, _Element declaration_](#Element-declaration)
+- [Rule 9-48, _Attribute declaration is top-level_ (REF, EXT)](#Rule-9-48_-Attribute-declaration-is-top-level): [Section 9.2.3, _Attribute declaration_](#Attribute-declaration)
+- [Rule 9-49, _Attribute declaration has data definition_ (REF, EXT)](#Rule-9-49_-Attribute-declaration-has-data-definition): [Section 9.2.3, _Attribute declaration_](#Attribute-declaration)
+- [Rule 9-50, _Attribute declaration has type_ (REF, EXT)](#Rule-9-50_-Attribute-declaration-has-type): [Section 9.2.3, _Attribute declaration_](#Attribute-declaration)
+- [Rule 9-51, _No attribute type of `xs:ID`_ (REF, EXT)](#Rule-9-51_-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
+- [Rule 9-52, _No attribute type of `xs:IDREF`_ (REF, EXT)](#Rule-9-52_-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
+- [Rule 9-53, _No attribute type of `xs:IDREFS`_ (REF, EXT)](#Rule-9-53_-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
+- [Rule 9-54, _No attribute type of `xs:ENTITY`_ (REF, EXT)](#Rule-9-54_-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
+- [Rule 9-55, _No attribute type of `xs:ENTITIES`_ (REF, EXT)](#Rule-9-55_-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
+- [Rule 9-56, _No attribute type of `xs:anySimpleType`_ (REF, EXT)](#Rule-9-56_-No-attribute-type-of-): [Section 9.2.3.1, _Prohibited attribute types_](#Prohibited-attribute-types)
+- [Rule 9-57, _No attribute default values_ (REF, EXT)](#Rule-9-57_-No-attribute-default-values): [Section 9.2.3.2, _No attribute value constraints_](#No-attribute-value-constraints)
+- [Rule 9-58, _No fixed values for optional attributes_ (REF, EXT)](#Rule-9-58_-No-fixed-values-for-optional-attributes): [Section 9.2.3.2, _No attribute value constraints_](#No-attribute-value-constraints)
+- [Rule 9-59, _No use of element `xs:notation`_ (REF, EXT)](#Rule-9-59_-No-use-of-element-): [Section 9.2.4, _Notation declaration_](#Notation-declaration)
+- [Rule 9-60, _Model group does not affect meaning_ (EXT)](#Rule-9-60_-Model-group-does-not-affect-meaning): [Section 9.3.1, _Model group_](#Model-group)
+- [Rule 9-61, _No `xs:all`_ (REF, EXT)](#Rule-9-61_-No-): [Section 9.3.1, _Model group_](#Model-group)
+- [Rule 9-62, _`xs:sequence` must be child of `xs:extension`_ (REF)](#Rule-9-62_--must-be-child-of-): [Section 9.3.1.1, _Sequence_](#Sequence)
+- [Rule 9-63, _`xs:sequence` must be child of `xs:extension` or `xs:restriction`_ (EXT)](#Rule-9-63_--must-be-child-of--or-): [Section 9.3.1.1, _Sequence_](#Sequence)
+- [Rule 9-64, _No `xs:choice`_ (REF)](#Rule-9-64_-No-): [Section 9.3.1.2, _Choice_](#Choice)
+- [Rule 9-65, _`xs:choice` must be child of `xs:sequence`_ (EXT)](#Rule-9-65_--must-be-child-of-): [Section 9.3.1.2, _Choice_](#Choice)
+- [Rule 9-66, _Sequence has minimum cardinality 1_ (REF, EXT)](#Rule-9-66_-Sequence-has-minimum-cardinality-1): [Section 9.3.2.1, _Sequence cardinality_](#Sequence-cardinality)
+- [Rule 9-67, _Sequence has maximum cardinality 1_ (REF, EXT)](#Rule-9-67_-Sequence-has-maximum-cardinality-1): [Section 9.3.2.1, _Sequence cardinality_](#Sequence-cardinality)
+- [Rule 9-68, _Choice has minimum cardinality 1_ (EXT)](#Rule-9-68_-Choice-has-minimum-cardinality-1): [Section 9.3.2.2, _Choice cardinality_](#Choice-cardinality)
+- [Rule 9-69, _Choice has maximum cardinality 1_ (EXT)](#Rule-9-69_-Choice-has-maximum-cardinality-1): [Section 9.3.2.2, _Choice cardinality_](#Choice-cardinality)
+- [Rule 9-70, _No use of `xs:any`_ (REF)](#Rule-9-70_-No-use-of-): [Section 9.3.4, _Wildcard_](#Wildcard)
+- [Rule 9-71, _No use of `xs:anyAttribute`_ (REF)](#Rule-9-71_-No-use-of-): [Section 9.3.4, _Wildcard_](#Wildcard)
+- [Rule 9-72, _No use of `xs:unique`_ (REF, EXT)](#Rule-9-72_-No-use-of-): [Section 9.4, _Identity-constraint definition components_](#Identity-constraint-definition-components)
+- [Rule 9-73, _No use of `xs:key`_ (REF, EXT)](#Rule-9-73_-No-use-of-): [Section 9.4, _Identity-constraint definition components_](#Identity-constraint-definition-components)
+- [Rule 9-74, _No use of `xs:keyref`_ (REF, EXT)](#Rule-9-74_-No-use-of-): [Section 9.4, _Identity-constraint definition components_](#Identity-constraint-definition-components)
+- [Rule 9-75, _No use of `xs:group`_ (REF, EXT)](#Rule-9-75_-No-use-of-): [Section 9.5.1, _Model group definition_](#Model-group-definition)
+- [Rule 9-76, _No definition of attribute groups_ (REF, EXT)](#Rule-9-76_-No-definition-of-attribute-groups): [Section 9.5.2, _Attribute group definition_](#Attribute-group-definition)
+- [Rule 9-77, _Comment is not recommended_ (REF, EXT)](#Rule-9-77_-Comment-is-not-recommended): [Section 9.6, _Annotation components_](#Annotation-components)
+- [Rule 9-78, _Documentation element has no element children_ (REF, EXT)](#Rule-9-78_-Documentation-element-has-no-element-children): [Section 9.6, _Annotation components_](#Annotation-components)
+- [Rule 9-79, _`xs:appinfo` children are comments, elements, or whitespace_ (REF, EXT)](#Rule-9-79_--children-are-comments_-elements_-or-whitespace): [Section 9.6.1, _Application information annotation_](#Application-information-annotation)
+- [Rule 9-80, _Appinfo child elements have namespaces_ (REF, EXT)](#Rule-9-80_-Appinfo-child-elements-have-namespaces): [Section 9.6.1, _Application information annotation_](#Application-information-annotation)
+- [Rule 9-81, _Appinfo descendants are not XML Schema elements_ (REF, EXT)](#Rule-9-81_-Appinfo-descendants-are-not-XML-Schema-elements): [Section 9.6.1, _Application information annotation_](#Application-information-annotation)
+- [Rule 9-82, _Schema has data definition_ (REF, EXT)](#Rule-9-82_-Schema-has-data-definition): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
+- [Rule 9-83, _Schema document defines target namespace_ (REF, EXT)](#Rule-9-83_-Schema-document-defines-target-namespace): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
+- [Rule 9-84, _Target namespace is absolute URI_ (REF, EXT)](#Rule-9-84_-Target-namespace-is-absolute-URI): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
+- [Rule 9-85, _Schema has version_ (REF, EXT)](#Rule-9-85_-Schema-has-version): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
+- [Rule 9-86, _No disallowed substitutions_ (REF)](#Rule-9-86_-No-disallowed-substitutions): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
+- [Rule 9-87, _No disallowed derivations_ (REF)](#Rule-9-87_-No-disallowed-derivations): [Section 9.7, _Schema as a whole_](#Schema-as-a-whole)
+- [Rule 9-88, _No use of `xs:redefine`_ (REF, EXT)](#Rule-9-88_-No-use-of-): [Section 9.8, _Schema assembly_](#Schema-assembly)
+- [Rule 9-89, _No use of `xs:include`_ (REF, EXT)](#Rule-9-89_-No-use-of-): [Section 9.8, _Schema assembly_](#Schema-assembly)
+- [Rule 9-90, _`xs:import` must have namespace_ (REF, EXT)](#Rule-9-90_--must-have-namespace): [Section 9.8, _Schema assembly_](#Schema-assembly)
+- [Rule 9-91, _XML Schema document set must be complete_ (SET)](#Rule-9-91_-XML-Schema-document-set-must-be-complete): [Section 9.8, _Schema assembly_](#Schema-assembly)
+- [Rule 9-92, _Namespace referenced by attribute `type` is imported_ (REF, EXT)](#Rule-9-92_-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
+- [Rule 9-93, _Namespace referenced by attribute `base` is imported_ (REF, EXT)](#Rule-9-93_-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
+- [Rule 9-94, _Namespace referenced by attribute `itemType` is imported_ (REF, EXT)](#Rule-9-94_-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
+- [Rule 9-95, _Namespaces referenced by attribute `memberTypes` is imported_ (REF, EXT)](#Rule-9-95_-Namespaces-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
+- [Rule 9-96, _Namespace referenced by attribute `ref` is imported_ (REF, EXT)](#Rule-9-96_-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
+- [Rule 9-97, _Namespace referenced by attribute `substitutionGroup` is imported_ (REF, EXT)](#Rule-9-97_-Namespace-referenced-by-attribute--is-imported): [Section 9.8.1, _Namespaces for referenced components are imported_](#Namespaces-for-referenced-components-are-imported)
+- [Rule 10-1, _Complex type has a category_ (REF, EXT)](#Rule-10-1_-Complex-type-has-a-category): [Section 10.1, _Categories of NIEM type definitions_](#Categories-of-NIEM-type-definitions)
+- [Rule 10-2, _Object type with complex content is derived from `structures:ObjectType`_ (REF, EXT)](#Rule-10-2_-Object-type-with-complex-content-is-derived-from-): [Section 10.2.1.1, _Object types with complex content_](#Object-types-with-complex-content)
+- [Rule 10-3, _RoleOf element type is an object type_ (REF, EXT)](#Rule-10-3_-RoleOf-element-type-is-an-object-type): [Section 10.2.2, _Role types and roles_](#Role-types-and-roles)
+- [Rule 10-4, _Only object type has RoleOf element_ (REF, EXT)](#Rule-10-4_-Only-object-type-has-RoleOf-element): [Section 10.2.2, _Role types and roles_](#Role-types-and-roles)
+- [Rule 10-5, _RoleOf elements indicate the base types of a role type_ (REF, EXT, INS)](#Rule-10-5_-RoleOf-elements-indicate-the-base-types-of-a-role-type): [Section 10.2.2, _Role types and roles_](#Role-types-and-roles)
+- [Rule 10-6, _Instance of RoleOf element indicates a role object_ (INS)](#Rule-10-6_-Instance-of-RoleOf-element-indicates-a-role-object): [Section 10.2.2, _Role types and roles_](#Role-types-and-roles)
+- [Rule 10-7, _Import of external namespace has data definition_ (REF, EXT)](#Rule-10-7_-Import-of-external-namespace-has-data-definition): [Section 10.2.3.1, _Import of external namespace_](#Import-of-external-namespace)
+- [Rule 10-8, _External adapter type has indicator_ (REF, EXT)](#Rule-10-8_-External-adapter-type-has-indicator): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
+- [Rule 10-9, _Structure of external adapter type definition follows pattern_ (REF, EXT)](#Rule-10-9_-Structure-of-external-adapter-type-definition-follows-pattern): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
+- [Rule 10-10, _Element use from external adapter type defined by external schema documents_ (REF, EXT)](#Rule-10-10_-Element-use-from-external-adapter-type-defined-by-external-schema-documents): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
+- [Rule 10-11, _External adapter type not a base type_ (REF, EXT)](#Rule-10-11_-External-adapter-type-not-a-base-type): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
+- [Rule 10-12, _External adapter type not a base type_ (SET)](#Rule-10-12_-External-adapter-type-not-a-base-type): [Section 10.2.3.2, _External adapter types_](#External-adapter-types)
+- [Rule 10-13, _External attribute use only in external adapter type_ (REF)](#Rule-10-13_-External-attribute-use-only-in-external-adapter-type): [Section 10.2.3.3, _External attribute use_](#External-attribute-use)
+- [Rule 10-14, _External attribute use has data definition_ (REF, EXT)](#Rule-10-14_-External-attribute-use-has-data-definition): [Section 10.2.3.3, _External attribute use_](#External-attribute-use)
+- [Rule 10-15, _External attribute use not an ID_ (SET)](#Rule-10-15_-External-attribute-use-not-an-ID): [Section 10.2.3.3, _External attribute use_](#External-attribute-use)
+- [Rule 10-16, _External element use has data definition_ (REF, EXT)](#Rule-10-16_-External-element-use-has-data-definition): [Section 10.2.3.4, _External element use_](#External-element-use)
+- [Rule 10-17, _Name of code type ends in "CodeType"_ (REF, EXT)](#Rule-10-17_-Name-of-code-type-ends-in-): [Section 10.2.4, _Code types_](#Code-types)
+- [Rule 10-18, _Code type corresponds to a code list_ (REF, EXT)](#Rule-10-18_-Code-type-corresponds-to-a-code-list): [Section 10.2.4, _Code types_](#Code-types)
+- [Rule 10-19, _Element of code type has code representation term_ (REF, EXT)](#Rule-10-19_-Element-of-code-type-has-code-representation-term): [Section 10.2.4, _Code types_](#Code-types)
+- [Rule 10-20, _Proxy type has designated structure_ (REF, EXT)](#Rule-10-20_-Proxy-type-has-designated-structure): [Section 10.2.5, _Proxy types_](#Proxy-types)
+- [Rule 10-21, _Association type derived from `structures:AssociationType`_ (REF, EXT)](#Rule-10-21_-Association-type-derived-from-): [Section 10.3.1, _Association types_](#Association-types)
+- [Rule 10-22, _Association element type is an association type_ (REF, EXT)](#Rule-10-22_-Association-element-type-is-an-association-type): [Section 10.3.2, _Association element declarations_](#Association-element-declarations)
+- [Rule 10-23, _Augmentable type has augmentation point element_ (REF)](#Rule-10-23_-Augmentable-type-has-augmentation-point-element): [Section 10.4.1, _Augmentable types_](#Augmentable-types)
+- [Rule 10-24, _Augmentable type has at most one augmentation point element_ (REF, EXT)](#Rule-10-24_-Augmentable-type-has-at-most-one-augmentation-point-element): [Section 10.4.1, _Augmentable types_](#Augmentable-types)
+- [Rule 10-25, _Augmentation point element corresponds to its base type_ (REF, EXT)](#Rule-10-25_-Augmentation-point-element-corresponds-to-its-base-type): [Section 10.4.2, _Augmentation point element declarations_](#Augmentation-point-element-declarations)
+- [Rule 10-26, _An augmentation point element has no type_ (REF, EXT)](#Rule-10-26_-An-augmentation-point-element-has-no-type): [Section 10.4.2, _Augmentation point element declarations_](#Augmentation-point-element-declarations)
+- [Rule 10-27, _An augmentation point element has no substitution group_ (REF, EXT)](#Rule-10-27_-An-augmentation-point-element-has-no-substitution-group): [Section 10.4.2, _Augmentation point element declarations_](#Augmentation-point-element-declarations)
+- [Rule 10-28, _Augmentation point element is only referenced by its base type_ (REF, EXT)](#Rule-10-28_-Augmentation-point-element-is-only-referenced-by-its-base-type): [Section 10.4.3, _Augmentation point element use_](#Augmentation-point-element-use)
+- [Rule 10-29, _Augmentation point element use is optional_ (REF)](#Rule-10-29_-Augmentation-point-element-use-is-optional): [Section 10.4.3, _Augmentation point element use_](#Augmentation-point-element-use)
+- [Rule 10-30, _Augmentation point element use is unbounded_ (REF)](#Rule-10-30_-Augmentation-point-element-use-is-unbounded): [Section 10.4.3, _Augmentation point element use_](#Augmentation-point-element-use)
+- [Rule 10-31, _Augmentation point element use must be last element in its base type_ (REF, EXT)](#Rule-10-31_-Augmentation-point-element-use-must-be-last-element-in-its-base-type): [Section 10.4.3, _Augmentation point element use_](#Augmentation-point-element-use)
+- [Rule 10-32, _Element within instance of augmentation type modifies base_ (INS)](#Rule-10-32_-Element-within-instance-of-augmentation-type-modifies-base): [Section 10.4.4, _Augmentation types_](#Augmentation-types)
+- [Rule 10-33, _Only an augmentation type name ends in "AugmentationType"_ (REF, EXT)](#Rule-10-33_-Only-an-augmentation-type-name-ends-in-): [Section 10.4.4, _Augmentation types_](#Augmentation-types)
+- [Rule 10-34, _Schema component with name ending in "AugmentationType" is an augmentation type_ (REF, EXT)](#Rule-10-34_-Schema-component-with-name-ending-in--is-an-augmentation-type): [Section 10.4.4, _Augmentation types_](#Augmentation-types)
+- [Rule 10-35, _Type derived from `structures:AugmentationType` is an augmentation type_ (REF, EXT)](#Rule-10-35_-Type-derived-from--is-an-augmentation-type): [Section 10.4.4, _Augmentation types_](#Augmentation-types)
+- [Rule 10-36, _Augmentation element type is an augmentation type_ (REF, EXT)](#Rule-10-36_-Augmentation-element-type-is-an-augmentation-type): [Section 10.4.5, _Augmentation element declarations_](#Augmentation-element-declarations)
+- [Rule 10-37, _Augmentation elements are not used directly_ (REF, SET)](#Rule-10-37_-Augmentation-elements-are-not-used-directly): [Section 10.4.5, _Augmentation element declarations_](#Augmentation-element-declarations)
+- [Rule 10-38, _Metadata type has data about data_ (REF, EXT)](#Rule-10-38_-Metadata-type-has-data-about-data): [Section 10.5.1, _Metadata types_](#Metadata-types)
+- [Rule 10-39, _Metadata types are derived from `structures:MetadataType`_ (REF, EXT)](#Rule-10-39_-Metadata-types-are-derived-from-): [Section 10.5.1, _Metadata types_](#Metadata-types)
+- [Rule 10-40, _Metadata element declaration type is a metadata type_ (REF, EXT)](#Rule-10-40_-Metadata-element-declaration-type-is-a-metadata-type): [Section 10.5.2, _Metadata element declarations_](#Metadata-element-declarations)
+- [Rule 10-41, _Metadata element has applicable elements_ (REF, EXT, SET)](#Rule-10-41_-Metadata-element-has-applicable-elements): [Section 10.5.2, _Metadata element declarations_](#Metadata-element-declarations)
+- [Rule 10-42, _Name of element that ends in "Representation" is abstract_ (REF, EXT)](#Rule-10-42_-Name-of-element-that-ends-in--is-abstract): [Section 10.7, _The "Representation" pattern_](#The--pattern)
+- [Rule 10-43, _A substitution for a representation element declaration is a value for a type_ (REF, EXT)](#Rule-10-43_-A-substitution-for-a-representation-element-declaration-is-a-value-for-a-type): [Section 10, _Rules for NIEM modeling, by NIEM concept_](#Rules-for-NIEM-modeling_-by-NIEM-concept)
+- [Rule 10-44, _Schema component name composed of English words_ (REF, EXT)](#Rule-10-44_-Schema-component-name-composed-of-English-words): [Section 10.8, _Naming rules_](#Naming-rules)
+- [Rule 10-45, _Schema component name has `xml:lang`_ (REF, EXT)](#Rule-10-45_-Schema-component-name-has-): [Section 10.8, _Naming rules_](#Naming-rules)
+- [Rule 10-46, _Schema component names have only specific characters_ (REF, EXT)](#Rule-10-46_-Schema-component-names-have-only-specific-characters): [Section 10.8, _Naming rules_](#Naming-rules)
+- [Rule 10-47, _Punctuation in component name is a separator_ (REF, EXT)](#Rule-10-47_-Punctuation-in-component-name-is-a-separator): [Section 10.8, _Naming rules_](#Naming-rules)
+- [Rule 10-48, _Names use camel case_ (REF, EXT)](#Rule-10-48_-Names-use-camel-case): [Section 10.8.1, _Character case_](#Character-case)
+- [Rule 10-49, _Attribute name begins with lower case letter_ (REF, EXT)](#Rule-10-49_-Attribute-name-begins-with-lower-case-letter): [Section 10.8.1, _Character case_](#Character-case)
+- [Rule 10-50, _Name of schema component other than attribute and proxy type begins with upper case letter_ (REF, EXT)](#Rule-10-50_-Name-of-schema-component-other-than-attribute-and-proxy-type-begins-with-upper-case-letter): [Section 10.8.1, _Character case_](#Character-case)
+- [Rule 10-51, _Names use common abbreviations_ (REF, EXT)](#Rule-10-51_-Names-use-common-abbreviations): [Section 10.8.2, _Use of acronyms and abbreviations_](#Use-of-acronyms-and-abbreviations)
+- [Rule 10-52, _Local term declaration is local to its schema document_ (REF, EXT)](#Rule-10-52_-Local-term-declaration-is-local-to-its-schema-document): [Section 10.8.2.1, _Use of Acronyms, Initialisms, Abbreviations, and Jargon_](#Use-of-Acronyms_-Initialisms_-Abbreviations_-and-Jargon)
+- [Rule 10-53, _Local terminology interpretation_ (REF, EXT)](#Rule-10-53_-Local-terminology-interpretation): [Section 10.8.2.1, _Use of Acronyms, Initialisms, Abbreviations, and Jargon_](#Use-of-Acronyms_-Initialisms_-Abbreviations_-and-Jargon)
+- [Rule 10-54, _Singular form is preferred in name_ (REF, EXT)](#Rule-10-54_-Singular-form-is-preferred-in-name): [Section 10.8.3, _Word forms_](#Word-forms)
+- [Rule 10-55, _Present tense is preferred in name_ (REF, EXT)](#Rule-10-55_-Present-tense-is-preferred-in-name): [Section 10.8.3, _Word forms_](#Word-forms)
+- [Rule 10-56, _Name does not have nonessential words_ (REF, EXT)](#Rule-10-56_-Name-does-not-have-nonessential-words): [Section 10.8.3, _Word forms_](#Word-forms)
+- [Rule 10-57, _Element or attribute name follows pattern_ (REF, EXT)](#Rule-10-57_-Element-or-attribute-name-follows-pattern): [Section 10.8, _Naming rules_](#Naming-rules)
+- [Rule 10-58, _Object-class term identifies concrete category_ (REF, EXT)](#Rule-10-58_-Object-class-term-identifies-concrete-category): [Section 10.8.4, _Object-class term_](#Object-class-term)
+- [Rule 10-59, _Property term describes characteristic or subpart_ (REF, EXT)](#Rule-10-59_-Property-term-describes-characteristic-or-subpart): [Section 10.8.5, _Property term_](#Property-term)
+- [Rule 10-60, _Name may have multiple qualifier terms_ (REF, EXT)](#Rule-10-60_-Name-may-have-multiple-qualifier-terms): [Section 10.8.6, _Qualifier terms_](#Qualifier-terms)
+- [Rule 10-61, _Name has minimum necessary number of qualifier terms_ (REF, EXT)](#Rule-10-61_-Name-has-minimum-necessary-number-of-qualifier-terms): [Section 10.8.6, _Qualifier terms_](#Qualifier-terms)
+- [Rule 10-62, _Order of qualifiers is not significant_ (REF, EXT)](#Rule-10-62_-Order-of-qualifiers-is-not-significant): [Section 10.8.6, _Qualifier terms_](#Qualifier-terms)
+- [Rule 10-63, _Redundant term in name is omitted_ (REF, EXT)](#Rule-10-63_-Redundant-term-in-name-is-omitted): [Section 10.8.7, _Representation terms_](#Representation-terms)
+- [Rule 10-64, _Element with simple content has representation term_ (REF, EXT)](#Rule-10-64_-Element-with-simple-content-has-representation-term): [Section 10.8.7, _Representation terms_](#Representation-terms)
+- [Rule 10-65, _Element with complex content has representation term when appropriate_ (REF, EXT)](#Rule-10-65_-Element-with-complex-content-has-representation-term-when-appropriate): [Section 10.8.7, _Representation terms_](#Representation-terms)
+- [Rule 10-66, _Element with complex content has representation term only when appropriate_ (REF, EXT)](#Rule-10-66_-Element-with-complex-content-has-representation-term-only-when-appropriate): [Section 10.8.7, _Representation terms_](#Representation-terms)
+- [Rule 10-67, _Machine-readable annotations are valid_ (REF, EXT)](#Rule-10-67_-Machine-readable-annotations-are-valid): [Section 10.9, _Machine-readable annotations_](#Machine-readable-annotations)
+- [Rule 10-68, _Component marked as deprecated is deprecated component_ (REF, EXT)](#Rule-10-68_-Component-marked-as-deprecated-is-deprecated-component): [Section 10.9.1.1, _Deprecation_](#Deprecation)
+- [Rule 10-69, _Deprecated annotates schema component_ (REF, EXT)](#Rule-10-69_-Deprecated-annotates-schema-component): [Section 10.9.1.1, _Deprecation_](#Deprecation)
+- [Rule 10-70, _External import indicator annotates import_ (REF, EXT)](#Rule-10-70_-External-import-indicator-annotates-import): [Section 10.9.1.2, _External adapters_](#External-adapters)
+- [Rule 10-71, _External adapter type indicator annotates complex type_ (REF, EXT)](#Rule-10-71_-External-adapter-type-indicator-annotates-complex-type): [Section 10.9.1.2, _External adapters_](#External-adapters)
+- [Rule 10-72, _`appinfo:appliesToTypes` annotates metadata element_ (REF, EXT)](#Rule-10-72_--annotates-metadata-element): [Section 10.9.1.3, _`appinfo:appliesToTypes` annotation_](#-annotation)
+- [Rule 10-73, _`appinfo:appliesToTypes` references types_ (SET)](#Rule-10-73_--references-types): [Section 10.9.1.3, _`appinfo:appliesToTypes` annotation_](#-annotation)
+- [Rule 10-74, _`appinfo:appliesToElements` annotates metadata element_ (REF, EXT)](#Rule-10-74_--annotates-metadata-element): [Section 10.9.1.4, _`appinfo:appliesToElements` annotation_](#-annotation)
+- [Rule 10-75, _`appinfo:appliesToElements` references elements_ (SET)](#Rule-10-75_--references-elements): [Section 10.9.1.4, _`appinfo:appliesToElements` annotation_](#-annotation)
+- [Rule 10-76, _`appinfo:LocalTerm` annotates schema_ (REF, EXT)](#Rule-10-76_--annotates-schema): [Section 10.9.2, _Local terminology_](#Local-terminology)
+- [Rule 10-77, _`appinfo:LocalTerm` has literal or definition_ (REF, EXT)](#Rule-10-77_--has-literal-or-definition): [Section 10.9.2, _Local terminology_](#Local-terminology)
+- [Rule 10-78, _Use structures consistent with specification_ (REF, EXT, INS, SET)](#Rule-10-78_-Use-structures-consistent-with-specification): [Section 10.10, _NIEM structural facilities_](#NIEM-structural-facilities)
+- [Rule 11-1, _Name of type ends in "Type"_ (REF, EXT)](#Rule-11-1_-Name-of-type-ends-in-): [Section 11.1, _Type definition components_](#Type-definition-components)
+- [Rule 11-2, _Only types have name ending in "Type" or "SimpleType"_ (REF, EXT)](#Rule-11-2_-Only-types-have-name-ending-in--or-): [Section 11.1, _Type definition components_](#Type-definition-components)
+- [Rule 11-3, _Base type definition defined by conformant schema_ (REF, EXT)](#Rule-11-3_-Base-type-definition-defined-by-conformant-schema): [Section 11.1.1, _Type definition hierarchy_](#Type-definition-hierarchy)
+- [Rule 11-4, _Name of simple type ends in "SimpleType"_ (REF, EXT)](#Rule-11-4_-Name-of-simple-type-ends-in-): [Section 11.1.2, _Simple type definition_](#Simple-type-definition)
+- [Rule 11-5, _Use lists only when data is uniform_ (REF, EXT)](#Rule-11-5_-Use-lists-only-when-data-is-uniform): [Section 11.1.2.1, _Derivation by list_](#Derivation-by-list)
+- [Rule 11-6, _List item type defined by conformant schemas_ (REF, EXT)](#Rule-11-6_-List-item-type-defined-by-conformant-schemas): [Section 11.1.2.1, _Derivation by list_](#Derivation-by-list)
+- [Rule 11-7, _Union member types defined by conformant schemas_ (REF, EXT)](#Rule-11-7_-Union-member-types-defined-by-conformant-schemas): [Section 11.1.2.2, _Derivation by union_](#Derivation-by-union)
+- [Rule 11-8, _Name of a code simple type ends in "CodeSimpleType"_ (REF, EXT)](#Rule-11-8_-Name-of-a-code-simple-type-ends-in-): [Section 11.1.2.3, _Code simple types_](#Code-simple-types)
+- [Rule 11-9, _Code simple type corresponds to a code list_ (REF, EXT)](#Rule-11-9_-Code-simple-type-corresponds-to-a-code-list): [Section 11.1.2.3, _Code simple types_](#Code-simple-types)
+- [Rule 11-10, _Attribute of code simple type has code representation term_ (REF, EXT)](#Rule-11-10_-Attribute-of-code-simple-type-has-code-representation-term): [Section 11.1.2.3, _Code simple types_](#Code-simple-types)
+- [Rule 11-11, _Complex type with simple content has `structures:SimpleObjectAttributeGroup`_ (REF, EXT)](#Rule-11-11_-Complex-type-with-simple-content-has-): [Section 11.1.3, _Complex type definition_](#Complex-type-definition)
+- [Rule 11-12, _Element type does not have a simple type name_ (REF, EXT)](#Rule-11-12_-Element-type-does-not-have-a-simple-type-name): [Section 11.2.1, _Element declaration_](#Element-declaration)
+- [Rule 11-13, _Element type is from conformant namespace_ (REF, EXT)](#Rule-11-13_-Element-type-is-from-conformant-namespace): [Section 11.2.1, _Element declaration_](#Element-declaration)
+- [Rule 11-14, _Name of element that ends in "Abstract" is abstract_ (REF, EXT)](#Rule-11-14_-Name-of-element-that-ends-in--is-abstract): [Section 11.2.1, _Element declaration_](#Element-declaration)
+- [Rule 11-15, _Name of element declaration with simple content has representation term_ (REF, EXT)](#Rule-11-15_-Name-of-element-declaration-with-simple-content-has-representation-term): [Section 11.2.1.1, _Object element declarations_](#Object-element-declarations)
+- [Rule 11-16, _Name of element declaration with simple content has representation term_ (SET)](#Rule-11-16_-Name-of-element-declaration-with-simple-content-has-representation-term): [Section 11.2.1.1, _Object element declarations_](#Object-element-declarations)
+- [Rule 11-17, _Element substitution group defined by conformant schema_ (REF, EXT)](#Rule-11-17_-Element-substitution-group-defined-by-conformant-schema): [Section 11.2.2, _Element substitution group_](#Element-substitution-group)
+- [Rule 11-18, _Attribute type defined by conformant schema_ (REF, EXT)](#Rule-11-18_-Attribute-type-defined-by-conformant-schema): [Section 11.2.3, _Attribute declaration_](#Attribute-declaration)
+- [Rule 11-19, _Attribute name uses representation term_ (REF, EXT)](#Rule-11-19_-Attribute-name-uses-representation-term): [Section 11.2.3, _Attribute declaration_](#Attribute-declaration)
+- [Rule 11-20, _Element or attribute declaration introduced only once into a type_ (REF, EXT)](#Rule-11-20_-Element-or-attribute-declaration-introduced-only-once-into-a-type): [Section 11.3.2.1, _Element use_](#Element-use)
+- [Rule 11-21, _Element reference defined by conformant schema_ (REF, EXT)](#Rule-11-21_-Element-reference-defined-by-conformant-schema): [Section 11.3.2.1, _Element use_](#Element-use)
+- [Rule 11-22, _Referenced attribute defined by conformant schemas_ (REF, EXT)](#Rule-11-22_-Referenced-attribute-defined-by-conformant-schemas): [Section 11.3.3, _Attribute use_](#Attribute-use)
+- [Rule 11-23, _Schema uses only known attribute groups_ (REF, EXT)](#Rule-11-23_-Schema-uses-only-known-attribute-groups): [Section 11.3.3.1, _Attribute group use_](#Attribute-group-use)
+- [Rule 11-24, _Data definition does not introduce ambiguity_ (REF, EXT)](#Rule-11-24_-Data-definition-does-not-introduce-ambiguity): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
+- [Rule 11-25, _Object class has only one meaning_ (REF, EXT)](#Rule-11-25_-Object-class-has-only-one-meaning): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
+- [Rule 11-26, _Data definition of a part does not redefine the whole_ (REF, EXT)](#Rule-11-26_-Data-definition-of-a-part-does-not-redefine-the-whole): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
+- [Rule 11-27, _Do not leak representation into data definition_ (REF, EXT)](#Rule-11-27_-Do-not-leak-representation-into-data-definition): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
+- [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT)](#Rule-11-28_-Data-definition-follows-11179-4-requirements): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
+- [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT)](#Rule-11-29_-Data-definition-follows-11179-4-recommendations): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
+- [Rule 11-30, _`xs:documentation` has `xml:lang`_ (REF, EXT)](#Rule-11-30_--has-): [Section 11.6.1, _Human-readable documentation_](#Human-readable-documentation)
+- [Rule 11-31, _Standard opening phrase for augmentation point element data definition_ (REF, EXT)](#Rule-11-31_-Standard-opening-phrase-for-augmentation-point-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-32, _Standard opening phrase for augmentation element data definition_ (REF, EXT)](#Rule-11-32_-Standard-opening-phrase-for-augmentation-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-33, _Standard opening phrase for metadata element data definition_ (REF, EXT)](#Rule-11-33_-Standard-opening-phrase-for-metadata-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-34, _Standard opening phrase for association element data definition_ (REF, EXT)](#Rule-11-34_-Standard-opening-phrase-for-association-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-35, _Standard opening phrase for abstract element data definition_ (REF, EXT)](#Rule-11-35_-Standard-opening-phrase-for-abstract-element-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-36, _Standard opening phrase for date element or attribute data definition_ (REF, EXT)](#Rule-11-36_-Standard-opening-phrase-for-date-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-37, _Standard opening phrase for quantity element or attribute data definition_ (REF, EXT)](#Rule-11-37_-Standard-opening-phrase-for-quantity-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-38, _Standard opening phrase for picture element or attribute data definition_ (REF, EXT)](#Rule-11-38_-Standard-opening-phrase-for-picture-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-39, _Standard opening phrase for indicator element or attribute data definition_ (REF, EXT)](#Rule-11-39_-Standard-opening-phrase-for-indicator-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-40, _Standard opening phrase for identification element or attribute data definition_ (REF, EXT)](#Rule-11-40_-Standard-opening-phrase-for-identification-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-41, _Standard opening phrase for name element or attribute data definition_ (REF, EXT)](#Rule-11-41_-Standard-opening-phrase-for-name-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-42, _Standard opening phrase for element or attribute data definition_ (REF, EXT)](#Rule-11-42_-Standard-opening-phrase-for-element-or-attribute-data-definition): [Section 11.6.1.1.1, _Element and attribute opening phrases_](#Element-and-attribute-opening-phrases)
+- [Rule 11-43, _Standard opening phrase for association type data definition_ (REF, EXT)](#Rule-11-43_-Standard-opening-phrase-for-association-type-data-definition): [Section 11.6.1.1.2, _Complex type opening phrases_](#Complex-type-opening-phrases)
+- [Rule 11-44, _Standard opening phrase for augmentation type data definition_ (REF, EXT)](#Rule-11-44_-Standard-opening-phrase-for-augmentation-type-data-definition): [Section 11.6.1.1.2, _Complex type opening phrases_](#Complex-type-opening-phrases)
+- [Rule 11-45, _Standard opening phrase for metadata type data definition_ (REF, EXT)](#Rule-11-45_-Standard-opening-phrase-for-metadata-type-data-definition): [Section 11.6.1.1.2, _Complex type opening phrases_](#Complex-type-opening-phrases)
+- [Rule 11-46, _Standard opening phrase for complex type data definition_ (REF, EXT)](#Rule-11-46_-Standard-opening-phrase-for-complex-type-data-definition): [Section 11.6.1.1.2, _Complex type opening phrases_](#Complex-type-opening-phrases)
+- [Rule 11-47, _Standard opening phrase for simple type data definition_ (REF, EXT)](#Rule-11-47_-Standard-opening-phrase-for-simple-type-data-definition): [Section 11.6.1.1, _Data definition opening phrases_](#Data-definition-opening-phrases)
+- [Rule 11-48, _Same namespace means same components_ (REF, EXT)](#Rule-11-48_-Same-namespace-means-same-components): [Section 11.7.1, _`xs:schema` document element restrictions_](#-document-element-restrictions)
+- [Rule 11-49, _Different version means different view_ (REF, EXT)](#Rule-11-49_-Different-version-means-different-view): [Section 11.7.1, _`xs:schema` document element restrictions_](#-document-element-restrictions)
+- [Rule 11-50, _Reference schema document imports reference schema document_ (SET)](#Rule-11-50_-Reference-schema-document-imports-reference-schema-document): [Section 11.8, _Schema assembly_](#Schema-assembly)
+- [Rule 11-51, _Extension schema document imports reference or extension schema document_ (SET)](#Rule-11-51_-Extension-schema-document-imports-reference-or-extension-schema-document): [Section 11.8, _Schema assembly_](#Schema-assembly)
+- [Rule 11-52, _Structures imported as conformant_ (REF, EXT)](#Rule-11-52_-Structures-imported-as-conformant): [Section 11.8.1, _Supporting namespaces are imported as conformant_](#Supporting-namespaces-are-imported-as-conformant)
+- [Rule 11-53, _XML namespace imported as conformant_ (REF, EXT)](#Rule-11-53_-XML-namespace-imported-as-conformant): [Section 11.8.1, _Supporting namespaces are imported as conformant_](#Supporting-namespaces-are-imported-as-conformant)
+- [Rule 11-54, _Each namespace may have only a single root schema in a schema set_ (SET)](#Rule-11-54_-Each-namespace-may-have-only-a-single-root-schema-in-a-schema-set): [Section 11.8, _Schema assembly_](#Schema-assembly)
+- [Rule 11-55, _Consistently marked namespace imports_ (REF, EXT)](#Rule-11-55_-Consistently-marked-namespace-imports): [Section 11.8, _Schema assembly_](#Schema-assembly)
+- [Rule 12-1, _Instance must be schema-valid_ (INS)](#Rule-12-1_-Instance-must-be-schema-valid): [Section 12, _XML instance document rules_](#XML-instance-document-rules)
+- [Rule 12-2, _Empty content has no meaning_ (INS)](#Rule-12-2_-Empty-content-has-no-meaning): [Section 12.1, _The meaning of NIEM data_](#The-meaning-of-NIEM-data)
+- [Rule 12-3, _Element has only one resource identifying attribute_ (INS)](#Rule-12-3_-Element-has-only-one-resource-identifying-attribute): [Section 12.2, _Identifiers and references_](#Identifiers-and-references)
+- [Rule 12-4, _Attribute `structures:ref` must reference `structures:id`_ (INS)](#Rule-12-4_-Attribute--must-reference-): [Section 12.2.1, _Local identifiers and references_](#Local-identifiers-and-references)
+- [Rule 12-5, _Linked elements have same validation root_ (INS)](#Rule-12-5_-Linked-elements-have-same-validation-root): [Section 12.2.1, _Local identifiers and references_](#Local-identifiers-and-references)
+- [Rule 12-6, _Attribute `structures:ref` references element of correct type_ (INS)](#Rule-12-6_-Attribute--references-element-of-correct-type): [Section 12.2.1, _Local identifiers and references_](#Local-identifiers-and-references)
+- [Rule 12-7, _`structures:uri` denotes resource identifier_ (INS)](#Rule-12-7_--denotes-resource-identifier): [Section 12.2.2, _Uniform resource identifiers in NIEM data_](#Uniform-resource-identifiers-in-NIEM-data)
+- [Rule 12-8, _`structures:id` and `structures:ref` denote resource identifier_ (INS)](#Rule-12-8_--and--denote-resource-identifier): [Section 12.2.2, _Uniform resource identifiers in NIEM data_](#Uniform-resource-identifiers-in-NIEM-data)
+- [Rule 12-9, _Nested elements and references have the same meaning._ (INS)](#Rule-12-9_-Nested-elements-and-references-have-the-same-meaning_): [Section 12.2.4, _Reference and content elements have same meaning_](#Reference-and-content-elements-have-same-meaning)
+- [Rule 12-10, _Order of properties is expressed via `structures:sequenceID`_ (INS)](#Rule-12-10_-Order-of-properties-is-expressed-via-): [Section 12.3, _Property order and sequence identifiers_](#Property-order-and-sequence-identifiers)
+- [Rule 12-11, _Metadata applies to referring entity_ (INS)](#Rule-12-11_-Metadata-applies-to-referring-entity): [Section 12.4, _Instance metadata_](#Instance-metadata)
+- [Rule 12-12, _Referent of `structures:relationshipMetadata` annotates relationship_ (INS)](#Rule-12-12_-Referent-of--annotates-relationship): [Section 12.4, _Instance metadata_](#Instance-metadata)
+- [Rule 12-13, _Values of `structures:metadata` refer to values of `structures:id`_ (INS)](#Rule-12-13_-Values-of--refer-to-values-of-): [Section 12.4, _Instance metadata_](#Instance-metadata)
+- [Rule 12-14, _Values of `structures:relationshipMetadata` refer to values of `structures:id`_ (INS)](#Rule-12-14_-Values-of--refer-to-values-of-): [Section 12.4, _Instance metadata_](#Instance-metadata)
+- [Rule 12-15, _`structures:metadata` and `structures:relationshipMetadata` refer to metadata elements_ (INS)](#Rule-12-15_--and--refer-to-metadata-elements): [Section 12.4, _Instance metadata_](#Instance-metadata)
+- [Rule 12-16, _Attribute `structures:metadata` references metadata element_ (INS)](#Rule-12-16_-Attribute--references-metadata-element): [Section 12.4, _Instance metadata_](#Instance-metadata)
+- [Rule 12-17, _Attribute `structures:relationshipMetadata` references metadata element_ (INS)](#Rule-12-17_-Attribute--references-metadata-element): [Section 12.4, _Instance metadata_](#Instance-metadata)
+- [Rule 12-18, _Metadata is applicable to element_ (INS)](#Rule-12-18_-Metadata-is-applicable-to-element): [Section 12.4, _Instance metadata_](#Instance-metadata)
 
 # Appendix F. General index
 
@@ -6951,767 +6693,3 @@
 - XML Schema: _Section 2.5_, _Section 3.4 (definition)_, _Section 3.4_, _Section 3.4_, _Section 3.4_, _Section 3.4_, _Section 6.2.10_, _Section 9.8_
 - XML Schema definition language: _Section 3.4_, _Section 3.4 (definition)_, _Section 3.4_, _Section 3.4_, _Section 7.3_, _Section 9.1.3.2.1_, _Section 9.4_, _Section 9.8.1_, _Section 10_, _Section 10.7_
 - XML Schema document set: _Section 3.4 (definition)_, _Section 9.8_
-Array
-(
-    [d3e56] => Abstract
-    [d3e65] => Authors
-    [d3e78] => Status
-    [toc] => Contents
-    [d3e106] => Table-of-Figures
-    [d3e114] => Table-of-Tables
-    [section_1] => Introduction
-    [section-scope] => Scope
-    [section_1.1] => Scope
-    [section_1.2] => Audience
-    [section_2] => Document-conventions-and-normative-content
-    [section_2.1] => Document-references
-    [section_2.2] => Clark-notation-and-qualified-names
-    [section-use-of-namespaces] => Use-of-namespaces-and-namespace-prefixes
-    [section_2.3] => Use-of-namespaces-and-namespace-prefixes
-    [SectionNormativeAndInformativeContent] => Normative-and-informative-content
-    [section_2.4] => Normative-and-informative-content
-    [section-rules] => Rules
-    [section_2.4.1] => Rules
-    [section_2.4.2] => Use-of-normative-Schematron
-    [section-normative-xpath-functions] => Normative-XPath-functions
-    [section_2.4.3] => Normative-XPath-functions
-    [section_2.4.4] => Normative-Schematron-namespace-declarations
-    [section_2.5] => Additional-formatting
-    [section_3] => Terminology
-    [section-terminology-bcp-14] => IETF-Best-Current-Practice-14-terminology
-    [section_3.1] => IETF-Best-Current-Practice-14-terminology
-    [section_3.2] => XML-terminology
-    [SectionTerminologyXMLInfoset] => XML-Information-Set-terminology
-    [section_3.3] => XML-Information-Set-terminology
-    [SectionTerminologyXMLSchema] => XML-Schema-terminology
-    [section_3.4] => XML-Schema-terminology
-    [section_3.4.1] => Schema-components
-    [section_3.4.2] => Schema-information-set-contributions
-    [section_3.5] => XML-Namespaces-terminology
-    [section_3.6] => Conformance-Targets-Attribute-Specification-terminology
-    [SectionNIEMConformanceTargets] => Conformance-targets
-    [section_4] => Conformance-targets
-    [SectionConformanceTargetsDefined] => Conformance-targets-defined
-    [section_4.1] => Conformance-targets-defined
-    [section_4.1.1] => Reference-schema-document
-    [section_4.1.2] => Extension-schema-document
-    [section_4.1.3] => Schema-document-set
-    [rule_4-1] => Rule-4-1.-Schema-marked-as-reference-schema-document-must-conform
-    [rule_4-2] => Rule-4-2.-Schema-marked-as-extension-schema-document-must-conform
-    [section_4.1.4] => Instance-documents-and-elements
-    [section_4.2] => Applicability-of-rules-to-conformance-targets
-    [section_4.3] => Conformance-target-identifiers
-    [is-ctas-conformant-document] => Rule-4-3.-Schema-is-CTAS-conformant
-    [rule_4-3] => Rule-4-3.-Schema-is-CTAS-conformant
-    [req-ct] => Rule-4-4.-Document-element-has-attribute-
-    [rule_4-4] => Rule-4-4.-Document-element-has-attribute-
-    [req-ct-ref] => Rule-4-5.-Schema-claims-reference-schema-conformance-target
-    [rule_4-5] => Rule-4-5.-Schema-claims-reference-schema-conformance-target
-    [req-ct-ext] => Rule-4-6.-Schema-claims-extension-conformance-target
-    [rule_4-6] => Rule-4-6.-Schema-claims-extension-conformance-target
-    [section-conceptual-model] => The-NIEM-conceptual-model
-    [section_5] => The-NIEM-conceptual-model
-    [section_5.1] => Purpose-of-the-NIEM-conceptual-model
-    [rule-meaning-of-xml] => Rule-5-1.--denotes-resource-identifier
-    [rule_5-1] => Rule-5-1.--denotes-resource-identifier
-    [section_5.2] => The-RDF-model
-    [section_5.3] => NIEM-in-terms-of-RDF
-    [section-unique-object-ids] => Unique-identification-of-data-objects
-    [section_5.4] => Unique-identification-of-data-objects
-    [section_5.5] => NIEM-data-is-explicit_-not-implicit
-    [section_5.6] => Mapping-of-NIEM-concepts-to-RDF-concepts
-    [section_5.6.1] => Resource-IRIs-for-XML-Schema-components-and-information-items
-    [sec-rdf-literals] => RDF-Literals
-    [section_5.6.2] => RDF-Literals
-    [section-instance-rdf-mapping] => Instance-document-mapped-to-RDF
-    [section_5.6.3] => Instance-document-mapped-to-RDF
-    [section_5.6.3.1] => Instance-document
-    [section_5.6.3.2] => Element-as-a-simple-property-without-relationship-metadata
-    [section_5.6.3.3] => Element-as-a-simple-property-with-relationship-metadata
-    [section_5.6.3.4] => Element-simple-value-without-relationship-metadata
-    [section_5.6.3.5] => Element-simple-value-with-relationship-metadata
-    [section_5.6.3.6] => Attribute-as-a-simple-property-without-relationship-metadata
-    [section_5.6.3.7] => Attribute-as-a-simple-property_-with-relationship-metadata
-    [section_5.6.3.8] => Elements-and-attributes-via-an-augmentation-type
-    [section_5.6.3.9] => Properties-applied-via-
-    [section_5.6.4] => Type-information-for-instance-documents
-    [section_5.6.5] => NIEM-schema-component-definitions-to-RDF
-    [section_5.6.5.1] => NIEM-complex-type-definitions-to-RDF
-    [section_5.6.5.2] => NIEM-element-declaration-mappings-to-RDF
-    [section_5.6.5.3] => NIEM-attribute-declarations-to-RDF
-    [section_6] => Guiding-principles
-    [section_6.1] => Specification-guidelines
-    [section_6.1.1] => Keep-specification-to-a-minimum
-    [section_6.1.2] => Focus-on-rules-for-schemas
-    [section_6.1.3] => Use-specific_-concise-rules
-    [section_6.2] => XML-Schema-design-guidelines
-    [section_6.2.1] => Purpose-of-XML-Schemas
-    [section-principle-no-infoset-mods] => Prohibit-XML-parsing-from-constructing-values
-    [section_6.2.2] => Prohibit-XML-parsing-from-constructing-values
-    [section_6.2.3] => Use-XML-validating-parsers-for-content-validation
-    [section_6.2.4] => Validate-for-conformance-to-schema
-    [section_6.2.5] => Allow-multiple-schemas-for-XML-constraints
-    [section_6.2.6] => Define-one-reference-schema-per-namespace
-    [section_6.2.7] => Disallow-mixed-content
-    [section_6.2.8] => Specify-types-for-all-constructs
-    [section_6.2.9] => Avoid-wildcards-in-reference-schemas
-    [section-principle-schema-locations-are-hints] => Schema-locations-provided-in-schema-documents-are-hints
-    [section_6.2.10] => Schema-locations-provided-in-schema-documents-are-hints
-    [section_6.2.11] => Use-open-standards
-    [section_6.3] => Modeling-design-guidelines
-    [section_6.3.1] => Namespaces-enhance-reuse
-    [section_6.3.2] => Design-NIEM-for-extensibility
-    [section_6.4] => Implementation-guidelines
-    [section_6.4.1] => Avoid-displaying-raw-XML-data
-    [section_6.4.2] => Leave-implementation-decisions-to-implementers
-    [section_6.5] => Modeling-guidelines
-    [section_6.5.1] => Documentation
-    [section_6.5.2] => Consistent-naming
-    [section_6.5.3] => Reflect-the-real-world
-    [section_6.5.4] => Be-consistent
-    [section_6.5.5] => Reserve-inheritance-for-specialization
-    [section_6.5.6] => Do-not-duplicate-definitions
-    [section_6.5.7] => Keep-it-simple
-    [section_6.5.8] => Be-aware-of-scope
-    [section_6.5.9] => Be-mindful-of-namespace-cohesion
-    [section_7] => Conformance-to-standards
-    [section_7.1] => Conformance-to-XML
-    [well-formed-xml] => Rule-7-1.-Document-is-an-XML-document
-    [rule_7-1] => Rule-7-1.-Document-is-an-XML-document
-    [section_7.2] => Conformance-to-XML-Namespaces
-    [ns-valid] => Rule-7-2.-Document-uses-XML-namespaces-properly
-    [rule_7-2] => Rule-7-2.-Document-uses-XML-namespaces-properly
-    [section_7.3] => Conformance-to-XML-Schema
-    [is-schema-doc] => Rule-7-3.-Document-is-a-schema-document
-    [rule_7-3] => Rule-7-3.-Document-is-a-schema-document
-    [rule-doc-element-is-xs-schema] => Rule-7-4.-Document-element-is-
-    [rule_7-4] => Rule-7-4.-Document-element-is-
-    [section_7.4] => ISO-11179-Part-4
-    [section_7.5] => ISO-11179-Part-5
-    [rule_7-5] => Rule-7-5.-Component-name-follows-ISO-11179-Part-5-Annex-A
-    [section-ism-ntk] => IC-ISM-and-IC-NTK
-    [section_7.6] => IC-ISM-and-IC-NTK
-    [section_8] => Strategy-for-a-NIEM-profile-of-XML-Schema
-    [section_8.1] => Wildcards
-    [section_8.2] => Components-are-globally-reusable
-    [section_8.3] => Avoid-recursive-model-groups
-    [sec-no-infoset-mods] => Ensure-XML-parsing-does-not-construct-values
-    [section_8.4] => Ensure-XML-parsing-does-not-construct-values
-    [section_8.5] => Use-namespaces-rigorously
-    [section_8.6] => Documentation-is-for-people;-appinfo-is-for-machines
-    [section-profile-of-xml-schema] => Rules-for-a-NIEM-profile-of-XML-Schema
-    [section_9] => Rules-for-a-NIEM-profile-of-XML-Schema
-    [section_9.1] => Type-definition-components
-    [section_9.1.1] => Type-definition-hierarchy
-    [section_9.1.1.1] => Types-prohibited-as-base-types
-    [rule-base-type-not-xml-ns] => Rule-9-1.-No-base-type-in-the-XML-namespace
-    [rule_9-1] => Rule-9-1.-No-base-type-in-the-XML-namespace
-    [no-base-xs-id] => Rule-9-2.-No-base-type-of-
-    [rule_9-2] => Rule-9-2.-No-base-type-of-
-    [no-base-xs-idref] => Rule-9-3.-No-base-type-of-
-    [rule_9-3] => Rule-9-3.-No-base-type-of-
-    [no-base-xs-idrefs] => Rule-9-4.-No-base-type-of-
-    [rule_9-4] => Rule-9-4.-No-base-type-of-
-    [no-base-xs-anyType] => Rule-9-5.-No-base-type-of-
-    [rule_9-5] => Rule-9-5.-No-base-type-of-
-    [no-base-xs-anySimpleType] => Rule-9-6.-No-base-type-of-
-    [rule_9-6] => Rule-9-6.-No-base-type-of-
-    [rule-section-no-base-xs-NOTATION] => Rule-9-7.-No-base-type-of-
-    [no-base-xs-NOTATION] => Rule-9-7.-No-base-type-of-
-    [rule_9-7] => Rule-9-7.-No-base-type-of-
-    [rule-section-no-base-xs-ENTITY] => Rule-9-8.-No-base-type-of-
-    [no-base-xs-ENTITY] => Rule-9-8.-No-base-type-of-
-    [rule_9-8] => Rule-9-8.-No-base-type-of-
-    [rule-section-no-base-xs-ENTITIES] => Rule-9-9.-No-base-type-of-
-    [no-base-xs-ENTITIES] => Rule-9-9.-No-base-type-of-
-    [rule_9-9] => Rule-9-9.-No-base-type-of-
-    [section_9.1.2] => Simple-type-definition
-    [st-top-level] => Rule-9-10.-Simple-type-definition-is-top-level
-    [rule_9-10] => Rule-9-10.-Simple-type-definition-is-top-level
-    [no-st-final] => Rule-9-11.-No-simple-type-disallowed-derivation
-    [rule_9-11] => Rule-9-11.-No-simple-type-disallowed-derivation
-    [st-has-dd] => Rule-9-12.-Simple-type-has-data-definition
-    [rule_9-12] => Rule-9-12.-Simple-type-has-data-definition
-    [no-facet-fixed] => Rule-9-13.-No-use-of--on-simple-type-facets
-    [rule_9-13] => Rule-9-13.-No-use-of--on-simple-type-facets
-    [enum-has-dd] => Rule-9-14.-Enumeration-has-data-definition
-    [rule_9-14] => Rule-9-14.-Enumeration-has-data-definition
-    [section_9.1.2.1] => Simple-types-prohibited-as-list-item-types
-    [no-itemType-xs-id] => Rule-9-15.-No-list-item-type-of-
-    [rule_9-15] => Rule-9-15.-No-list-item-type-of-
-    [no-itemType-xs-idref] => Rule-9-16.-No-list-item-type-of-
-    [rule_9-16] => Rule-9-16.-No-list-item-type-of-
-    [no-itemType-xs-anySimpleType] => Rule-9-17.-No-list-item-type-of-
-    [rule_9-17] => Rule-9-17.-No-list-item-type-of-
-    [no-itemType-xs-entity] => Rule-9-18.-No-list-item-type-of-
-    [rule_9-18] => Rule-9-18.-No-list-item-type-of-
-    [section_9.1.2.2] => Simple-types-prohibited-as-union-member-types
-    [no-memberTypes-xs-id] => Rule-9-19.-No-union-member-types-of-
-    [rule_9-19] => Rule-9-19.-No-union-member-types-of-
-    [no-memberTypes-xs-idref] => Rule-9-20.-No-union-member-types-of-
-    [rule_9-20] => Rule-9-20.-No-union-member-types-of-
-    [no-memberTypes-xs-idrefs] => Rule-9-21.-No-union-member-types-of-
-    [rule_9-21] => Rule-9-21.-No-union-member-types-of-
-    [no-memberTypes-xs-anySimpleType] => Rule-9-22.-No-union-member-types-of-
-    [rule_9-22] => Rule-9-22.-No-union-member-types-of-
-    [no-memberTypes-xs-entity] => Rule-9-23.-No-union-member-types-of-
-    [rule_9-23] => Rule-9-23.-No-union-member-types-of-
-    [no-memberTypes-xs-entities] => Rule-9-24.-No-union-member-types-of-
-    [rule_9-24] => Rule-9-24.-No-union-member-types-of-
-    [section_9.1.3] => Complex-type-definition
-    [ct-top-level] => Rule-9-25.-Complex-type-definition-is-top-level
-    [rule_9-25] => Rule-9-25.-Complex-type-definition-is-top-level
-    [ct-has-dd] => Rule-9-26.-Complex-type-has-data-definition
-    [rule_9-26] => Rule-9-26.-Complex-type-has-data-definition
-    [section_9.1.3.1] => No-mixed-content
-    [ct-not-mixed] => Rule-9-27.-No-mixed-content-on-complex-type
-    [rule_9-27] => Rule-9-27.-No-mixed-content-on-complex-type
-    [cc-not-mixed] => Rule-9-28.-No-mixed-content-on-complex-content
-    [rule_9-28] => Rule-9-28.-No-mixed-content-on-complex-content
-    [ct-has-content-type] => Rule-9-29.-Complex-type-content-is-explicitly-simple-or-complex
-    [rule_9-29] => Rule-9-29.-Complex-type-content-is-explicitly-simple-or-complex
-    [section_9.1.3.2] => Complex-content
-    [ct-cc-is-extension] => Rule-9-30.-Complex-content-uses-extension
-    [rule_9-30] => Rule-9-30.-Complex-content-uses-extension
-    [section_9.1.3.2.1] => Base-type-of-complex-type-with-complex-content-has-complex-content
-    [rule-ref-ccc-base-has-cc] => Rule-9-31.-Base-type-of-complex-type-with-complex-content-must-have-complex-content
-    [rule_9-31] => Rule-9-31.-Base-type-of-complex-type-with-complex-content-must-have-complex-content
-    [rule-set-ccc-base-has-cc] => Rule-9-32.-Base-type-of-complex-type-with-complex-content-must-have-complex-content
-    [rule_9-32] => Rule-9-32.-Base-type-of-complex-type-with-complex-content-must-have-complex-content
-    [section_9.1.3.3] => Simple-content
-    [ct-sc-has-extension] => Rule-9-33.-Simple-content-uses-extension
-    [rule_9-33] => Rule-9-33.-Simple-content-uses-extension
-    [no-ct-block] => Rule-9-34.-No-complex-type-disallowed-substitutions
-    [rule_9-34] => Rule-9-34.-No-complex-type-disallowed-substitutions
-    [no-ct-final] => Rule-9-35.-No-complex-type-disallowed-derivation
-    [rule_9-35] => Rule-9-35.-No-complex-type-disallowed-derivation
-    [section_9.2] => Declaration-components
-    [section_9.2.1] => Element-declaration
-    [el-top-level] => Rule-9-36.-Element-declaration-is-top-level
-    [rule_9-36] => Rule-9-36.-Element-declaration-is-top-level
-    [el-has-dd] => Rule-9-37.-Element-declaration-has-data-definition
-    [rule_9-37] => Rule-9-37.-Element-declaration-has-data-definition
-    [el-with-no-type-is-abstract] => Rule-9-38.-Untyped-element-is-abstract
-    [rule_9-38] => Rule-9-38.-Untyped-element-is-abstract
-    [el-with-type-xs-anysimpletype-is-abstract] => Rule-9-39.-Element-of-type--is-abstract
-    [rule_9-39] => Rule-9-39.-Element-of-type--is-abstract
-    [el-type-not-xs] => Rule-9-40.-Element-type-not-in-the-XML-Schema-namespace
-    [rule_9-40] => Rule-9-40.-Element-type-not-in-the-XML-Schema-namespace
-    [el-type-ns-not-special] => Rule-9-41.-Element-type-not-in-the-XML-namespace
-    [rule_9-41] => Rule-9-41.-Element-type-not-in-the-XML-namespace
-    [el-type-not-st] => Rule-9-42.-Element-type-is-not-simple-type
-    [rule_9-42] => Rule-9-42.-Element-type-is-not-simple-type
-    [no-el-block] => Rule-9-43.-No-element-disallowed-substitutions-
-    [rule_9-43] => Rule-9-43.-No-element-disallowed-substitutions-
-    [no-el-final] => Rule-9-44.-No-element-disallowed-derivation
-    [rule_9-44] => Rule-9-44.-No-element-disallowed-derivation
-    [section_9.2.1.1] => No-element-value-constraints
-    [no-el-default] => Rule-9-45.-No-element-default-value
-    [rule_9-45] => Rule-9-45.-No-element-default-value
-    [no-el-fixed] => Rule-9-46.-No-element-fixed-value
-    [rule_9-46] => Rule-9-46.-No-element-fixed-value
-    [el-is-nillable] => Rule-9-47.-Element-declaration-is-nillable
-    [rule_9-47] => Rule-9-47.-Element-declaration-is-nillable
-    [section_9.2.2] => Element-substitution-group
-    [section_9.2.3] => Attribute-declaration
-    [att-top-level] => Rule-9-48.-Attribute-declaration-is-top-level
-    [rule_9-48] => Rule-9-48.-Attribute-declaration-is-top-level
-    [at-has-dd] => Rule-9-49.-Attribute-declaration-has-data-definition
-    [rule_9-49] => Rule-9-49.-Attribute-declaration-has-data-definition
-    [attr-has-type] => Rule-9-50.-Attribute-declaration-has-type
-    [rule_9-50] => Rule-9-50.-Attribute-declaration-has-type
-    [section_9.2.3.1] => Prohibited-attribute-types
-    [no-type-xs-id] => Rule-9-51.-No-attribute-type-of-
-    [rule_9-51] => Rule-9-51.-No-attribute-type-of-
-    [no-type-xs-idref] => Rule-9-52.-No-attribute-type-of-
-    [rule_9-52] => Rule-9-52.-No-attribute-type-of-
-    [no-type-xs-idrefs] => Rule-9-53.-No-attribute-type-of-
-    [rule_9-53] => Rule-9-53.-No-attribute-type-of-
-    [no-type-xs-entity] => Rule-9-54.-No-attribute-type-of-
-    [rule_9-54] => Rule-9-54.-No-attribute-type-of-
-    [no-type-xs-entities] => Rule-9-55.-No-attribute-type-of-
-    [rule_9-55] => Rule-9-55.-No-attribute-type-of-
-    [no-type-xs-anySimpleType] => Rule-9-56.-No-attribute-type-of-
-    [rule_9-56] => Rule-9-56.-No-attribute-type-of-
-    [section_9.2.3.2] => No-attribute-value-constraints
-    [no-at-default] => Rule-9-57.-No-attribute-default-values
-    [rule_9-57] => Rule-9-57.-No-attribute-default-values
-    [no-at-fixed] => Rule-9-58.-No-fixed-values-for-optional-attributes
-    [rule_9-58] => Rule-9-58.-No-fixed-values-for-optional-attributes
-    [section-profile-notation-declaration] => Notation-declaration
-    [section_9.2.4] => Notation-declaration
-    [no-el-notation] => Rule-9-59.-No-use-of-element-
-    [rule_9-59] => Rule-9-59.-No-use-of-element-
-    [section_9.3] => Model-group-components
-    [section-profile-model-group] => Model-group
-    [section_9.3.1] => Model-group
-    [rule_9-60] => Rule-9-60.-Model-group-does-not-affect-meaning
-    [no-all] => Rule-9-61.-No-
-    [rule_9-61] => Rule-9-61.-No-
-    [section_9.3.1.1] => Sequence
-    [seq-in-ext] => Rule-9-62.--must-be-child-of-
-    [rule_9-62] => Rule-9-62.--must-be-child-of-
-    [seq-in-restr] => Rule-9-63.--must-be-child-of--or-
-    [rule_9-63] => Rule-9-63.--must-be-child-of--or-
-    [section_9.3.1.2] => Choice
-    [no-choice] => Rule-9-64.-No-
-    [rule_9-64] => Rule-9-64.-No-
-    [req-seq-choice] => Rule-9-65.--must-be-child-of-
-    [rule_9-65] => Rule-9-65.--must-be-child-of-
-    [section_9.3.2] => Particle
-    [section_9.3.2.1] => Sequence-cardinality
-    [seq-minOccurs] => Rule-9-66.-Sequence-has-minimum-cardinality-1
-    [rule_9-66] => Rule-9-66.-Sequence-has-minimum-cardinality-1
-    [seq-maxOccurs] => Rule-9-67.-Sequence-has-maximum-cardinality-1
-    [rule_9-67] => Rule-9-67.-Sequence-has-maximum-cardinality-1
-    [section_9.3.2.2] => Choice-cardinality
-    [choice-minOccurs] => Rule-9-68.-Choice-has-minimum-cardinality-1
-    [rule_9-68] => Rule-9-68.-Choice-has-minimum-cardinality-1
-    [choice-maxOccurs] => Rule-9-69.-Choice-has-maximum-cardinality-1
-    [rule_9-69] => Rule-9-69.-Choice-has-maximum-cardinality-1
-    [section_9.3.3] => Attribute-use
-    [section-profile-wildcard] => Wildcard
-    [section_9.3.4] => Wildcard
-    [no-xs-any] => Rule-9-70.-No-use-of-
-    [rule_9-70] => Rule-9-70.-No-use-of-
-    [no-anyattribute] => Rule-9-71.-No-use-of-
-    [rule_9-71] => Rule-9-71.-No-use-of-
-    [section-profile-identity-constraint] => Identity-constraint-definition-components
-    [section_9.4] => Identity-constraint-definition-components
-    [no-xs-unique] => Rule-9-72.-No-use-of-
-    [rule_9-72] => Rule-9-72.-No-use-of-
-    [no-xs-key] => Rule-9-73.-No-use-of-
-    [rule_9-73] => Rule-9-73.-No-use-of-
-    [no-xs-keyref] => Rule-9-74.-No-use-of-
-    [rule_9-74] => Rule-9-74.-No-use-of-
-    [section_9.5] => Group-definition-components
-    [section-profile-model-group-definitions] => Model-group-definition
-    [section_9.5.1] => Model-group-definition
-    [no-xs-group] => Rule-9-75.-No-use-of-
-    [rule_9-75] => Rule-9-75.-No-use-of-
-    [section-profile-attribute-group-definition] => Attribute-group-definition
-    [section_9.5.2] => Attribute-group-definition
-    [no-def-attr-grp] => Rule-9-76.-No-definition-of-attribute-groups
-    [rule_9-76] => Rule-9-76.-No-definition-of-attribute-groups
-    [section_9.6] => Annotation-components
-    [no-comments] => Rule-9-77.-Comment-is-not-recommended
-    [rule_9-77] => Rule-9-77.-Comment-is-not-recommended
-    [doc-has-no-els] => Rule-9-78.-Documentation-element-has-no-element-children
-    [rule_9-78] => Rule-9-78.-Documentation-element-has-no-element-children
-    [section_9.6.1] => Application-information-annotation
-    [appinfo-has-els] => Rule-9-79.--children-are-comments_-elements_-or-whitespace
-    [rule_9-79] => Rule-9-79.--children-are-comments_-elements_-or-whitespace
-    [appinfo-el-has-ns] => Rule-9-80.-Appinfo-child-elements-have-namespaces
-    [rule_9-80] => Rule-9-80.-Appinfo-child-elements-have-namespaces
-    [no-xs-in-appinfo] => Rule-9-81.-Appinfo-descendants-are-not-XML-Schema-elements
-    [rule_9-81] => Rule-9-81.-Appinfo-descendants-are-not-XML-Schema-elements
-    [section_9.7] => Schema-as-a-whole
-    [rule-schema-has-dd] => Rule-9-82.-Schema-has-data-definition
-    [rule_9-82] => Rule-9-82.-Schema-has-data-definition
-    [req-target-ns] => Rule-9-83.-Schema-document-defines-target-namespace
-    [rule_9-83] => Rule-9-83.-Schema-document-defines-target-namespace
-    [target-ns-is-rfc3986] => Rule-9-84.-Target-namespace-is-absolute-URI
-    [rule_9-84] => Rule-9-84.-Target-namespace-is-absolute-URI
-    [has-version] => Rule-9-85.-Schema-has-version
-    [rule_9-85] => Rule-9-85.-Schema-has-version
-    [no-blockdefault] => Rule-9-86.-No-disallowed-substitutions
-    [rule_9-86] => Rule-9-86.-No-disallowed-substitutions
-    [no-finalDefault] => Rule-9-87.-No-disallowed-derivations
-    [rule_9-87] => Rule-9-87.-No-disallowed-derivations
-    [section_9.8] => Schema-assembly
-    [no-redefine] => Rule-9-88.-No-use-of-
-    [rule_9-88] => Rule-9-88.-No-use-of-
-    [no-include] => Rule-9-89.-No-use-of-
-    [rule_9-89] => Rule-9-89.-No-use-of-
-    [xs-import-has-ns] => Rule-9-90.--must-have-namespace
-    [rule_9-90] => Rule-9-90.--must-have-namespace
-    [rule-set-is-closed] => Rule-9-91.-XML-Schema-document-set-must-be-complete
-    [rule_9-91] => Rule-9-91.-XML-Schema-document-set-must-be-complete
-    [section_9.8.1] => Namespaces-for-referenced-components-are-imported
-    [xs-import-referenced-namespaces-type] => Rule-9-92.-Namespace-referenced-by-attribute--is-imported
-    [rule_9-92] => Rule-9-92.-Namespace-referenced-by-attribute--is-imported
-    [xs-import-referenced-namespaces-base] => Rule-9-93.-Namespace-referenced-by-attribute--is-imported
-    [rule_9-93] => Rule-9-93.-Namespace-referenced-by-attribute--is-imported
-    [xs-import-referenced-namespaces-itemType] => Rule-9-94.-Namespace-referenced-by-attribute--is-imported
-    [rule_9-94] => Rule-9-94.-Namespace-referenced-by-attribute--is-imported
-    [xs-import-referenced-namespaces-memberTypes] => Rule-9-95.-Namespaces-referenced-by-attribute--is-imported
-    [rule_9-95] => Rule-9-95.-Namespaces-referenced-by-attribute--is-imported
-    [xs-import-referenced-namespaces-ref] => Rule-9-96.-Namespace-referenced-by-attribute--is-imported
-    [rule_9-96] => Rule-9-96.-Namespace-referenced-by-attribute--is-imported
-    [xs-import-referenced-namespaces-sg] => Rule-9-97.-Namespace-referenced-by-attribute--is-imported
-    [rule_9-97] => Rule-9-97.-Namespace-referenced-by-attribute--is-imported
-    [section_10] => Rules-for-NIEM-modeling_-by-NIEM-concept
-    [section_10.1] => Categories-of-NIEM-type-definitions
-    [code-classes] => Rule-10-1.-Complex-type-has-a-category
-    [rule_10-1] => Rule-10-1.-Complex-type-has-a-category
-    [section_10.2] => Object
-    [section_10.2.1] => General-object-types
-    [section_10.2.1.1] => Object-types-with-complex-content
-    [object-with-cc-derived-from-object] => Rule-10-2.-Object-type-with-complex-content-is-derived-from-
-    [rule_10-2] => Rule-10-2.-Object-type-with-complex-content-is-derived-from-
-    [section_10.2.2] => Role-types-and-roles
-    [rule-roleOf-is-object-type] => Rule-10-3.-RoleOf-element-type-is-an-object-type
-    [rule_10-3] => Rule-10-3.-RoleOf-element-type-is-an-object-type
-    [rule-ct-has-roleOf-is-object-type] => Rule-10-4.-Only-object-type-has-RoleOf-element
-    [rule_10-4] => Rule-10-4.-Only-object-type-has-RoleOf-element
-    [rule_10-5] => Rule-10-5.-RoleOf-elements-indicate-the-base-types-of-a-role-type
-    [rule_10-6] => Rule-10-6.-Instance-of-RoleOf-element-indicates-a-role-object
-    [section-external-adapter-types] => External-adapter-types-and-external-components
-    [section_10.2.3] => External-adapter-types-and-external-components
-    [section_10.2.3.1] => Import-of-external-namespace
-    [rule-external-import-has-dd] => Rule-10-7.-Import-of-external-namespace-has-data-definition
-    [rule_10-7] => Rule-10-7.-Import-of-external-namespace-has-data-definition
-    [section_10.2.3.2] => External-adapter-types
-    [rule_10-8] => Rule-10-8.-External-adapter-type-has-indicator
-    [rule-adapter-type-structure] => Rule-10-9.-Structure-of-external-adapter-type-definition-follows-pattern
-    [rule_10-9] => Rule-10-9.-Structure-of-external-adapter-type-definition-follows-pattern
-    [el-ref-from-external] => Rule-10-10.-Element-use-from-external-adapter-type-defined-by-external-schema-documents
-    [rule_10-10] => Rule-10-10.-Element-use-from-external-adapter-type-defined-by-external-schema-documents
-    [rule-ref-extadapt-not-base] => Rule-10-11.-External-adapter-type-not-a-base-type
-    [rule_10-11] => Rule-10-11.-External-adapter-type-not-a-base-type
-    [rule-set-extadapt-not-base] => Rule-10-12.-External-adapter-type-not-a-base-type
-    [rule_10-12] => Rule-10-12.-External-adapter-type-not-a-base-type
-    [section_10.2.3.3] => External-attribute-use
-    [rule-ext-attr-use-in-eat] => Rule-10-13.-External-attribute-use-only-in-external-adapter-type
-    [rule_10-13] => Rule-10-13.-External-attribute-use-only-in-external-adapter-type
-    [ext-attr-use-has-dd] => Rule-10-14.-External-attribute-use-has-data-definition
-    [rule_10-14] => Rule-10-14.-External-attribute-use-has-data-definition
-    [ext-attr-not-id] => Rule-10-15.-External-attribute-use-not-an-ID
-    [rule_10-15] => Rule-10-15.-External-attribute-use-not-an-ID
-    [section_10.2.3.4] => External-element-use
-    [rule-ext-element-use-has-dd] => Rule-10-16.-External-element-use-has-data-definition
-    [rule_10-16] => Rule-10-16.-External-element-use-has-data-definition
-    [section_10.2.4] => Code-types
-    [rule-code-type-name-suffix] => Rule-10-17.-Name-of-code-type-ends-in-
-    [rule_10-17] => Rule-10-17.-Name-of-code-type-ends-in-
-    [code-type-has-list] => Rule-10-18.-Code-type-corresponds-to-a-code-list
-    [rule_10-18] => Rule-10-18.-Code-type-corresponds-to-a-code-list
-    [rule-element-of-code-type-has-code-rep-term] => Rule-10-19.-Element-of-code-type-has-code-representation-term
-    [rule_10-19] => Rule-10-19.-Element-of-code-type-has-code-representation-term
-    [section-proxy-types] => Proxy-types
-    [section_10.2.5] => Proxy-types
-    [proxy-type-structure] => Rule-10-20.-Proxy-type-has-designated-structure
-    [rule_10-20] => Rule-10-20.-Proxy-type-has-designated-structure
-    [section-associations] => Associations
-    [section_10.3] => Associations
-    [section_10.3.1] => Association-types
-    [rule-association-type-derived-from-association-type] => Rule-10-21.-Association-type-derived-from-
-    [rule_10-21] => Rule-10-21.-Association-type-derived-from-
-    [section_10.3.2] => Association-element-declarations
-    [rule-association-el-type-is-association-type] => Rule-10-22.-Association-element-type-is-an-association-type
-    [rule_10-22] => Rule-10-22.-Association-element-type-is-an-association-type
-    [section-augmentations] => Augmentations
-    [section_10.4] => Augmentations
-    [section_10.4.1] => Augmentable-types
-    [augmentable-type-has-aug-point] => Rule-10-23.-Augmentable-type-has-augmentation-point-element
-    [rule_10-23] => Rule-10-23.-Augmentable-type-has-augmentation-point-element
-    [augmentable-type-has-at-most-one-aug-point] => Rule-10-24.-Augmentable-type-has-at-most-one-augmentation-point-element
-    [rule_10-24] => Rule-10-24.-Augmentable-type-has-at-most-one-augmentation-point-element
-    [section_10.4.2] => Augmentation-point-element-declarations
-    [aug-el-matches-aug-type] => Rule-10-25.-Augmentation-point-element-corresponds-to-its-base-type
-    [rule_10-25] => Rule-10-25.-Augmentation-point-element-corresponds-to-its-base-type
-    [aug-pt-untyped] => Rule-10-26.-An-augmentation-point-element-has-no-type
-    [rule_10-26] => Rule-10-26.-An-augmentation-point-element-has-no-type
-    [aug-pt-no-subst-grp] => Rule-10-27.-An-augmentation-point-element-has-no-substitution-group
-    [rule_10-27] => Rule-10-27.-An-augmentation-point-element-has-no-substitution-group
-    [section_10.4.3] => Augmentation-point-element-use
-    [aug-el-in-type] => Rule-10-28.-Augmentation-point-element-is-only-referenced-by-its-base-type
-    [rule_10-28] => Rule-10-28.-Augmentation-point-element-is-only-referenced-by-its-base-type
-    [aug-el-is-optional] => Rule-10-29.-Augmentation-point-element-use-is-optional
-    [rule_10-29] => Rule-10-29.-Augmentation-point-element-use-is-optional
-    [aug-el-is-unbounded] => Rule-10-30.-Augmentation-point-element-use-is-unbounded
-    [rule_10-30] => Rule-10-30.-Augmentation-point-element-use-is-unbounded
-    [aug-ref-is-last] => Rule-10-31.-Augmentation-point-element-use-must-be-last-element-in-its-base-type
-    [rule_10-31] => Rule-10-31.-Augmentation-point-element-use-must-be-last-element-in-its-base-type
-    [section_10.4.4] => Augmentation-types
-    [rule_10-32] => Rule-10-32.-Element-within-instance-of-augmentation-type-modifies-base
-    [aug-type-name] => Rule-10-33.-Only-an-augmentation-type-name-ends-in-
-    [rule_10-33] => Rule-10-33.-Only-an-augmentation-type-name-ends-in-
-    [rule-augmentation-type-structure] => Rule-10-34.-Schema-component-with-name-ending-in--is-an-augmentation-type
-    [rule_10-34] => Rule-10-34.-Schema-component-with-name-ending-in--is-an-augmentation-type
-    [rule-type-derived-from-augmentation-type] => Rule-10-35.-Type-derived-from--is-an-augmentation-type
-    [rule_10-35] => Rule-10-35.-Type-derived-from--is-an-augmentation-type
-    [section_10.4.5] => Augmentation-element-declarations
-    [rule-augmentation-el-type-is-augmentation-type] => Rule-10-36.-Augmentation-element-type-is-an-augmentation-type
-    [rule_10-36] => Rule-10-36.-Augmentation-element-type-is-an-augmentation-type
-    [rule-aug-el-not-used] => Rule-10-37.-Augmentation-elements-are-not-used-directly
-    [rule_10-37] => Rule-10-37.-Augmentation-elements-are-not-used-directly
-    [section_10.5] => Metadata
-    [section_10.5.1] => Metadata-types
-    [rule_10-38] => Rule-10-38.-Metadata-type-has-data-about-data
-    [rule-metadata-type-derived-from-metadata-type] => Rule-10-39.-Metadata-types-are-derived-from-
-    [rule_10-39] => Rule-10-39.-Metadata-types-are-derived-from-
-    [section_10.5.2] => Metadata-element-declarations
-    [rule-metadata-el-type-is-metadata-type] => Rule-10-40.-Metadata-element-declaration-type-is-a-metadata-type
-    [rule_10-40] => Rule-10-40.-Metadata-element-declaration-type-is-a-metadata-type
-    [rule-metadata-applicable-elements] => Rule-10-41.-Metadata-element-has-applicable-elements
-    [rule_10-41] => Rule-10-41.-Metadata-element-has-applicable-elements
-    [section_10.6] => Container-elements
-    [section-representation-pattern] => The--pattern
-    [section_10.7] => The--pattern
-    [el-representation-is-abstract] => Rule-10-42.-Name-of-element-that-ends-in--is-abstract
-    [rule_10-42] => Rule-10-42.-Name-of-element-that-ends-in--is-abstract
-    [rule_10-43] => Rule-10-43.-A-substitution-for-a-representation-element-declaration-is-a-value-for-a-type
-    [SectionNamingRules] => Naming-rules
-    [section_10.8] => Naming-rules
-    [rule_10-44] => Rule-10-44.-Schema-component-name-composed-of-English-words
-    [rule-component-name-has-xml-lang] => Rule-10-45.-Schema-component-name-has-
-    [rule_10-45] => Rule-10-45.-Schema-component-name-has-
-    [rule-names-have-specific-characters] => Rule-10-46.-Schema-component-names-have-only-specific-characters
-    [rule_10-46] => Rule-10-46.-Schema-component-names-have-only-specific-characters
-    [rule_10-47] => Rule-10-47.-Punctuation-in-component-name-is-a-separator
-    [section_10.8.1] => Character-case
-    [rule_10-48] => Rule-10-48.-Names-use-camel-case
-    [rule-attribute-names-start-lower-case] => Rule-10-49.-Attribute-name-begins-with-lower-case-letter
-    [rule_10-49] => Rule-10-49.-Attribute-name-begins-with-lower-case-letter
-    [rule-names-start-upper-case] => Rule-10-50.-Name-of-schema-component-other-than-attribute-and-proxy-type-begins-with-upper-case-letter
-    [rule_10-50] => Rule-10-50.-Name-of-schema-component-other-than-attribute-and-proxy-type-begins-with-upper-case-letter
-    [section_10.8.2] => Use-of-acronyms-and-abbreviations
-    [rule_10-51] => Rule-10-51.-Names-use-common-abbreviations
-    [section_10.8.2.1] => Use-of-Acronyms_-Initialisms_-Abbreviations_-and-Jargon
-    [rule-lt-single-doc] => Rule-10-52.-Local-term-declaration-is-local-to-its-schema-document
-    [rule_10-52] => Rule-10-52.-Local-term-declaration-is-local-to-its-schema-document
-    [rule-lt-meaning] => Rule-10-53.-Local-terminology-interpretation
-    [rule_10-53] => Rule-10-53.-Local-terminology-interpretation
-    [section_10.8.3] => Word-forms
-    [rule_10-54] => Rule-10-54.-Singular-form-is-preferred-in-name
-    [rule_10-55] => Rule-10-55.-Present-tense-is-preferred-in-name
-    [rule_10-56] => Rule-10-56.-Name-does-not-have-nonessential-words
-    [rule_10-57] => Rule-10-57.-Element-or-attribute-name-follows-pattern
-    [section_10.8.4] => Object-class-term
-    [rule_10-58] => Rule-10-58.-Object-class-term-identifies-concrete-category
-    [section_10.8.5] => Property-term
-    [rule_10-59] => Rule-10-59.-Property-term-describes-characteristic-or-subpart
-    [section_10.8.6] => Qualifier-terms
-    [rule_10-60] => Rule-10-60.-Name-may-have-multiple-qualifier-terms
-    [rule_10-61] => Rule-10-61.-Name-has-minimum-necessary-number-of-qualifier-terms
-    [rule_10-62] => Rule-10-62.-Order-of-qualifiers-is-not-significant
-    [section_10.8.7] => Representation-terms
-    [rule_10-63] => Rule-10-63.-Redundant-term-in-name-is-omitted
-    [rule-csc-has-rep-term] => Rule-10-64.-Element-with-simple-content-has-representation-term
-    [rule_10-64] => Rule-10-64.-Element-with-simple-content-has-representation-term
-    [rule_10-65] => Rule-10-65.-Element-with-complex-content-has-representation-term-when-appropriate
-    [rule_10-66] => Rule-10-66.-Element-with-complex-content-has-representation-term-only-when-appropriate
-    [section-machine-readable-annotations] => Machine-readable-annotations
-    [section_10.9] => Machine-readable-annotations
-    [rule_10-67] => Rule-10-67.-Machine-readable-annotations-are-valid
-    [section_10.9.1] => The-NIEM-appinfo-namespace
-    [section_10.9.1.1] => Deprecation
-    [rule_10-68] => Rule-10-68.-Component-marked-as-deprecated-is-deprecated-component
-    [rule-use-of-deprecated] => Rule-10-69.-Deprecated-annotates-schema-component
-    [rule_10-69] => Rule-10-69.-Deprecated-annotates-schema-component
-    [section_10.9.1.2] => External-adapters
-    [rule-owner-of-appinfo-conformantindicator] => Rule-10-70.-External-import-indicator-annotates-import
-    [rule_10-70] => Rule-10-70.-External-import-indicator-annotates-import
-    [rule-owner-of-appinfo-externaladaptertypeindicator] => Rule-10-71.-External-adapter-type-indicator-annotates-complex-type
-    [rule_10-71] => Rule-10-71.-External-adapter-type-indicator-annotates-complex-type
-    [section_10.9.1.3] => -annotation
-    [rule-owner-of-appinfo-appliestotypes] => Rule-10-72.--annotates-metadata-element
-    [rule_10-72] => Rule-10-72.--annotates-metadata-element
-    [appliestotypes-refs-types] => Rule-10-73.--references-types
-    [rule_10-73] => Rule-10-73.--references-types
-    [section_10.9.1.4] => -annotation
-    [rule-owner-of-appinfo-appliestoelements] => Rule-10-74.--annotates-metadata-element
-    [rule_10-74] => Rule-10-74.--annotates-metadata-element
-    [appliestoelements-refs-elements] => Rule-10-75.--references-elements
-    [rule_10-75] => Rule-10-75.--references-elements
-    [sec-local-term] => Local-terminology
-    [section_10.9.2] => Local-terminology
-    [lt-schema] => Rule-10-76.--annotates-schema
-    [rule_10-76] => Rule-10-76.--annotates-schema
-    [lt-has-defn] => Rule-10-77.--has-literal-or-definition
-    [rule_10-77] => Rule-10-77.--has-literal-or-definition
-    [section_10.10] => NIEM-structural-facilities
-    [rule_10-78] => Rule-10-78.-Use-structures-consistent-with-specification
-    [section-niem-schema-modeling-rules] => Rules-for-NIEM-modeling_-by-XML-Schema-component
-    [section_11] => Rules-for-NIEM-modeling_-by-XML-Schema-component
-    [section_11.1] => Type-definition-components
-    [type-name-suffix] => Rule-11-1.-Name-of-type-ends-in-
-    [rule_11-1] => Rule-11-1.-Name-of-type-ends-in-
-    [only-type-has-type-name-suffix] => Rule-11-2.-Only-types-have-name-ending-in--or-
-    [rule_11-2] => Rule-11-2.-Only-types-have-name-ending-in--or-
-    [section_11.1.1] => Type-definition-hierarchy
-    [type-base-from-ns] => Rule-11-3.-Base-type-definition-defined-by-conformant-schema
-    [rule_11-3] => Rule-11-3.-Base-type-definition-defined-by-conformant-schema
-    [section_11.1.2] => Simple-type-definition
-    [st-name-ends-in-simpletype] => Rule-11-4.-Name-of-simple-type-ends-in-
-    [rule_11-4] => Rule-11-4.-Name-of-simple-type-ends-in-
-    [section_11.1.2.1] => Derivation-by-list
-    [rule_11-5] => Rule-11-5.-Use-lists-only-when-data-is-uniform
-    [list-item-type-ns] => Rule-11-6.-List-item-type-defined-by-conformant-schemas
-    [rule_11-6] => Rule-11-6.-List-item-type-defined-by-conformant-schemas
-    [section_11.1.2.2] => Derivation-by-union
-    [union-member-type-ns] => Rule-11-7.-Union-member-types-defined-by-conformant-schemas
-    [rule_11-7] => Rule-11-7.-Union-member-types-defined-by-conformant-schemas
-    [section-code-simple-type] => Code-simple-types
-    [section_11.1.2.3] => Code-simple-types
-    [code-st-name] => Rule-11-8.-Name-of-a-code-simple-type-ends-in-
-    [rule_11-8] => Rule-11-8.-Name-of-a-code-simple-type-ends-in-
-    [code-st-has-list] => Rule-11-9.-Code-simple-type-corresponds-to-a-code-list
-    [rule_11-9] => Rule-11-9.-Code-simple-type-corresponds-to-a-code-list
-    [rule-attribute-of-code-simple-type-has-code-rep-term] => Rule-11-10.-Attribute-of-code-simple-type-has-code-representation-term
-    [rule_11-10] => Rule-11-10.-Attribute-of-code-simple-type-has-code-representation-term
-    [section_11.1.3] => Complex-type-definition
-    [rule-ct-sc-has-soag] => Rule-11-11.-Complex-type-with-simple-content-has-
-    [rule_11-11] => Rule-11-11.-Complex-type-with-simple-content-has-
-    [section_11.2] => Declaration-components
-    [section_11.2.1] => Element-declaration
-    [el-type-name-not-simple-type] => Rule-11-12.-Element-type-does-not-have-a-simple-type-name
-    [rule_11-12] => Rule-11-12.-Element-type-does-not-have-a-simple-type-name
-    [el-type-conformant-ns] => Rule-11-13.-Element-type-is-from-conformant-namespace
-    [rule_11-13] => Rule-11-13.-Element-type-is-from-conformant-namespace
-    [el-abstract-is-abstract] => Rule-11-14.-Name-of-element-that-ends-in--is-abstract
-    [rule_11-14] => Rule-11-14.-Name-of-element-that-ends-in--is-abstract
-    [section_11.2.1.1] => Object-element-declarations
-    [rule-ref-el-csc-uses-rep-term] => Rule-11-15.-Name-of-element-declaration-with-simple-content-has-representation-term
-    [rule_11-15] => Rule-11-15.-Name-of-element-declaration-with-simple-content-has-representation-term
-    [rule-set-el-csc-uses-rep-term] => Rule-11-16.-Name-of-element-declaration-with-simple-content-has-representation-term
-    [rule_11-16] => Rule-11-16.-Name-of-element-declaration-with-simple-content-has-representation-term
-    [section_11.2.2] => Element-substitution-group
-    [el-sg-from-ns] => Rule-11-17.-Element-substitution-group-defined-by-conformant-schema
-    [rule_11-17] => Rule-11-17.-Element-substitution-group-defined-by-conformant-schema
-    [section_11.2.3] => Attribute-declaration
-    [att-type-from-ns] => Rule-11-18.-Attribute-type-defined-by-conformant-schema
-    [rule_11-18] => Rule-11-18.-Attribute-type-defined-by-conformant-schema
-    [att-name-uses-rep-term] => Rule-11-19.-Attribute-name-uses-representation-term
-    [rule_11-19] => Rule-11-19.-Attribute-name-uses-representation-term
-    [section_11.2.4] => Notation-declaration
-    [section_11.3] => Model-group-components
-    [section_11.3.1] => Model-group
-    [section_11.3.2] => Particle
-    [section_11.3.2.1] => Element-use
-    [rule-decl-introduced-once] => Rule-11-20.-Element-or-attribute-declaration-introduced-only-once-into-a-type
-    [rule_11-20] => Rule-11-20.-Element-or-attribute-declaration-introduced-only-once-into-a-type
-    [el-ref-from-ns] => Rule-11-21.-Element-reference-defined-by-conformant-schema
-    [rule_11-21] => Rule-11-21.-Element-reference-defined-by-conformant-schema
-    [section_11.3.3] => Attribute-use
-    [att-ref-from-ns] => Rule-11-22.-Referenced-attribute-defined-by-conformant-schemas
-    [rule_11-22] => Rule-11-22.-Referenced-attribute-defined-by-conformant-schemas
-    [section_11.3.3.1] => Attribute-group-use
-    [rule-known-att-grp-refs] => Rule-11-23.-Schema-uses-only-known-attribute-groups
-    [rule_11-23] => Rule-11-23.-Schema-uses-only-known-attribute-groups
-    [section_11.3.4] => Wildcard
-    [section_11.4] => Identity-constraint-definition-components
-    [section_11.5] => Group-definition-components
-    [section_11.5.1] => Model-group-definition
-    [section_11.5.2] => Attribute-group-definition
-    [section_11.6] => Annotation-components
-    [SectionHumanReadableDocumentation] => Human-readable-documentation
-    [section_11.6.1] => Human-readable-documentation
-    [rule_11-24] => Rule-11-24.-Data-definition-does-not-introduce-ambiguity
-    [rule_11-25] => Rule-11-25.-Object-class-has-only-one-meaning
-    [rule_11-26] => Rule-11-26.-Data-definition-of-a-part-does-not-redefine-the-whole
-    [rule_11-27] => Rule-11-27.-Do-not-leak-representation-into-data-definition
-    [def-11179-4-req] => Rule-11-28.-Data-definition-follows-11179-4-requirements
-    [rule_11-28] => Rule-11-28.-Data-definition-follows-11179-4-requirements
-    [def-11179-4-rec] => Rule-11-29.-Data-definition-follows-11179-4-recommendations
-    [rule_11-29] => Rule-11-29.-Data-definition-follows-11179-4-recommendations
-    [rule-xs-documentation-has-xml-lang] => Rule-11-30.--has-
-    [rule_11-30] => Rule-11-30.--has-
-    [section_11.6.1.1] => Data-definition-opening-phrases
-    [section_11.6.1.1.1] => Element-and-attribute-opening-phrases
-    [rule-sop-augmentation-point] => Rule-11-31.-Standard-opening-phrase-for-augmentation-point-element-data-definition
-    [rule_11-31] => Rule-11-31.-Standard-opening-phrase-for-augmentation-point-element-data-definition
-    [rule-sop-augmentation] => Rule-11-32.-Standard-opening-phrase-for-augmentation-element-data-definition
-    [rule_11-32] => Rule-11-32.-Standard-opening-phrase-for-augmentation-element-data-definition
-    [rule-sop-metadata] => Rule-11-33.-Standard-opening-phrase-for-metadata-element-data-definition
-    [rule_11-33] => Rule-11-33.-Standard-opening-phrase-for-metadata-element-data-definition
-    [rule-sop-association] => Rule-11-34.-Standard-opening-phrase-for-association-element-data-definition
-    [rule_11-34] => Rule-11-34.-Standard-opening-phrase-for-association-element-data-definition
-    [rule-sop-abstract] => Rule-11-35.-Standard-opening-phrase-for-abstract-element-data-definition
-    [rule_11-35] => Rule-11-35.-Standard-opening-phrase-for-abstract-element-data-definition
-    [rule-sop-date] => Rule-11-36.-Standard-opening-phrase-for-date-element-or-attribute-data-definition
-    [rule_11-36] => Rule-11-36.-Standard-opening-phrase-for-date-element-or-attribute-data-definition
-    [rule-sop-quantity] => Rule-11-37.-Standard-opening-phrase-for-quantity-element-or-attribute-data-definition
-    [rule_11-37] => Rule-11-37.-Standard-opening-phrase-for-quantity-element-or-attribute-data-definition
-    [rule-sop-picture] => Rule-11-38.-Standard-opening-phrase-for-picture-element-or-attribute-data-definition
-    [rule_11-38] => Rule-11-38.-Standard-opening-phrase-for-picture-element-or-attribute-data-definition
-    [rule-sop-indicator] => Rule-11-39.-Standard-opening-phrase-for-indicator-element-or-attribute-data-definition
-    [rule_11-39] => Rule-11-39.-Standard-opening-phrase-for-indicator-element-or-attribute-data-definition
-    [rule-sop-identification] => Rule-11-40.-Standard-opening-phrase-for-identification-element-or-attribute-data-definition
-    [rule_11-40] => Rule-11-40.-Standard-opening-phrase-for-identification-element-or-attribute-data-definition
-    [rule-sop-name] => Rule-11-41.-Standard-opening-phrase-for-name-element-or-attribute-data-definition
-    [rule_11-41] => Rule-11-41.-Standard-opening-phrase-for-name-element-or-attribute-data-definition
-    [rule-sop-element] => Rule-11-42.-Standard-opening-phrase-for-element-or-attribute-data-definition
-    [rule_11-42] => Rule-11-42.-Standard-opening-phrase-for-element-or-attribute-data-definition
-    [section_11.6.1.1.2] => Complex-type-opening-phrases
-    [rule-sop-association-type] => Rule-11-43.-Standard-opening-phrase-for-association-type-data-definition
-    [rule_11-43] => Rule-11-43.-Standard-opening-phrase-for-association-type-data-definition
-    [rule-sop-augmentation-type] => Rule-11-44.-Standard-opening-phrase-for-augmentation-type-data-definition
-    [rule_11-44] => Rule-11-44.-Standard-opening-phrase-for-augmentation-type-data-definition
-    [rule-sop-metadata-type] => Rule-11-45.-Standard-opening-phrase-for-metadata-type-data-definition
-    [rule_11-45] => Rule-11-45.-Standard-opening-phrase-for-metadata-type-data-definition
-    [rule-sop-complex-type] => Rule-11-46.-Standard-opening-phrase-for-complex-type-data-definition
-    [rule_11-46] => Rule-11-46.-Standard-opening-phrase-for-complex-type-data-definition
-    [rule-sop-simple-type] => Rule-11-47.-Standard-opening-phrase-for-simple-type-data-definition
-    [rule_11-47] => Rule-11-47.-Standard-opening-phrase-for-simple-type-data-definition
-    [section_11.7] => Schema-as-a-whole
-    [section_11.7.1] => -document-element-restrictions
-    [rule_11-48] => Rule-11-48.-Same-namespace-means-same-components
-    [rule_11-49] => Rule-11-49.-Different-version-means-different-view
-    [section_11.8] => Schema-assembly
-    [xs-import-consistent-with-schema] => Rule-11-50.-Reference-schema-document-imports-reference-schema-document
-    [rule_11-50] => Rule-11-50.-Reference-schema-document-imports-reference-schema-document
-    [rule-ext-imports-ext] => Rule-11-51.-Extension-schema-document-imports-reference-or-extension-schema-document
-    [rule_11-51] => Rule-11-51.-Extension-schema-document-imports-reference-or-extension-schema-document
-    [section_11.8.1] => Supporting-namespaces-are-imported-as-conformant
-    [structures-imported-conformant] => Rule-11-52.-Structures-imported-as-conformant
-    [rule_11-52] => Rule-11-52.-Structures-imported-as-conformant
-    [schema-for-xml-imported-conformant] => Rule-11-53.-XML-namespace-imported-as-conformant
-    [rule_11-53] => Rule-11-53.-XML-namespace-imported-as-conformant
-    [namespace-appears-once] => Rule-11-54.-Each-namespace-may-have-only-a-single-root-schema-in-a-schema-set
-    [rule_11-54] => Rule-11-54.-Each-namespace-may-have-only-a-single-root-schema-in-a-schema-set
-    [rule-import-is-consistent] => Rule-11-55.-Consistently-marked-namespace-imports
-    [rule_11-55] => Rule-11-55.-Consistently-marked-namespace-imports
-    [section-xml-instance-document-rules] => XML-instance-document-rules
-    [section_12] => XML-instance-document-rules
-    [rule_12-1] => Rule-12-1.-Instance-must-be-schema-valid
-    [section_12.1] => The-meaning-of-NIEM-data
-    [rule_12-2] => Rule-12-2.-Empty-content-has-no-meaning
-    [section-id-and-ref] => Identifiers-and-references
-    [section_12.2] => Identifiers-and-references
-    [rule-only-one-id] => Rule-12-3.-Element-has-only-one-resource-identifying-attribute
-    [rule_12-3] => Rule-12-3.-Element-has-only-one-resource-identifying-attribute
-    [section_12.2.1] => Local-identifiers-and-references
-    [rule-ref-refs-id] => Rule-12-4.-Attribute--must-reference-
-    [rule_12-4] => Rule-12-4.-Attribute--must-reference-
-    [rule-ref-and-id-have-same-validation-root] => Rule-12-5.-Linked-elements-have-same-validation-root
-    [rule_12-5] => Rule-12-5.-Linked-elements-have-same-validation-root
-    [rule_12-6] => Rule-12-6.-Attribute--references-element-of-correct-type
-    [section_12.2.2] => Uniform-resource-identifiers-in-NIEM-data
-    [rule-uri-base] => Rule-12-7.--denotes-resource-identifier
-    [rule_12-7] => Rule-12-7.--denotes-resource-identifier
-    [rule-id-ref-is-uri] => Rule-12-8.--and--denote-resource-identifier
-    [rule_12-8] => Rule-12-8.--and--denote-resource-identifier
-    [compare-contrast-id-ref-uri] => Differentiating-reference-to-identifier-links-and-use-of-URIs
-    [section_12.2.3] => Differentiating-reference-to-identifier-links-and-use-of-URIs
-    [section_12.2.4] => Reference-and-content-elements-have-same-meaning
-    [rule_12-9] => Rule-12-9.-Nested-elements-and-references-have-the-same-meaning.
-    [section-sequence-id] => Property-order-and-sequence-identifiers
-    [section_12.3] => Property-order-and-sequence-identifiers
-    [rule_12-10] => Rule-12-10.-Order-of-properties-is-expressed-via-
-    [section-instance-metadata] => Instance-metadata
-    [section_12.4] => Instance-metadata
-    [rule_12-11] => Rule-12-11.-Metadata-applies-to-referring-entity
-    [rule_12-12] => Rule-12-12.-Referent-of--annotates-relationship
-    [rule_12-13] => Rule-12-13.-Values-of--refer-to-values-of-
-    [rule_12-14] => Rule-12-14.-Values-of--refer-to-values-of-
-    [rule_12-15] => Rule-12-15.--and--refer-to-metadata-elements
-    [rule-attr-metadata-refs-metadata] => Rule-12-16.-Attribute--references-metadata-element
-    [rule_12-16] => Rule-12-16.-Attribute--references-metadata-element
-    [rule-attr-rel-metadata-refs-metadata] => Rule-12-17.-Attribute--references-metadata-element
-    [rule_12-17] => Rule-12-17.-Attribute--references-metadata-element
-    [rule_12-18] => Rule-12-18.-Metadata-is-applicable-to-element
-    [AppendixReferences] => Appendix-A.-References
-    [appendix_A] => Appendix-A.-References
-    [section-include-structures-xsd] => Appendix-B.-Structures-namespace
-    [appendix_B] => Appendix-B.-Structures-namespace
-    [section-appinfo-xsd] => Appendix-C.-Appinfo-namespace
-    [appendix_C] => Appendix-C.-Appinfo-namespace
-    [index-of-defns] => Appendix-D.-Index-of-definitions
-    [appendix_D] => Appendix-D.-Index-of-definitions
-    [index-of-rules] => Appendix-E.-Index-of-rules
-    [appendix_E] => Appendix-E.-Index-of-rules
-    [index] => Appendix-F.-General-index
-    [appendix_F] => Appendix-F.-General-index
-)
