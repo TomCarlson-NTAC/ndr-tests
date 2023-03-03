@@ -348,16 +348,16 @@
 
 ## Document references
 
- This document relies on references to many outside documents. Such references are noted by bold, bracketed inline terms. For example, a reference to RFC 3986 is shown as [RFC 3986](#Appendix-A.-References). All reference documents are recorded in [Appendix A, _References_, below](#Appendix-A_-References).
+ This document relies on references to many outside documents. Such references are noted by bold, bracketed inline terms. For example, a reference to RFC 3986 is shown as [RFC 3986](#Appendix-A_-References). All reference documents are recorded in [Appendix A, _References_, below](#Appendix-A_-References).
 
 
 ## Clark notation and qualified names
 
  This document uses both Clark notation and QName notation to represent qualified names.
 
- QName notation is defined by [XML Namespaces](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2009/REC-xml-names-20091208/#NT-QName">Section 4, _Qualified Names_</a>. A QName for the XML Schema string datatype is `xs:string`. Namespace prefixes used within this specification are listed in [Section 2.3, _Use of namespaces and namespace prefixes_, below](#Use-of-namespaces-and-namespace-prefixes).
+ QName notation is defined by [XML Namespaces](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2009/REC-xml-names-20091208/#NT-QName">Section 4, _Qualified Names_</a>. A QName for the XML Schema string datatype is `xs:string`. Namespace prefixes used within this specification are listed in [Section 2.3, _Use of namespaces and namespace prefixes_, below](#Use-of-namespaces-and-namespace-prefixes).
 
- This document sometimes uses Clark notation to represent qualified names in normative text. Clark notation is described by [ClarkNS](#Appendix-A.-References), and provides the information in a QName without the need to first define a namespace prefix, and then to reference that namespace prefix. A Clark notation representation for the qualified name for the XML Schema string datatype is `{http://www.w3.org/2001/XMLSchema}string`.
+ This document sometimes uses Clark notation to represent qualified names in normative text. Clark notation is described by [ClarkNS](#Appendix-A_-References), and provides the information in a QName without the need to first define a namespace prefix, and then to reference that namespace prefix. A Clark notation representation for the qualified name for the XML Schema string datatype is `{http://www.w3.org/2001/XMLSchema}string`.
 
  Each Clark notation value usually consists of a namespace URI surrounded by curly braces, concatenated with a local name. The exception to this is when Clark notation is used to represent the qualified name for an attribute with no namespace, which is ambiguous when represented using QName notation. For example, the element `targetNamespace`, which has no [namespace name] property, is represented in Clark notation as `{}targetNamespace`.
 
@@ -382,11 +382,11 @@
 
 
 > **<a name="definition_normative"/>[Definition: <dfn>normative</dfn>]**
-> The term "normative" is as defined by [ConfReq](#Appendix-A.-References) Section 7.2, _Conformance by key words_, which states:
+> The term "normative" is as defined by [ConfReq](#Appendix-A_-References) Section 7.2, _Conformance by key words_, which states:
 
 
 > **<a name="definition_informative"/>[Definition: <dfn>informative</dfn>]**
-> The term "informative" is as defined by [ConfReq](#Appendix-A.-References) Section 7.2, _Conformance by key words_, which states:
+> The term "informative" is as defined by [ConfReq](#Appendix-A_-References) Section 7.2, _Conformance by key words_, which states:
 
  Conventions used within this document include:
 
@@ -409,7 +409,7 @@
 
 ### Rules
 
- A rule states a specific requirement on an artifact or on the interpretation of an artifact. The classes of artifacts are identified by _conformance targets_ that are enumerated by this document in [Section 4.1, _Conformance targets defined_, below](#Conformance-targets-defined). The rules are normative. Human-readable text in rules uses [BCP 14](#Appendix-A.-References) terminology as described in [Section 3.1, _IETF Best Current Practice 14 terminology_, below,](#IETF-Best-Current-Practice-14-terminology) for normative requirements and recommendations.
+ A rule states a specific requirement on an artifact or on the interpretation of an artifact. The classes of artifacts are identified by _conformance targets_ that are enumerated by this document in [Section 4.1, _Conformance targets defined_, below](#Conformance-targets-defined). The rules are normative. Human-readable text in rules uses [BCP 14](#Appendix-A_-References) terminology as described in [Section 3.1, _IETF Best Current Practice 14 terminology_, below,](#IETF-Best-Current-Practice-14-terminology) for normative requirements and recommendations.
 
 
 > **[Rule &lt;section&gt;-&lt;number&gt;] (&lt;applicability&gt;) (&lt;classification&gt;)**
@@ -434,11 +434,11 @@
 
 ### Use of normative Schematron
 
- This document defines many normative rules using Schematron rule-based validation syntax, as defined by [Schematron](#Appendix-A.-References). For example, see [Rule 9-29, _Complex type content is explicitly simple or complex_ (REF, EXT), below](#Rule-9-29_-Complex-type-content-is-explicitly-simple-or-complex). Effort has been made to make the rules precise and unambiguous. Very detailed text descriptions of rules can introduce ambiguity, and they are not directly executable by users. Providing NDR rules that are expressed as Schematron rules ensures that the rules are precise, and that they are directly executable through commercially-available and free tools.
+ This document defines many normative rules using Schematron rule-based validation syntax, as defined by [Schematron](#Appendix-A_-References). For example, see [Rule 9-29, _Complex type content is explicitly simple or complex_ (REF, EXT), below](#Rule-9-29_-Complex-type-content-is-explicitly-simple-or-complex). Effort has been made to make the rules precise and unambiguous. Very detailed text descriptions of rules can introduce ambiguity, and they are not directly executable by users. Providing NDR rules that are expressed as Schematron rules ensures that the rules are precise, and that they are directly executable through commercially-available and free tools.
 
- Many rules herein do not have executable Schematron supporting them. Some are not fit for automatic validation, and others may be difficult or cumbersome to express in Schematron. In neither case are such rules any less normative. A rule that has no Schematron is just as normative as a rule that does have Schematron. The level of requirements and recommendations within a rule is expressed using terminology from [BCP 14](#Appendix-A.-References) as described in [Section 3.1, _IETF Best Current Practice 14 terminology_, below](#IETF-Best-Current-Practice-14-terminology).
+ Many rules herein do not have executable Schematron supporting them. Some are not fit for automatic validation, and others may be difficult or cumbersome to express in Schematron. In neither case are such rules any less normative. A rule that has no Schematron is just as normative as a rule that does have Schematron. The level of requirements and recommendations within a rule is expressed using terminology from [BCP 14](#Appendix-A_-References) as described in [Section 3.1, _IETF Best Current Practice 14 terminology_, below](#IETF-Best-Current-Practice-14-terminology).
 
- The Schematron rules are written using XPath2 as defined by [XPath 2](#Appendix-A.-References). These executable rules are normative.
+ The Schematron rules are written using XPath2 as defined by [XPath 2](#Appendix-A_-References). These executable rules are normative.
 
  An execution of a Schematron pattern that issues a failed assertion (represented via `sch:assert`) represents a validation error, and signifies that the assessed artifact violates a requirement (i.e., a "MUST") of a conformance rule. An example of a constraint rule that uses Schematron is [Rule 9-10, _Simple type definition is top-level_ (REF, EXT), below](#Rule-9-10_-Simple-type-definition-is-top-level).
 
@@ -480,9 +480,9 @@
 
  In addition to the special formatting above, this document uses additional formatting conventions.
 
- [square brackets]: Terms in plain [square brackets] are properties of XML information set information items, as defined by [XML Infoset](#Appendix-A.-References). The information items and many of the information items’ properties are defined in that document. [XML Schema Structures](#Appendix-A.-References) defines additional information item properties that are contributed by validation of an _XML document_ against an _XML Schema_.
+ [square brackets]: Terms in plain [square brackets] are properties of XML information set information items, as defined by [XML Infoset](#Appendix-A_-References). The information items and many of the information items’ properties are defined in that document. [XML Schema Structures](#Appendix-A_-References) defines additional information item properties that are contributed by validation of an _XML document_ against an _XML Schema_.
 
- {curly brackets}: Terms in plain {curly brackets} are properties of _schema components_, as defined by [XML Schema Structures](#Appendix-A.-References).
+ {curly brackets}: Terms in plain {curly brackets} are properties of _schema components_, as defined by [XML Schema Structures](#Appendix-A_-References).
 
  `Courier`: All words appearing in `Courier` font are values, objects, keywords, or literal XML text.
 
@@ -507,31 +507,31 @@
 
 ## IETF Best Current Practice 14 terminology
 
- The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](#Appendix-A.-References)      [RFC 2119](#Appendix-A.-References)      [RFC 8174](#Appendix-A.-References) when, and only when, they appear in all capitals, as shown here.
+ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](#Appendix-A_-References)      [RFC 2119](#Appendix-A_-References)      [RFC 8174](#Appendix-A_-References) when, and only when, they appear in all capitals, as shown here.
 
 
 ## XML terminology
 
 
 > **<a name="definition_XML_document"/>[Definition: <dfn>XML document</dfn>]**
-> The term "XML document" is as defined by [XML](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#dt-xml-doc">Section 2, _Documents_</a>, which states:
+> The term "XML document" is as defined by [XML](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#dt-xml-doc">Section 2, _Documents_</a>, which states:
 
 
 ## XML Information Set terminology
 
- When discussing XML documents, this document uses terminology and language as defined by [XML Infoset](#Appendix-A.-References).
+ When discussing XML documents, this document uses terminology and language as defined by [XML Infoset](#Appendix-A_-References).
 
- [XML Infoset](#Appendix-A.-References) uses the term "information item" to describe pieces of XML documents. Documents, elements, and attributes are types of information items. The use of the term "element information item", for example, refers to the term as defined by [XML Infoset](#Appendix-A.-References). Shorthand terms may also be used to refer to information items, such as _element_, as defined below. The information items are identified and defined by [XML Infoset](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xml-infoset-20040204/#infoitem">Section 2, _Information Items_</a>.
+ [XML Infoset](#Appendix-A_-References) uses the term "information item" to describe pieces of XML documents. Documents, elements, and attributes are types of information items. The use of the term "element information item", for example, refers to the term as defined by [XML Infoset](#Appendix-A_-References). Shorthand terms may also be used to refer to information items, such as _element_, as defined below. The information items are identified and defined by [XML Infoset](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xml-infoset-20040204/#infoitem">Section 2, _Information Items_</a>.
 
 
 > **<a name="definition_element"/>[Definition: <dfn>element</dfn>]**
-> An _element_ is an _element information item_, as defined by [XML Infoset](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xml-infoset-20040204/#infoitem.element">Section 2.2, _Element Information Items_</a>
+> An _element_ is an _element information item_, as defined by [XML Infoset](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xml-infoset-20040204/#infoitem.element">Section 2.2, _Element Information Items_</a>
 
 
 > **<a name="definition_attribute"/>[Definition: <dfn>attribute</dfn>]**
-> An _attribute_ is an _attribute information item_, as defined by [XML Infoset](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xml-infoset-20040204/#infoitem.element">Section 2.3, _Attribute Information Items_</a>
+> An _attribute_ is an _attribute information item_, as defined by [XML Infoset](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xml-infoset-20040204/#infoitem.element">Section 2.3, _Attribute Information Items_</a>
 
- [XML Infoset](#Appendix-A.-References) also describes properties of information items. Each class of information item carries a set of properties. Each property has a name, and the property is identified by putting the name into square brackets. For example, the element that contains an attribute is described as the [owner element] of an attribute information item, as defined in [XML Infoset](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xml-infoset-20040204/#infoitem.attribute">Section 2.3, _Attribute Information Items_</a>.
+ [XML Infoset](#Appendix-A_-References) also describes properties of information items. Each class of information item carries a set of properties. Each property has a name, and the property is identified by putting the name into square brackets. For example, the element that contains an attribute is described as the [owner element] of an attribute information item, as defined in [XML Infoset](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xml-infoset-20040204/#infoitem.attribute">Section 2.3, _Attribute Information Items_</a>.
 
  Shorthand terms for properties of information items include:
 
@@ -542,35 +542,35 @@
 
 ## XML Schema terminology
 
- This document uses many terms from [XML Schema Structures](#Appendix-A.-References) and [XML Schema Datatypes](#Appendix-A.-References) in a normative way.
+ This document uses many terms from [XML Schema Structures](#Appendix-A_-References) and [XML Schema Datatypes](#Appendix-A_-References) in a normative way.
 
 
 > **<a name="definition_schema_component"/>[Definition: <dfn>schema component</dfn>]**
-> The term "schema component" is as defined by [XML Schema Structures](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-component">Section 2.2, _XML Schema Abstract Data Model_</a>, which states:
+> The term "schema component" is as defined by [XML Schema Structures](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-component">Section 2.2, _XML Schema Abstract Data Model_</a>, which states:
 
  Note that this defines an abstract concept. This is not a direct reference to elements that are defined by the _XML Schema definition language_; this is an abstract concept that might be realized within a tool as an in-memory model of data objects.
 
 
 > **<a name="definition_XML_Schema"/>[Definition: <dfn>XML Schema</dfn>]**
-> The term "XML Schema" is as defined by [XML Schema Structures](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-schema">Section 2.2, _XML Schema Abstract Data Model_</a>, which states:
+> The term "XML Schema" is as defined by [XML Schema Structures](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-schema">Section 2.2, _XML Schema Abstract Data Model_</a>, which states:
 
  Note, again, that this is an abstract concept: the set of abstract _schema components_ that are put together to define a schema against which an XML document might be validated.
 
 
 > **<a name="definition_XML_Schema_definition_language"/>[Definition: <dfn>XML Schema definition language</dfn>]**
-> The term "XML Schema definition language" is as defined by [XML Schema Structures](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#abstract">subsection _Abstract_</a>, which states:
+> The term "XML Schema definition language" is as defined by [XML Schema Structures](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#abstract">subsection _Abstract_</a>, which states:
 
  This describes the XML syntax (and related semantics) defined by the XML Schema specifications. It is through the _XML Schema definition language_ that a complex type definition schema component is created using the `xs:complexType` element.
 
 
 > **<a name="definition_schema_document"/>[Definition: <dfn>schema document</dfn>]**
-> The term "schema document" is as defined by [XML Schema Structures](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-schemaDoc">Section 3.1.2, _XML Representations of Components_</a>, which states:
+> The term "schema document" is as defined by [XML Schema Structures](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-schemaDoc">Section 3.1.2, _XML Representations of Components_</a>, which states:
 
  This definition describes an _XML document_ that follows the syntax of the _XML Schema definition language_.
 
 
 > **<a name="definition_valid"/>[Definition: <dfn>valid</dfn>]**
-> The term "valid" is as defined by [XML Schema Structures](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-vn">Section 2.1, _Overview of XML Schema_</a>, which states:
+> The term "valid" is as defined by [XML Schema Structures](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-vn">Section 2.1, _Overview of XML Schema_</a>, which states:
 
 > The referenced clause 1 is a part of a description of schema-validity:
 
@@ -580,7 +580,7 @@
 > **<a name="definition_instance_document"/>[Definition: <dfn>instance document</dfn>]**
 > An _instance document_ (of an _XML Schema_) is an _XML document_ that is _valid_ against the _XML Schema_.
 
- The term "instance document" is used with [XML Schema Structures](#Appendix-A.-References), but is not defined therein.
+ The term "instance document" is used with [XML Schema Structures](#Appendix-A_-References), but is not defined therein.
 
 
 > **<a name="definition_XML_Schema_document_set"/>[Definition: <dfn>XML Schema document set</dfn>]**
@@ -595,24 +595,24 @@
 
 
 > **<a name="definition_base_type_definition"/>[Definition: <dfn>base type definition</dfn>]**
-> The term "base type definition" is as defined by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-baseTypeDefinition">Section 2.2.1.1, _Type Definition Hierarchy_</a>, which states:
+> The term "base type definition" is as defined by [XML Schema Structures](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-baseTypeDefinition">Section 2.2.1.1, _Type Definition Hierarchy_</a>, which states:
 
 
 > **<a name="definition_simple_type_definition"/>[Definition: <dfn>simple type definition</dfn>]**
-> The term "simple type definition" is as defined by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Simple_Type_Definition">Section 2.2.1.2, _Simple Type Definition_</a>.
+> The term "simple type definition" is as defined by [XML Schema Structures](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Simple_Type_Definition">Section 2.2.1.2, _Simple Type Definition_</a>.
 
 
 > **<a name="definition_complex_type_definition"/>[Definition: <dfn>complex type definition</dfn>]**
-> The term "complex type definition" is as defined by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Complex_Type_Definition">Section 2.2.1.3, _Complex Type Definition_</a>.
+> The term "complex type definition" is as defined by [XML Schema Structures](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Complex_Type_Definition">Section 2.2.1.3, _Complex Type Definition_</a>.
 
 
 > **<a name="definition_element_declaration"/>[Definition: <dfn>element declaration</dfn>]**
-> The term "element declaration" is as defined by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Element_Declaration">Section 2.2.2.1, _Element Declaration_</a>.
+> The term "element declaration" is as defined by [XML Schema Structures](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Element_Declaration">Section 2.2.2.1, _Element Declaration_</a>.
 
 
 ### Schema information set contributions
 
- As described in [Section 3.3, _XML Information Set terminology_, above](#XML-Information-Set-terminology), the XML Information Set specification defined properties of the content of XML documents. The XML Schema specification also provides properties of the content of XML documents. These properties are called Schema information set contribution, as described by [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#gloss-sic">Section 2.3, _Constraints and Validation Rules_</a>, which defines them as:
+ As described in [Section 3.3, _XML Information Set terminology_, above](#XML-Information-Set-terminology), the XML Information Set specification defined properties of the content of XML documents. The XML Schema specification also provides properties of the content of XML documents. These properties are called Schema information set contribution, as described by [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#gloss-sic">Section 2.3, _Constraints and Validation Rules_</a>, which defines them as:
 
  This document uses these property terms within definitions and other text. Terms used include:
 
@@ -620,24 +620,24 @@
 
 ## XML Namespaces terminology
 
- This document uses XML Namespaces as defined by [XML Namespaces](#Appendix-A.-References).
+ This document uses XML Namespaces as defined by [XML Namespaces](#Appendix-A_-References).
 
 
 ## Conformance Targets Attribute Specification terminology
 
- [CTAS](#Appendix-A.-References) defines several terms used normatively within this specification.
+ [CTAS](#Appendix-A_-References) defines several terms used normatively within this specification.
 
 
 > **<a name="definition_conformance_target"/>[Definition: <dfn>conformance target</dfn>]**
-> The term "conformance target" is as defined by [CTAS](#Appendix-A.-References), which states:
+> The term "conformance target" is as defined by [CTAS](#Appendix-A_-References), which states:
 
 
 > **<a name="definition_conformance_target_identifier"/>[Definition: <dfn>conformance target identifier</dfn>]**
-> The term "conformance target identifier" is as defined by [CTAS](#Appendix-A.-References), which states:
+> The term "conformance target identifier" is as defined by [CTAS](#Appendix-A_-References), which states:
 
 
 > **<a name="definition_effective_conformance_target_identifier"/>[Definition: <dfn>effective conformance target identifier</dfn>]**
-> The term "effective conformance target identifier" is as defined by [CTAS](#Appendix-A.-References)        <a target="_blank" href="http://reference.niem.gov/niem/specification/conformance-targets-attribute/3.0/NIEM-CTAS-3.0-2014-07-31.html#definition_effective_conformance_target_identifier">Section 4, _Semantics and Use_</a>, which states:
+> The term "effective conformance target identifier" is as defined by [CTAS](#Appendix-A_-References)        <a target="_blank" href="http://reference.niem.gov/niem/specification/conformance-targets-attribute/3.0/NIEM-CTAS-3.0-2014-07-31.html#definition_effective_conformance_target_identifier">Section 4, _Semantics and Use_</a>, which states:
 
 
 # Conformance targets
@@ -739,7 +739,7 @@
 > **<a name="definition_conformant_element_information_item"/>[Definition: <dfn>conformant element information item</dfn>]**
 > A _conformant element information item_ is an element information item that satisfies all of the following criteria:
 
- Because each NIEM-conformant element information item must be locally schema-valid, each element must validate against the schema definition of the element, even if the element information item is allowed within the document because of a wildcard that the {process contents} with a value of "skip". As described by [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#process_contents">Section 3.10.1, _The Wildcard Schema Component_</a>, the content of an element introduced by a wildcard with {process contents} set to "skip" does not have any schema validity constraint; it is only required to be well-formed XML. Within a NIEM-conformant XML document, each element that is from a NIEM namespace conforms to its schema specification.
+ Because each NIEM-conformant element information item must be locally schema-valid, each element must validate against the schema definition of the element, even if the element information item is allowed within the document because of a wildcard that the {process contents} with a value of "skip". As described by [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#process_contents">Section 3.10.1, _The Wildcard Schema Component_</a>, the content of an element introduced by a wildcard with {process contents} set to "skip" does not have any schema validity constraint; it is only required to be well-formed XML. Within a NIEM-conformant XML document, each element that is from a NIEM namespace conforms to its schema specification.
 
 
 ## Applicability of rules to conformance targets
@@ -757,7 +757,7 @@
 > **[Rule 4-3] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The schema document MUST be a conformant document as defined by the NIEM Conformance Targets Attribute Specification.
 
- The term "conformant document" is defined by [CTAS](#Appendix-A.-References)       <a target="_blank" href="http://reference.niem.gov/niem/specification/conformance-targets-attribute/3.0/NIEM-CTAS-3.0-2014-07-31.html#section_3.2">Section 3.2, _Conformance to this Specification_</a>.
+ The term "conformant document" is defined by [CTAS](#Appendix-A_-References)       <a target="_blank" href="http://reference.niem.gov/niem/specification/conformance-targets-attribute/3.0/NIEM-CTAS-3.0-2014-07-31.html#section_3.2">Section 3.2, _Conformance to this Specification_</a>.
 
 
 ### Rule 4-4. Document element has attribute `ct:conformanceTargets`
@@ -847,19 +847,19 @@
 
  This section identifies features of RDF and RDFS, in order to establish a mapping between RDF semantics and NIEM. A reader should read the referenced source documents to obtain a full understanding of the concepts mentioned in this section.
 
- RDF establishes a graph-based data model, as described by [RDF Concepts](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#data-model">Section 1.1, _Graph-based Data Model_</a>, which states:
+ RDF establishes a graph-based data model, as described by [RDF Concepts](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#data-model">Section 1.1, _Graph-based Data Model_</a>, which states:
 
- [RDF Concepts](#Appendix-A.-References) also states:
+ [RDF Concepts](#Appendix-A_-References) also states:
 
- [RDF Concepts](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#resources-and-statements">Section 1.2, _Resources and Statements_</a> describes resources:
+ [RDF Concepts](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#resources-and-statements">Section 1.2, _Resources and Statements_</a> describes resources:
 
- [RDF Concepts](#Appendix-A.-References) also describes relationships and blank nodes.
+ [RDF Concepts](#Appendix-A_-References) also describes relationships and blank nodes.
 
- [RDF Concepts](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#dfn-logical-expression">Section 1.7, _Equivalence, Entailment and Inconsistency_</a> describes the meaning of an RDF triple:
+ [RDF Concepts](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#dfn-logical-expression">Section 1.7, _Equivalence, Entailment and Inconsistency_</a> describes the meaning of an RDF triple:
 
- [RDF Concepts](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#dfn-rdf-triple">Section 3.1, _Triples_</a> defines an RDF triple:
+ [RDF Concepts](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#dfn-rdf-triple">Section 3.1, _Triples_</a> defines an RDF triple:
 
- [RDF Concepts](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#dfn-rdf-dataset">Section 4, _RDF Datasets_</a> defines an RDF dataset:
+ [RDF Concepts](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#dfn-rdf-dataset">Section 4, _RDF Datasets_</a> defines an RDF dataset:
 
 
 ## NIEM in terms of RDF
@@ -868,7 +868,7 @@
 
  This NDR discusses NIEM data in XML terminology, complex types and elements, rather than using RDF terms, resources and properties. NIEM objects and associations coincide with RDF resources; both objects and associations correspond to RDF resources with additional constraints:
 
- NIEM associations are defined as n-ary properties, as described in [N-ary](#Appendix-A.-References), <a target="_blank" href="http://www.w3.org/TR/2006/NOTE-swbp-n-aryRelations-20060412/#useCase3">"Use Case 3: N-ary relation with no distinguished participant"</a>. NIEM associations are defined in [Section 10.3, _Associations_, below](#Associations). Assertions are made via NIEM-conformant XML data, described by [Section 12, _XML instance document rules_, below](#XML-instance-document-rules).
+ NIEM associations are defined as n-ary properties, as described in [N-ary](#Appendix-A_-References), <a target="_blank" href="http://www.w3.org/TR/2006/NOTE-swbp-n-aryRelations-20060412/#useCase3">"Use Case 3: N-ary relation with no distinguished participant"</a>. NIEM associations are defined in [Section 10.3, _Associations_, below](#Associations). Assertions are made via NIEM-conformant XML data, described by [Section 12, _XML instance document rules_, below](#XML-instance-document-rules).
 
  The XML Schema types that define NIEM objects and associations are related to each other via elements and attributes. That is, a type contains elements and attributes, and an element or attribute has a value that is an instance of an XML Schema type. These elements and attributes are XML Schema representations, which correspond to RDF properties. NIEM-conformant XML Schemas describe things and their properties. NIEM-conformant data contains elements and attributes. These correspond to RDF resources and their properties, which describe their characteristics and relationships.
 
@@ -892,7 +892,7 @@
 - Attribute **`structures:ref`** (of type `xs:IDREF`) provides a reference to another element within a document, by providing a value of a `structures:id` attribute within the document. Semantically, "`structures:ref="abe92"`" is equivalent to "`structures:uri="#abe92"`"
  The values of URIs and IDs within NIEM XML documents are not presumed to have any particular significance. XML requires every ID to be unique within its XML document, and for every IDREF to refer to an ID within the same document. The mapping of IDs and IDREFs to URIs does not mean that the identifiers are persistent or significant.
 
- These attributes provide the identifiers of objects. The properties of an object may be spread across several XML elements that have the same identifier. These properties must be merged together to provide all the properties of a single object, as described by [JSON LD](#Appendix-A.-References)      <a target="_blank" href="https://www.w3.org/TR/2014/REC-json-ld-20140116/#node-objects">Section 8.2, _Node Objects_</a>:
+ These attributes provide the identifiers of objects. The properties of an object may be spread across several XML elements that have the same identifier. These properties must be merged together to provide all the properties of a single object, as described by [JSON LD](#Appendix-A_-References)      <a target="_blank" href="https://www.w3.org/TR/2014/REC-json-ld-20140116/#node-objects">Section 8.2, _Node Objects_</a>:
 
  Mapping of NIEM data to RDF frequently involves the use of blank nodes, instead of universally-meaningful resource IRIs.
 
@@ -910,7 +910,7 @@
 
  This section provides RDF implementations for many aspects of NIEM-conformant schemas and instance documents.
 
- [N-Quads](#Appendix-A.-References)      <a target="_blank" href="https://www.w3.org/TR/2014/REC-n-quads-20140225/#n-quads-language">Section 2, _N-Quads Language_</a> defines a plain text format for encoding an RDF dataset:
+ [N-Quads](#Appendix-A_-References)      <a target="_blank" href="https://www.w3.org/TR/2014/REC-n-quads-20140225/#n-quads-language">Section 2, _N-Quads Language_</a> defines a plain text format for encoding an RDF dataset:
 
  RDF examples and templates within this document are provided using a modified N-Quads format, where qualified names (e.g., `nc:PersonType`) and variables (e.g., <var>$object</var> may be substituted for full URIs and their surrounding angle brackets. Within this section, the following substitutions apply:
 
@@ -929,9 +929,9 @@
 
 ### Resource IRIs for XML Schema components and information items
 
- The term "qualified name" is defined by [XML Namespaces](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2009/REC-xml-names-20091208/#dt-qualname">Section 2.1, _Basic Concepts_</a>, which states:
+ The term "qualified name" is defined by [XML Namespaces](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2009/REC-xml-names-20091208/#dt-qualname">Section 2.1, _Basic Concepts_</a>, which states:
 
- A QName is used to represent a qualified name, as described by [XML Schema Datatypes](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#QName">Section 3.2.18, _QName_</a>, which states:
+ A QName is used to represent a qualified name, as described by [XML Schema Datatypes](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#QName">Section 3.2.18, _QName_</a>, which states:
 
  Certain components defined by NIEM schemas and instances have corresponding resource IRIs. Each IRI is taken from a qualified name, as follows:
 
@@ -1250,7 +1250,7 @@
 
 ### Schema locations provided in schema documents are hints
 
- [XML Schema Structures](#Appendix-A.-References) provides several mechanisms for acquiring components of an _XML Schema_ for the purpose of assessing validity of an instance. [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#schema_reference">Section 4.3.2, _How schema definitions are located on the Web_</a> includes:
+ [XML Schema Structures](#Appendix-A_-References) provides several mechanisms for acquiring components of an _XML Schema_ for the purpose of assessing validity of an instance. [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#schema_reference">Section 4.3.2, _How schema definitions are located on the Web_</a> includes:
 
 - Use schema definitions already known to the processor.
 - Use a location URI or namespace name to identify a schema document from a network location or local schema repository.
@@ -1260,9 +1260,9 @@
 - Use schema locations identified by user direction.
 - Use locations provided via `xsi:schemaLocation` or `xsi:noNamespaceSchemaLocation` attributes in an _XML document_ under assessment.
 - Use schema locations provided by `xs:import` elements.
- [XML Schema Structures](#Appendix-A.-References) characterizes several of these methods as _hints_ of where to acquire a schema document for assessment. [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#xsi_schemaLocation">Section 2.6.3, _xsi:schemaLocation, xsi:noNamespaceSchemaLocation_</a> states:
+ [XML Schema Structures](#Appendix-A_-References) characterizes several of these methods as _hints_ of where to acquire a schema document for assessment. [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#xsi_schemaLocation">Section 2.6.3, _xsi:schemaLocation, xsi:noNamespaceSchemaLocation_</a> states:
 
- [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#composition-schemaImport">Section 4.2.3, _References to schema components across namespaces_</a> states:
+ [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#composition-schemaImport">Section 4.2.3, _References to schema components across namespaces_</a> states:
 
  The specification explicitly maintains that schema location provided in schemas or instances may be overridden by applications or by user direction.
 
@@ -1449,7 +1449,7 @@
 
 ## Conformance to XML
 
- The XML specification [XML](#Appendix-A.-References) defines the term _XML document_. NIEM XML documents, including instance documents and schema documents, must conform to the definition of this term.
+ The XML specification [XML](#Appendix-A_-References) defines the term _XML document_. NIEM XML documents, including instance documents and schema documents, must conform to the definition of this term.
 
 
 ### Rule 7-1. Document is an XML document
@@ -1457,7 +1457,7 @@
 > **[Rule 7-1] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets), [INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The document MUST be an XML document.
 
- This document establishes the term _XML document_, by reference to [XML](#Appendix-A.-References).
+ This document establishes the term _XML document_, by reference to [XML](#Appendix-A_-References).
 
 
 ## Conformance to XML Namespaces
@@ -1470,12 +1470,12 @@
 > **[Rule 7-2] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets), [INS](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The document MUST be namespace-well-formed and namespace-valid.
 
- The terms _namespace-well-formed_ and _namespace-valid_ are normatively defined by [XML Namespaces](#Appendix-A.-References).
+ The terms _namespace-well-formed_ and _namespace-valid_ are normatively defined by [XML Namespaces](#Appendix-A_-References).
 
 
 ## Conformance to XML Schema
 
- The XML Schema specification part 1 [XML Schema Structures](#Appendix-A.-References) defines the syntax of the _XML Schema definition language_, and identifies an _XML document_ that follows that syntax as a _schema document_. This section requires that NIEM reference and extension schema documents be _schema documents_.
+ The XML Schema specification part 1 [XML Schema Structures](#Appendix-A_-References) defines the syntax of the _XML Schema definition language_, and identifies an _XML document_ that follows that syntax as a _schema document_. This section requires that NIEM reference and extension schema documents be _schema documents_.
 
 
 ### Rule 7-3. Document is a schema document
@@ -1483,7 +1483,7 @@
 > **[Rule 7-3] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The [XML document] MUST be a [schema document].
 
- This document establishes the term _schema document_, by reference to [XML Schema Structures](#Appendix-A.-References).
+ This document establishes the term _schema document_, by reference to [XML Schema Structures](#Appendix-A_-References).
 
 
 ### Rule 7-4. Document element is `xs:schema`
@@ -1498,22 +1498,22 @@
   </sch:rule>
 </sch:pattern>
 ```
- This document establishes the terms _document element_ by reference to [XML Infoset](#Appendix-A.-References), and _XML document_ by reference to [XML](#Appendix-A.-References).
+ This document establishes the terms _document element_ by reference to [XML Infoset](#Appendix-A_-References), and _XML document_ by reference to [XML](#Appendix-A_-References).
 
 
 ## ISO 11179 Part 4
 
- Good data definitions are fundamental to data interoperability. You cannot effectively exchange what you cannot understand. NIEM employs the guidance of [ISO 11179-4](#Appendix-A.-References) as a baseline for its data component definitions.
+ Good data definitions are fundamental to data interoperability. You cannot effectively exchange what you cannot understand. NIEM employs the guidance of [ISO 11179-4](#Appendix-A_-References) as a baseline for its data component definitions.
 
- To advance the goal of creating semantically rich NIEM-conformant schemas, it is necessary that data definitions be descriptive, meaningful, and precise. [ISO 11179-4](#Appendix-A.-References) provides standard structure and rules for defining data definitions. NIEM uses this standard for component definitions.
+ To advance the goal of creating semantically rich NIEM-conformant schemas, it is necessary that data definitions be descriptive, meaningful, and precise. [ISO 11179-4](#Appendix-A_-References) provides standard structure and rules for defining data definitions. NIEM uses this standard for component definitions.
 
  Note that the metadata maintained for each NIEM component contains additional details, including domain-specific usage examples and keywords. Such metadata is used to enhance search and discovery of components in a registry, and therefore, is not included in schemas.
 
- For convenience and reference, the summary requirements and recommendations in [ISO 11179-4](#Appendix-A.-References) are reproduced here:
+ For convenience and reference, the summary requirements and recommendations in [ISO 11179-4](#Appendix-A_-References) are reproduced here:
 
- In addition to the requirements and recommendations of [ISO 11179-4](#Appendix-A.-References), NIEM applies additional rules to data definitions. These rules are detailed in [Section 11.6.1, _Human-readable documentation_, below](#Human-readable-documentation).
+ In addition to the requirements and recommendations of [ISO 11179-4](#Appendix-A_-References), NIEM applies additional rules to data definitions. These rules are detailed in [Section 11.6.1, _Human-readable documentation_, below](#Human-readable-documentation).
 
- These definitions leverage the term "definition" as defined by [ISO 11179-4](#Appendix-A.-References):
+ These definitions leverage the term "definition" as defined by [ISO 11179-4](#Appendix-A_-References):
 
 
 > **<a name="definition_data_definition"/>[Definition: <dfn>data definition</dfn>]**
@@ -1525,12 +1525,12 @@
 
  An example of a data definition is provided in _Figure 7-1, _Example of data definition of element `nc:Activity`_, below_.
 
- See [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT), below,](#Rule-11-28_-Data-definition-follows-11179-4-requirements) and [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT), below,](#Rule-11-29_-Data-definition-follows-11179-4-recommendations) for application of [ISO 11179-4](#Appendix-A.-References) to constrain NIEM _data definitions_.
+ See [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT), below,](#Rule-11-28_-Data-definition-follows-11179-4-requirements) and [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT), below,](#Rule-11-29_-Data-definition-follows-11179-4-recommendations) for application of [ISO 11179-4](#Appendix-A_-References) to constrain NIEM _data definitions_.
 
 
 ## ISO 11179 Part 5
 
- Names are a simple but incomplete means of providing semantics to data components. Data definitions, structure, and context help to fill the gap left by the limitations of naming. The goals for data component names should be syntactic consistency, semantic precision, and simplicity. In many cases, these goals conflict and it is sometimes necessary to compromise or to allow exceptions to ensure clarity and understanding. To the extent possible, NIEM applies [ISO 11179-5](#Appendix-A.-References) to construct NIEM data component names.
+ Names are a simple but incomplete means of providing semantics to data components. Data definitions, structure, and context help to fill the gap left by the limitations of naming. The goals for data component names should be syntactic consistency, semantic precision, and simplicity. In many cases, these goals conflict and it is sometimes necessary to compromise or to allow exceptions to ensure clarity and understanding. To the extent possible, NIEM applies [ISO 11179-5](#Appendix-A_-References) to construct NIEM data component names.
 
  The set of NIEM data components is a collection of data representations for real-world objects and concepts, along with their associated properties and relationships. Thus, names for these components would consist of the terms (words) for object classes or that describe object classes, their characteristic properties, subparts, and relationships.
 
@@ -1538,11 +1538,11 @@
 ### Rule 7-5. Component name follows ISO 11179 Part 5 Annex A
 
 > **[Rule 7-5] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-> A NIEM component name SHOULD be formed by applying the informative guidelines and examples detailed in Annex A of [ISO 11179-5](#Appendix-A.-References), with exceptions as specified in this document.
+> A NIEM component name SHOULD be formed by applying the informative guidelines and examples detailed in Annex A of [ISO 11179-5](#Appendix-A_-References), with exceptions as specified in this document.
 
- The guidelines and examples of [ISO 11179-5](#Appendix-A.-References) provide a simple, consistent syntax for data names that captures context and thereby imparts a reasonable degree of semantic precision.
+ The guidelines and examples of [ISO 11179-5](#Appendix-A_-References) provide a simple, consistent syntax for data names that captures context and thereby imparts a reasonable degree of semantic precision.
 
- NIEM uses the guidelines and examples of [ISO 11179-5](#Appendix-A.-References) as a baseline for normative naming rules. However, some NIEM components require bending of these rules. Special naming rules for these classes of components are presented and discussed in the relevant sections. In spite of these exceptions, most NIEM component names can be disassembled into their [ISO 11179-5](#Appendix-A.-References) constituent words or terms.
+ NIEM uses the guidelines and examples of [ISO 11179-5](#Appendix-A_-References) as a baseline for normative naming rules. However, some NIEM components require bending of these rules. Special naming rules for these classes of components are presented and discussed in the relevant sections. In spite of these exceptions, most NIEM component names can be disassembled into their [ISO 11179-5](#Appendix-A_-References) constituent words or terms.
 
  Example:
 
@@ -1608,7 +1608,7 @@
 
 ## Ensure XML parsing does not construct values
 
- An XML document expresses an infoset (see [XML Infoset](#Appendix-A.-References)); the infoset is the data carried by the XML document, and is expressed as a set of information items (e.g., element information items, attribute information items, etc.). [XML Schema Structures](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#d0e504">Section 2.1, _Overview of XML Schema_</a> describes the process followed by an XML Schema validating parser. Beyond the actions of a plain XML parser, which provides the data from an XML document to its caller in a structured way, an XML Schema validating parser does the following:
+ An XML document expresses an infoset (see [XML Infoset](#Appendix-A_-References)); the infoset is the data carried by the XML document, and is expressed as a set of information items (e.g., element information items, attribute information items, etc.). [XML Schema Structures](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#d0e504">Section 2.1, _Overview of XML Schema_</a> describes the process followed by an XML Schema validating parser. Beyond the actions of a plain XML parser, which provides the data from an XML document to its caller in a structured way, an XML Schema validating parser does the following:
 
  In short, not only does an XML Schema validating parser yield data from an XML document to its caller, it determines whether the XML document is valid against an XML Schema, and also provides an **augmented infoset** to the caller, constructed to reflect information implied by the schema, which may not appear in the original XML document.
 
@@ -1634,9 +1634,9 @@
 
  The XML Schema specification defines two types of annotations: _user information_ and _application information_. It defines that user information is for human consumption, while application information is for automatic processing. 
 
- [XML Schema Structures](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#cAnnotations">Section 3.13, _Annotations_</a> states:
+ [XML Schema Structures](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#cAnnotations">Section 3.13, _Annotations_</a> states:
 
- [XML Schema Structures](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Annotation_details">Section 3.13.1, _The Annotation Schema Component_</a> states:
+ [XML Schema Structures](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Annotation_details">Section 3.13.1, _The Annotation Schema Component_</a> states:
 
  The two types: human-targeted and machine-targeted, are kept separate by the use of two separate container elements defined by XML Schema: `xs:documentation` and `xs:appinfo`.
 
@@ -1655,7 +1655,7 @@
 
  Note that external schema documents (i.e., non-NIEM-conformant schema documents) do not need to obey the rules set forth in this section. So long as schema components from external schema documents are adapted for use with NIEM according to the modeling rules in [Section 10.2.3, _External adapter types and external components_, below](#External-adapter-types-and-external-components), they may be used as they appear in the external standard, even if the schema components themselves violate the rules for NIEM-conformant schemas.
 
- The following sections are broken down in the order provided by [XML Schema Structures](#Appendix-A.-References)     <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, followed by a section on a schema document as a whole and a section on schema namespaces and assembly:
+ The following sections are broken down in the order provided by [XML Schema Structures](#Appendix-A_-References)     <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, followed by a section on a schema document as a whole and a section on schema namespaces and assembly:
 
 - [Section 9.1, _Type definition components_](#Type-definition-components)
 - [Section 9.2, _Declaration components_](#Declaration-components)
@@ -1890,7 +1890,7 @@
 
 #### Simple types prohibited as list item types
 
- There is no explicit prohibition on the use of xs:NOTATION as list item type, because it is prohibited by [XML Schema Datatypes](#Appendix-A.-References).
+ There is no explicit prohibition on the use of xs:NOTATION as list item type, because it is prohibited by [XML Schema Datatypes](#Appendix-A_-References).
 
  There is no prohibition on `xs:anyType` as a list item type, because xs:anyType is not a simple type.
 
@@ -1949,7 +1949,7 @@
 
 #### Simple types prohibited as union member types
 
- There is no explicit prohibition on the use of xs:NOTATION as a union member type, because it is prohibited by [XML Schema Datatypes](#Appendix-A.-References).
+ There is no explicit prohibition on the use of xs:NOTATION as a union member type, because it is prohibited by [XML Schema Datatypes](#Appendix-A_-References).
 
  There is no prohibition on `xs:anyType` as a union member type, because xs:anyType is not a simple type.
 
@@ -2440,7 +2440,7 @@
 
 ### Element substitution group
 
- This section is intentionally blank. It is present in order to ensure that section numbers correspond to [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, as described by [Section 9, _Rules for a NIEM profile of XML Schema_, above](#Rules-for-a-NIEM-profile-of-XML-Schema).
+ This section is intentionally blank. It is present in order to ensure that section numbers correspond to [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, as described by [Section 9, _Rules for a NIEM profile of XML Schema_, above](#Rules-for-a-NIEM-profile-of-XML-Schema).
 
 
 ### Attribute declaration
@@ -2496,7 +2496,7 @@
 
 #### Prohibited attribute types
 
- There is no explicit prohibition on the use of xs:NOTATION as an attribute type, because it is prohibited by [XML Schema Datatypes](#Appendix-A.-References).
+ There is no explicit prohibition on the use of xs:NOTATION as an attribute type, because it is prohibited by [XML Schema Datatypes](#Appendix-A_-References).
 
  These types are only explicitly prohibited from attributes, not elements, because the case is covered by a general prohibition against elements having simple types.
 
@@ -2598,7 +2598,7 @@
 
 
 ##### Rule 9-58. No fixed values for optional attributes
- The `fixed` attribute is described by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Attribute_Declaration_details">Section 3.2.1, _The Attribute Declaration Schema Component_</a>:
+ The `fixed` attribute is described by [XML Schema Structures](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Attribute_Declaration_details">Section 3.2.1, _The Attribute Declaration Schema Component_</a>:
 
 > _default_ specifies that the attribute is to appear unconditionally in the post-schema-validation infoset, with the supplied value used whenever the attribute is not actually present; _fixed_ indicates that the attribute value if present must equal the supplied constraint value, and if absent receives the supplied value as for _default_.
 
@@ -2616,7 +2616,7 @@
   </sch:rule>
 </sch:pattern>
 ```
- This rule helps to ensure that schema processing does not alter processed data, as described in [Section 8.4, _Ensure XML parsing does not construct values_, above](#Ensure-XML-parsing-does-not-construct-values). The use of the `fixed` attribute may result in alteration of the post-schema-validation infoset, like the use of `default` does. This behavior is described by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Attribute_Declaration_details">Section 3.2.1, _The Attribute Declaration Schema Component_</a>.
+ This rule helps to ensure that schema processing does not alter processed data, as described in [Section 8.4, _Ensure XML parsing does not construct values_, above](#Ensure-XML-parsing-does-not-construct-values). The use of the `fixed` attribute may result in alteration of the post-schema-validation infoset, like the use of `default` does. This behavior is described by [XML Schema Structures](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Attribute_Declaration_details">Section 3.2.1, _The Attribute Declaration Schema Component_</a>.
 
 
 ### Notation declaration
@@ -2734,7 +2734,7 @@
 
  In NIEM schemas, an element use is an element declaration acting as a particle within a content model. Each such element declaration must reference a top-level named element declaration.
 
- Element declarations acting as a particle (particles formed by `xs:element`) may have any cardinality. NIEM does not provide additional constraints on the values of the XML Schema properties {min occurs} and {max occurs} on element uses. These properties are described by [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Particle_details">Section 3.9.1, _The Particle Schema Component_</a>.
+ Element declarations acting as a particle (particles formed by `xs:element`) may have any cardinality. NIEM does not provide additional constraints on the values of the XML Schema properties {min occurs} and {max occurs} on element uses. These properties are described by [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Particle_details">Section 3.9.1, _The Particle Schema Component_</a>.
 
 
 #### Sequence cardinality
@@ -3048,7 +3048,7 @@
 > **[Rule 9-84] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > The value of the attribute targetNamespace MUST match the production &lt;absolute-URI&gt; as defined by RFC 3986.
 
- Absolute URIs are the only universally meaningful URIs. URIs include both URLs and URNs. Finding the target namespace using standard XML Base technology is complicated and not specified by XML Schema. Relative URIs are not universally identifiable, as they are context-specific. `&lt;absolute-URI&gt;` is a grammar production defined by [RFC 3986](#Appendix-A.-References)       <a target="_blank" href="http://tools.ietf.org/html/rfc3986#section-4.3">Section 4.3, _Absolute URI_</a>. 
+ Absolute URIs are the only universally meaningful URIs. URIs include both URLs and URNs. Finding the target namespace using standard XML Base technology is complicated and not specified by XML Schema. Relative URIs are not universally identifiable, as they are context-specific. `&lt;absolute-URI&gt;` is a grammar production defined by [RFC 3986](#Appendix-A_-References)       <a target="_blank" href="http://tools.ietf.org/html/rfc3986#section-4.3">Section 4.3, _Absolute URI_</a>. 
 
 
 ### Rule 9-85. Schema has version
@@ -3161,7 +3161,7 @@
 
 ### Namespaces for referenced components are imported
 
- The _XML Schema definition language_ requires that, when a _schema document_ references a component in some other namespace, it must use `xs:import` to import the namespace of the referenced component. The use of `xs:import` is described by [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#nsi-schema_components">Section 4.2.3, _References to schema components across namespaces_</a>.
+ The _XML Schema definition language_ requires that, when a _schema document_ references a component in some other namespace, it must use `xs:import` to import the namespace of the referenced component. The use of `xs:import` is described by [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#nsi-schema_components">Section 4.2.3, _References to schema components across namespaces_</a>.
 
  Some tools do not enforce this constraint; one such tool carries imports from a _schema document_ into _schema documents_ that it imports. This has the potential to introduce incompatibility into schema documents and schema document sets that exercise this bug. To maintain compatibility across tool sets, this requirement is an explicit rule for NIEM-conformant schemas.
 
@@ -3622,13 +3622,13 @@
 
 
 ##### Rule 10-15. External attribute use not an ID
- NIEM schemas use `structures:id` to enable references between components. Each NIEM-defined complex type must incorporate a definition for `structures:id`. [XML](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#one-id-per-el">Section 3.3.1, _Attribute Types_</a> entails that a complex type may have no more than one ID attribute. This means that an external attribute use must not be an ID attribute.
+ NIEM schemas use `structures:id` to enable references between components. Each NIEM-defined complex type must incorporate a definition for `structures:id`. [XML](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#one-id-per-el">Section 3.3.1, _Attribute Types_</a> entails that a complex type may have no more than one ID attribute. This means that an external attribute use must not be an ID attribute.
 
 
 > **[Rule 10-15] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > An attribute use schema component MUST NOT have an {attribute declaration} with an ID type.
 
- The term "attribute use schema component" is defined by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#AU_details">Section 3.5.1, _The Attribute Use Schema Component_</a>. Attribute type ID is defined by [XML](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-attribute-types">Section 3.3.1, _Attribute Types_</a>.
+ The term "attribute use schema component" is defined by [XML Schema Structures](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#AU_details">Section 3.5.1, _The Attribute Use Schema Component_</a>. Attribute type ID is defined by [XML](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-attribute-types">Section 3.3.1, _Attribute Types_</a>.
 
 
 #### External element use
@@ -3662,7 +3662,7 @@
 
  These types represent lists of values, each of which has a known meaning beyond the text representation. These values may be meaningful text or may be a string of alphanumeric identifiers that represent abbreviations for literals.
 
- Many code types have simple content composed of `xs:enumeration` values. Code types may also be constructed using the _<a target="_blank" href="https://reference.niem.gov/niem/specification/code-lists/4.0/niem-code-lists-4.0.html">NIEM Code Lists Specification</a>_       [Code Lists](#Appendix-A.-References), which supports code lists defined using a variety of methods, including CSV spreadsheets.
+ Many code types have simple content composed of `xs:enumeration` values. Code types may also be constructed using the _<a target="_blank" href="https://reference.niem.gov/niem/specification/code-lists/4.0/niem-code-lists-4.0.html">NIEM Code Lists Specification</a>_       [Code Lists](#Appendix-A_-References), which supports code lists defined using a variety of methods, including CSV spreadsheets.
 
 
 #### Rule 10-17. Name of code type ends in <q>CodeType</q>
@@ -4261,13 +4261,13 @@
 ### Rule 10-44. Schema component name composed of English words
 
 > **[Rule 10-44] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-> The name of any XML Schema component defined by the schema SHOULD be composed of words from the English language, using the prevalent U.S. spelling, as provided by [OED](#Appendix-A.-References).
+> The name of any XML Schema component defined by the schema SHOULD be composed of words from the English language, using the prevalent U.S. spelling, as provided by [OED](#Appendix-A_-References).
 
  The English language has many spelling variations for the same word. For example, American English "program" has a corresponding British spelling "programme." This variation has the potential to cause interoperability problems when XML components are exchanged because of the different names used by the same elements. Providing users with a dictionary standard for spelling will mitigate this potential interoperability issue.
 
 
 ### Rule 10-45. Schema component name has `xml:lang`
- [XML](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-lang-tag">Section 2.12, _Language Identification_</a> defines attribute `xml:lang`, which establishes the language used in the contents and attributes of an XML document. To facilitate clarity and future support for languages other than US English, each component name defined in a conformant schema is in the scope of an occurrence of `xml:lang`, which defines the language used in the component name.
+ [XML](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-lang-tag">Section 2.12, _Language Identification_</a> defines attribute `xml:lang`, which establishes the language used in the contents and attributes of an XML document. To facilitate clarity and future support for languages other than US English, each component name defined in a conformant schema is in the scope of an occurrence of `xml:lang`, which defines the language used in the component name.
 
 
 > **[Rule 10-45] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
@@ -4427,18 +4427,18 @@
 
 
 ### Rule 10-57. Element or attribute name follows pattern
- Elements and attributes in NIEM-conformant schemas are given names that follow a specific pattern. This pattern comes from [ISO 11179-5](#Appendix-A.-References).
+ Elements and attributes in NIEM-conformant schemas are given names that follow a specific pattern. This pattern comes from [ISO 11179-5](#Appendix-A_-References).
 
 
 > **[Rule 10-57] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > Except as specified elsewhere in this document, any element or attribute defined within the schema SHOULD have a name that takes the form:
 
- Consistent naming rules are helpful for users who wish to understand components with which they are unfamiliar, as well as for users to find components with known semantics. This rule establishes the basic structure for an element or attribute name, in line with the rules for names under [ISO 11179-5](#Appendix-A.-References). Note that many elements with complex type should not have a representation term.
+ Consistent naming rules are helpful for users who wish to understand components with which they are unfamiliar, as well as for users to find components with known semantics. This rule establishes the basic structure for an element or attribute name, in line with the rules for names under [ISO 11179-5](#Appendix-A_-References). Note that many elements with complex type should not have a representation term.
 
 
 ### Object-class term
 
- NIEM adopts an object-oriented approach to representation of data. Object classes represent what [ISO 11179-5](#Appendix-A.-References) refers to as "things of interest in a universe of discourse that may be found in a model of that universe." An object class or object term is a word that represents a class of real-world entities or concepts. An object-class term describes the applicable context for a NIEM component.
+ NIEM adopts an object-oriented approach to representation of data. Object classes represent what [ISO 11179-5](#Appendix-A_-References) refers to as "things of interest in a universe of discourse that may be found in a model of that universe." An object class or object term is a word that represents a class of real-world entities or concepts. An object-class term describes the applicable context for a NIEM component.
 
 
 #### Rule 10-58. Object-class term identifies concrete category
@@ -4528,7 +4528,7 @@
 
 ## Machine-readable annotations
 
- XML Schema provides _application information_ schema components to provide for automatic processing and machine-readable content for schemas, as described by [XML Schema Structures](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#application_information">Section 3.13.2, _XML Representation of Annotation Schema Components_</a>. XML Schema also allows the use of attributes (with namespaces other than the XML Schema namespace) to carry additional information in schemas. NIEM uses these machine-readable annotations convey information that is outside schema definition and outside human-readable text definitions.
+ XML Schema provides _application information_ schema components to provide for automatic processing and machine-readable content for schemas, as described by [XML Schema Structures](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#application_information">Section 3.13.2, _XML Representation of Annotation Schema Components_</a>. XML Schema also allows the use of attributes (with namespaces other than the XML Schema namespace) to carry additional information in schemas. NIEM uses these machine-readable annotations convey information that is outside schema definition and outside human-readable text definitions.
 
  XML elements, attributes, and text content may appear as machine-readable annotations within an XML Schema document. The methods provided by XML Schema for machine-readable annotations are:
 
@@ -4576,7 +4576,7 @@
 > **<a name="definition_deprecated_component"/>[Definition: <dfn>deprecated component</dfn>]**
 > A **deprecated component** is one that developers are discouraged from using, typically because a better alternative exists, yet which is maintained in the schema for compatibility with previous versions of the namespace.
 
- The definition for _deprecated component_ is adapted from [JLS](#Appendix-A.-References)        <a target="_blank" href="http://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.6.4.6">Section 9.6.4.6, _@Deprecated_</a>.
+ The definition for _deprecated component_ is adapted from [JLS](#Appendix-A_-References)        <a target="_blank" href="http://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.6.4.6">Section 9.6.4.6, _@Deprecated_</a>.
 
 
 ##### Rule 10-68. Component marked as deprecated is deprecated component
@@ -4891,7 +4891,7 @@
 
  These types represent lists of values, each of which has a known meaning beyond the text representation. These values may be meaningful text or may be a string of alphanumeric identifiers that represent abbreviations for literals.
 
- Many code simple types are composed of `xs:enumeration` values. Code simple types may also be constructed using the _<a target="_blank" href="https://reference.niem.gov/niem/specification/code-lists/4.0/niem-code-lists-4.0.html">NIEM Code Lists Specification</a>_        [Code Lists](#Appendix-A.-References), which supports code lists defined using a variety of methods, including CSV spreadsheets.
+ Many code simple types are composed of `xs:enumeration` values. Code simple types may also be constructed using the _<a target="_blank" href="https://reference.niem.gov/niem/specification/code-lists/4.0/niem-code-lists-4.0.html">NIEM Code Lists Specification</a>_        [Code Lists](#Appendix-A_-References), which supports code lists defined using a variety of methods, including CSV spreadsheets.
 
 
 ##### Rule 11-8. Name of a code simple type ends in <q>CodeSimpleType</q>
@@ -5129,7 +5129,7 @@
 
 ### Notation declaration
 
- NIEM does not define any additional features relating to notation declarations. This section is present to maintain with [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.2.4, _Notation declaration_, above,](#Notation-declaration) for rules related to notation declarations.
+ NIEM does not define any additional features relating to notation declarations. This section is present to maintain with [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.2.4, _Notation declaration_, above,](#Notation-declaration) for rules related to notation declarations.
 
 
 ## Model group components
@@ -5137,7 +5137,7 @@
 
 ### Model group
 
- NIEM does not define any additional features relating to model groups. This section is present to maintain with [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.3.1, _Model group_, above,](#Model-group) for rules related to model groups.
+ NIEM does not define any additional features relating to model groups. This section is present to maintain with [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.3.1, _Model group_, above,](#Model-group) for rules related to model groups.
 
 
 ### Particle
@@ -5153,7 +5153,7 @@
 
  This rule ensures that a type definition does not incorporate a component multiple times. As information exchange specifications often contain multiple versions of schemas, including reference schemas as well as subset and constraint schemas, it may be easy to omit an element or attribute in one version of the schema, only to reincorporate it via an extension. This can cause difficulties in integrating such schemas, as it may be impossible to use a reference schema if an attribute is added twice, in both a base type and an extension type, since that would make it an invalid schema.
 
- Incorporating a component multiple times can also make it difficult to avoid violating XML Schema’s unique particle attribution constraint, which is described by [XML Schema Structures](#Appendix-A.-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#cos-nonambig">Section 3.8.6, _Constraints on Model Group Schema Components_</a>. This can create difficulty if an element is added both directly, and via a substitution group head. In such a case, a parser may not be able to determine which element use is responsible for an element in an instance, which is a violation of the UPA constraint.
+ Incorporating a component multiple times can also make it difficult to avoid violating XML Schema’s unique particle attribution constraint, which is described by [XML Schema Structures](#Appendix-A_-References)         <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#cos-nonambig">Section 3.8.6, _Constraints on Model Group Schema Components_</a>. This can create difficulty if an element is added both directly, and via a substitution group head. In such a case, a parser may not be able to determine which element use is responsible for an element in an instance, which is a violation of the UPA constraint.
 
  This rule is also intended to prevent developers from creating complicated sequences of recurring elements. Such definitions are difficult for developers to satisfy in code, and can cause havoc with XML Schema language binding tools. If an element is needed more than once, or if a particular sequence of elements is needed, a developer should consider the use of flexible content models (via substitution groups) along with additional rules.
 
@@ -5222,12 +5222,12 @@
 
 ### Wildcard
 
- NIEM does not define any additional features relating to wildcards. This section is present to maintain with [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.3.4, _Wildcard_, above,](#Wildcard) for rules related to wildcards.
+ NIEM does not define any additional features relating to wildcards. This section is present to maintain with [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.3.4, _Wildcard_, above,](#Wildcard) for rules related to wildcards.
 
 
 ## Identity-constraint definition components
 
- NIEM does not define any additional features relating to identity-constraint definition components. This section is present to maintain with [XML Schema Structures](#Appendix-A.-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.4, _Identity-constraint definition components_, above,](#Identity-constraint-definition-components) for rules related to identity-constraint definition components.
+ NIEM does not define any additional features relating to identity-constraint definition components. This section is present to maintain with [XML Schema Structures](#Appendix-A_-References)      <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.4, _Identity-constraint definition components_, above,](#Identity-constraint-definition-components) for rules related to identity-constraint definition components.
 
 
 ## Group definition components
@@ -5235,12 +5235,12 @@
 
 ### Model group definition
 
- NIEM does not define any additional features relating to model group definitions. This section is present to maintain with [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.5.1, _Model group definition_, above,](#Model-group-definition) for rules related to model group definitions.
+ NIEM does not define any additional features relating to model group definitions. This section is present to maintain with [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.5.1, _Model group definition_, above,](#Model-group-definition) for rules related to model group definitions.
 
 
 ### Attribute group definition
 
- NIEM does not define any additional features relating to attribute group definitions. This section is present to maintain with [XML Schema Structures](#Appendix-A.-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.5.2, _Attribute group definition_, above,](#Attribute-group-definition) for rules related to attribute group definitions.
+ NIEM does not define any additional features relating to attribute group definitions. This section is present to maintain with [XML Schema Structures](#Appendix-A_-References)       <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#concepts-data-model">Section 2.2, _XML Schema Abstract Data Model_</a>, See [Section 9.5.2, _Attribute group definition_, above,](#Attribute-group-definition) for rules related to attribute group definitions.
 
 
 ## Annotation components
@@ -5252,7 +5252,7 @@
 
 ### Human-readable documentation
 
- Note that [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT), below,](#Rule-11-28_-Data-definition-follows-11179-4-requirements) and [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT), below,](#Rule-11-29_-Data-definition-follows-11179-4-recommendations) apply [ISO 11179-4](#Appendix-A.-References) definition rules to documented components.
+ Note that [Rule 11-28, _Data definition follows 11179-4 requirements_ (REF, EXT), below,](#Rule-11-28_-Data-definition-follows-11179-4-requirements) and [Rule 11-29, _Data definition follows 11179-4 recommendations_ (REF, EXT), below,](#Rule-11-29_-Data-definition-follows-11179-4-recommendations) apply [ISO 11179-4](#Appendix-A_-References) definition rules to documented components.
 
 
 #### Rule 11-24. Data definition does not introduce ambiguity
@@ -5274,7 +5274,7 @@
 > **[Rule 11-26] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 > An object class MUST NOT be redefined within the definitions of the components that represent properties or subparts of that entity or class.
 
- Data definitions should be concise, precise, and unambiguous without embedding additional definitions of data elements that have already been defined once elsewhere (such as object classes). [ISO 11179-4](#Appendix-A.-References) says that definitions should not be nested inside other definitions. Furthermore, a data dictionary is not a language dictionary. It is acceptable to reuse terms (object class, property term, and qualifier terms) from a component name within its corresponding definition to enhance clarity, as long as the requirements and recommendations of [ISO 11179-4](#Appendix-A.-References) are not violated. This further enhances brevity and precision.
+ Data definitions should be concise, precise, and unambiguous without embedding additional definitions of data elements that have already been defined once elsewhere (such as object classes). [ISO 11179-4](#Appendix-A_-References) says that definitions should not be nested inside other definitions. Furthermore, a data dictionary is not a language dictionary. It is acceptable to reuse terms (object class, property term, and qualifier terms) from a component name within its corresponding definition to enhance clarity, as long as the requirements and recommendations of [ISO 11179-4](#Appendix-A_-References) are not violated. This further enhances brevity and precision.
 
 
 #### Rule 11-27. Do not leak representation into data definition
@@ -5288,17 +5288,17 @@
 #### Rule 11-28. Data definition follows 11179-4 requirements
 
 > **[Rule 11-28] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-> Each _data definition_ MUST conform to the requirements for data definitions provided by [ISO 11179-4](#Appendix-A.-References) Section 5.2, _Requirements_.
+> Each _data definition_ MUST conform to the requirements for data definitions provided by [ISO 11179-4](#Appendix-A_-References) Section 5.2, _Requirements_.
 
 
 #### Rule 11-29. Data definition follows 11179-4 recommendations
 
 > **[Rule 11-29] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-> Each _data definition_ SHOULD conform to the recommendations for data definitions provided by [ISO 11179-4](#Appendix-A.-References) Section 5.3, _Recommendations_.
+> Each _data definition_ SHOULD conform to the recommendations for data definitions provided by [ISO 11179-4](#Appendix-A_-References) Section 5.3, _Recommendations_.
 
 
 #### Rule 11-30. `xs:documentation` has `xml:lang`
- [XML](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-lang-tag">Section 2.12, _Language Identification_</a> defines attribute `xml:lang`, which establishes the language used in the contents and attributes of an XML document. To facilitate clarity and future support for languages other than US English, each occurrence of `xs:documentation` in a conformant schema is in the scope of an occurrence of `xml:lang`, which defines the language used in the documentation.
+ [XML](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-lang-tag">Section 2.12, _Language Identification_</a> defines attribute `xml:lang`, which establishes the language used in the contents and attributes of an XML document. To facilitate clarity and future support for languages other than US English, each occurrence of `xs:documentation` in a conformant schema is in the scope of an occurrence of `xml:lang`, which defines the language used in the documentation.
 
 
 > **[Rule 11-30] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
@@ -5726,7 +5726,7 @@
 
  This specification attempts to restrict XML instance data as little as possible while still maintaining interoperability.
 
- NIEM does not require a specific encoding or specific requirements for the XML prologue, except as specified by [XML](#Appendix-A.-References).
+ NIEM does not require a specific encoding or specific requirements for the XML prologue, except as specified by [XML](#Appendix-A_-References).
 
 
 ## Rule 12-1. Instance must be schema-valid
@@ -5738,7 +5738,7 @@
 
  This rule should not be construed to mean that XML validation must be performed on all XML instances as they are served or consumed; only that the XML instances validate if XML validation is performed. The XML Schema component definitions specify XML documents and element information items, and the instances should follow the rules given by the schemas, even when validation is not performed.
 
- NIEM embraces the use of XML Schema instance attributes, including `xsi:type`, `xsi:nil`, and `xsi:schemaLocation`, as specified by [XML Schema Structures](#Appendix-A.-References).
+ NIEM embraces the use of XML Schema instance attributes, including `xsi:type`, `xsi:nil`, and `xsi:schemaLocation`, as specified by [XML Schema Structures](#Appendix-A_-References).
 
 
 ## The meaning of NIEM data
@@ -5810,7 +5810,7 @@
   </sch:rule>
 </sch:pattern>
 ```
- This mirrors the terminology in [XML](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#idref">subsection _Validity constraint: IDREF_</a> within <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-attribute-types">Section 3.3.1, _Attribute Types_</a>, except it requires the target attribute to be `structures:id`, rather than any attribute of type `ID`.
+ This mirrors the terminology in [XML](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#idref">subsection _Validity constraint: IDREF_</a> within <a target="_blank" href="http://www.w3.org/TR/2008/REC-xml-20081126/#sec-attribute-types">Section 3.3.1, _Attribute Types_</a>, except it requires the target attribute to be `structures:id`, rather than any attribute of type `ID`.
 
 
 #### Rule 12-5. Linked elements have same validation root
@@ -5822,7 +5822,7 @@
 
 > Every element that has an attribute `structures:ref` MUST have a referencing element validation root that is equal to the referenced element validation root.
 
- The term "validation root" is defined by [XML Schema Structures](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-vr">Section 5.2, _Assessing Schema-Validity_</a>. It is established as a part of validity assessment of an XML document. It is required because relationships between the types of elements cannot be established if those elements were not assessed together.
+ The term "validation root" is defined by [XML Schema Structures](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#key-vr">Section 5.2, _Assessing Schema-Validity_</a>. It is established as a part of validity assessment of an XML document. It is required because relationships between the types of elements cannot be established if those elements were not assessed together.
 
 
 #### Rule 12-6. Attribute `structures:ref` references element of correct type
@@ -5832,7 +5832,7 @@
 
 > Every element that has an attribute `structures:ref` MUST have a _referenced element type definition_ that is validly derived from the _referencing element type definition_.
 
- The term **validly derived** is as established by [XML Schema Structures](#Appendix-A.-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#cos-ct-derived-ok">subsection _Schema Component Constraint: Type Derivation OK (Complex)_</a> within <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#coss-ct">Section 3.4.6, _Constraints on Complex Type Definition Schema Components_</a>.
+ The term **validly derived** is as established by [XML Schema Structures](#Appendix-A_-References)        <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#cos-ct-derived-ok">subsection _Schema Component Constraint: Type Derivation OK (Complex)_</a> within <a target="_blank" href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#coss-ct">Section 3.4.6, _Constraints on Complex Type Definition Schema Components_</a>.
 
  This rule requires that the type of the element pointed to by a `structures:ref` attribute must be of (or derived from) the type of the reference element.
 
@@ -5849,7 +5849,7 @@
 #### Rule 12-7. `structures:uri` denotes resource identifier
 
 > **[Rule 12-7] ([INS](#Applicability-of-rules-to-conformance-targets)) (Interpretation)**
-> The value of an attribute `structures:uri` is a URI-reference, as defined by [RFC 3986](#Appendix-A.-References), which denotes a resource identifier on the element holding the attribute, in accordance with evaluation consistent with [RFC 3986](#Appendix-A.-References) and [XML Base](#Appendix-A.-References).
+> The value of an attribute `structures:uri` is a URI-reference, as defined by [RFC 3986](#Appendix-A_-References), which denotes a resource identifier on the element holding the attribute, in accordance with evaluation consistent with [RFC 3986](#Appendix-A_-References) and [XML Base](#Appendix-A_-References).
 
  The following example shows a reference to an absolute URI, using the URN namespace for UUIDs:
 
