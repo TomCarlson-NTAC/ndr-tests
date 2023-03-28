@@ -1834,68 +1834,70 @@ The following sections are broken down in the order provided by [XML Schema Stru
 Although the XML namespace is to be imported as if it is conformant, types from that namespace may not be the _base type definition_ of any type.
 
 > **[Rule 9-1] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@base)]">
+>    <sch:assert test="namespace-uri-from-QName(resolve-QName(@base, .)) != xs:anyURI('http://www.w3.org/XML/1998/namespace')"
+>                >A schema component must not have a base type definition with a {target namespace} that is the XML namespace.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@base)]">
-   <sch:assert test="namespace-uri-from-QName(resolve-QName(@base, .)) != xs:anyURI('http://www.w3.org/XML/1998/namespace')"
-               >A schema component must not have a base type definition with a {target namespace} that is the XML namespace.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 The term _base type definition_ has a normative definition.
 
 ##### Rule 9-2. No base type of `xs:ID`
 
 > **[Rule 9-2] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@base)]">
-   <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:ID')"
-     >A schema component MUST NOT have an attribute {}base with a value of xs:ID.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@base)]">
+>    <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:ID')"
+>      >A schema component MUST NOT have an attribute {}base with a value of xs:ID.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-3. No base type of `xs:IDREF`
 
 > **[Rule 9-3] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@base)]">
-   <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:IDREF')"
-     >A schema component MUST NOT have an attribute {}base with a value of xs:IDREF.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@base)]">
+>    <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:IDREF')"
+>      >A schema component MUST NOT have an attribute {}base with a value of xs:IDREF.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-4. No base type of `xs:IDREFS`
 
 > **[Rule 9-4] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@base)]">
-   <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:IDREFS')"
-     >A schema component MUST NOT have an attribute {}base with a value of xs:IDREFS.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@base)]">
+>    <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:IDREFS')"
+>      >A schema component MUST NOT have an attribute {}base with a value of xs:IDREFS.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-5. No base type of `xs:anyType`
 
 > **[Rule 9-5] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@base)]">
+>    <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:anyType')"
+>      >A schema component MUST NOT have an attribute {}base with a value of xs:anyType.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@base)]">
-   <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:anyType')"
-     >A schema component MUST NOT have an attribute {}base with a value of xs:anyType.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 XML Schema has the concept of the "ur-type," a type that is the root of all other types. This type is realized in schemas as `xs:anyType`.
 
 NIEM-conformant schemas must not use `xs:anyType`, because this feature permits the introduction of arbitrary content (i.e., untyped and unconstrained data) into an XML instance. NIEM intends that the schemas describing that instance describe all constructs within the instance.
@@ -1903,15 +1905,16 @@ NIEM-conformant schemas must not use `xs:anyType`, because this feature permits 
 ##### Rule 9-6. No base type of `xs:anySimpleType`
 
 > **[Rule 9-6] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@base)]">
+>    <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:anySimpleType')"
+>      >A schema component MUST NOT have an attribute {}base with a value of xs:anySimpleType.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@base)]">
-   <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:anySimpleType')"
-     >A schema component MUST NOT have an attribute {}base with a value of xs:anySimpleType.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 XML Schema provides a restriction of the "ur-type" that contains only simple content. This provides a wildcard for arbitrary text. It is realized in XML Schema as `xs:anySimpleType`.
 
 NIEM-conformant schemas must not use `xs:anySimpleType` because this feature is insufficiently constrained to provide a meaningful starting point for content definitions. Instead, content should be based on one of the more specifically defined simple types defined by XML Schema.
@@ -1919,118 +1922,123 @@ NIEM-conformant schemas must not use `xs:anySimpleType` because this feature is 
 ##### Rule 9-7. No base type of `xs:NOTATION`
 
 > **[Rule 9-7] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@base)]">
+>    <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:NOTATION')"
+>      >A schema component MUST NOT have an attribute {}base with a value of xs:NOTATION.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@base)]">
-   <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:NOTATION')"
-     >A schema component MUST NOT have an attribute {}base with a value of xs:NOTATION.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 XML Schema notations allow the attachment of system and public identifiers on fields of data. The notation mechanism does not play a part in validation of instances and is not supported by NIEM.
 
 ##### Rule 9-8. No base type of `xs:ENTITY`
 
 > **[Rule 9-8] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@base)]">
-   <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:ENTITY')"
-     >A schema component MUST NOT have an attribute {}base with a value of xs:ENTITY.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@base)]">
+>    <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:ENTITY')"
+>      >A schema component MUST NOT have an attribute {}base with a value of xs:ENTITY.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-9. No base type of `xs:ENTITIES`
 
 > **[Rule 9-9] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@base)]">
-   <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:ENTITIES')"
-     >A schema component MUST NOT have an attribute {}base with a value of xs:ENTITIES.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@base)]">
+>    <sch:assert test="resolve-QName(@base, .) != xs:QName('xs:ENTITIES')"
+>      >A schema component MUST NOT have an attribute {}base with a value of xs:ENTITIES.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Simple type definition
 
 #### Rule 9-10. Simple type definition is top-level
 
 > **[Rule 9-10] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:simpleType">
+>    <sch:assert test="exists(parent::xs:schema)"
+>      >A simple type definition MUST be top-level.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:simpleType">
-   <sch:assert test="exists(parent::xs:schema)"
-     >A simple type definition MUST be top-level.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 NIEM does not support anonymous types in NIEM-conformant schemas. All XML Schema "top-level" types (children of the document element) are required by XML Schema to be named. By requiring NIEM type definitions to be top level, they are forced to be named and are globally reusable.
 
 #### Rule 9-11. No simple type disallowed derivation
 
 > **[Rule 9-11] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:simpleType">
-   <sch:assert test="empty(@final)"
-     >An element xs:simpleType MUST NOT have an attribute {}final.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:simpleType">
+>    <sch:assert test="empty(@final)"
+>      >An element xs:simpleType MUST NOT have an attribute {}final.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-12. Simple type has data definition
 
 > **[Rule 9-12] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:simpleType">
+>    <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
+>                        string-length(normalize-space(string($definition))) &gt; 0"
+>      >A simple type MUST have a data definition.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:simpleType">
-   <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
-                       string-length(normalize-space(string($definition))) &gt; 0"
-     >A simple type MUST have a data definition.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 This document defines the term _data definition_.
 
 #### Rule 9-13. No use of <q>fixed</q> on simple type facets
+
 An attribute `fixed` on a constraining facet (e.g., `xs:maxInclusive`) of a simple type `$base` prevents a simple type derived from `$base` from further restricting that facet. For example, if simpleType `nc:LatitudeDegreeSimpleType` uses an `xs:maxInclusive` facet that limits the maximum value to 90, a simple type derived from that type could not further restrict the type to limit the maximum value to 45.
 
 The use of `fixed` on simple type facets violates _**[Principle 17]**, above_, since it prevents an extension schema from constraining a base type. As a result, the `fixed` on simple type facets in reference schemas is prohibited.
 
 > **[Rule 9-13] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace
-     or self::xs:maxInclusive or self::xs:maxExclusive or self::xs:minExclusive or self::xs:minInclusive
-     or self::xs:totalDigits or self::xs:fractionDigits]">
-   <sch:assert test="empty(@fixed)"
-     >A simple type constraining facet MUST NOT have an attribute {}fixed.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace
+>      or self::xs:maxInclusive or self::xs:maxExclusive or self::xs:minExclusive or self::xs:minInclusive
+>      or self::xs:totalDigits or self::xs:fractionDigits]">
+>    <sch:assert test="empty(@fixed)"
+>      >A simple type constraining facet MUST NOT have an attribute {}fixed.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-14. Enumeration has data definition
 
 > **[Rule 9-14] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:enumeration">
+>    <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
+>                        string-length(normalize-space(string($definition))) &gt; 0"
+>      >An enumeration facet MUST have a data definition.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:enumeration">
-   <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
-                       string-length(normalize-space(string($definition))) &gt; 0"
-     >An enumeration facet MUST have a data definition.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 This document defines the term _data definition_.
 
 #### Simple types prohibited as list item types
@@ -2042,54 +2050,54 @@ There is no prohibition on `xs:anyType` as a list item type, because xs:anyType 
 ##### Rule 9-15. No list item type of `xs:ID`
 
 > **[Rule 9-15] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@itemType)]">
-   <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:ID')"
-     >A schema component MUST NOT have an attribute {}itemType with a value of xs:ID.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@itemType)]">
+>    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:ID')"
+>      >A schema component MUST NOT have an attribute {}itemType with a value of xs:ID.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-16. No list item type of `xs:IDREF`
 
 > **[Rule 9-16] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@itemType)]">
-   <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:IDREF')"
-     >A schema component MUST NOT have an attribute {}itemType with a value of xs:IDREF.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@itemType)]">
+>    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:IDREF')"
+>      >A schema component MUST NOT have an attribute {}itemType with a value of xs:IDREF.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-17. No list item type of `xs:anySimpleType`
 
 > **[Rule 9-17] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@itemType)]">
-   <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:anySimpleType')"
-     >A schema component MUST NOT have an attribute {}itemType with a value of xs:anySimpleType.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@itemType)]">
+>    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:anySimpleType')"
+>      >A schema component MUST NOT have an attribute {}itemType with a value of xs:anySimpleType.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-18. No list item type of `xs:ENTITY`
 
 > **[Rule 9-18] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@itemType)]">
-   <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:ENTITY')"
-     >A schema component MUST NOT have an attribute {}itemType with a value of xs:ENTITY.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@itemType)]">
+>    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:ENTITY')"
+>      >A schema component MUST NOT have an attribute {}itemType with a value of xs:ENTITY.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Simple types prohibited as union member types
 
@@ -2100,122 +2108,124 @@ There is no prohibition on `xs:anyType` as a union member type, because xs:anyTy
 ##### Rule 9-19. No union member types of `xs:ID`
 
 > **[Rule 9-19] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@memberTypes)]">
-   <sch:assert test="every $type-qname
-                     in tokenize(normalize-space(@memberTypes), ' ')
-                     satisfies resolve-QName($type-qname, .) != xs:QName('xs:ID')"
-     >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ID.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@memberTypes)]">
+>    <sch:assert test="every $type-qname
+>                      in tokenize(normalize-space(@memberTypes), ' ')
+>                      satisfies resolve-QName($type-qname, .) != xs:QName('xs:ID')"
+>      >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ID.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-20. No union member types of `xs:IDREF`
 
 > **[Rule 9-20] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@memberTypes)]">
-   <sch:assert test="every $type-qname
-                     in tokenize(normalize-space(@memberTypes), ' ')
-                     satisfies resolve-QName($type-qname, .) != xs:QName('xs:IDREF')"
-     >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREF.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@memberTypes)]">
+>    <sch:assert test="every $type-qname
+>                      in tokenize(normalize-space(@memberTypes), ' ')
+>                      satisfies resolve-QName($type-qname, .) != xs:QName('xs:IDREF')"
+>      >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREF.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-21. No union member types of `xs:IDREFS`
 
 > **[Rule 9-21] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@memberTypes)]">
-   <sch:assert test="every $type-qname
-                     in tokenize(normalize-space(@memberTypes), ' ')
-                     satisfies resolve-QName($type-qname, .) != xs:QName('xs:IDREFS')"
-     >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREFS.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@memberTypes)]">
+>    <sch:assert test="every $type-qname
+>                      in tokenize(normalize-space(@memberTypes), ' ')
+>                      satisfies resolve-QName($type-qname, .) != xs:QName('xs:IDREFS')"
+>      >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREFS.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-22. No union member types of `xs:anySimpleType`
 
 > **[Rule 9-22] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@memberTypes)]">
-   <sch:assert test="every $type-qname
-                     in tokenize(normalize-space(@memberTypes), ' ')
-                     satisfies resolve-QName($type-qname, .) != xs:QName('xs:anySimpleType')"
-     >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:anySimpleType.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@memberTypes)]">
+>    <sch:assert test="every $type-qname
+>                      in tokenize(normalize-space(@memberTypes), ' ')
+>                      satisfies resolve-QName($type-qname, .) != xs:QName('xs:anySimpleType')"
+>      >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:anySimpleType.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-23. No union member types of `xs:ENTITY`
 
 > **[Rule 9-23] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@memberTypes)]">
-   <sch:assert test="every $type-qname
-                     in tokenize(normalize-space(@memberTypes), ' ')
-                     satisfies resolve-QName($type-qname, .) != xs:QName('xs:ENTITY')"
-     >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITY.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@memberTypes)]">
+>    <sch:assert test="every $type-qname
+>                      in tokenize(normalize-space(@memberTypes), ' ')
+>                      satisfies resolve-QName($type-qname, .) != xs:QName('xs:ENTITY')"
+>      >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITY.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-24. No union member types of `xs:ENTITIES`
 
 > **[Rule 9-24] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[exists(@memberTypes)]">
-   <sch:assert test="every $type-qname
-                     in tokenize(normalize-space(@memberTypes), ' ')
-                     satisfies resolve-QName($type-qname, .) != xs:QName('xs:ENTITIES')"
-     >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITIES.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[exists(@memberTypes)]">
+>    <sch:assert test="every $type-qname
+>                      in tokenize(normalize-space(@memberTypes), ' ')
+>                      satisfies resolve-QName($type-qname, .) != xs:QName('xs:ENTITIES')"
+>      >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITIES.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Complex type definition
 
 #### Rule 9-25. Complex type definition is top-level
 
 > **[Rule 9-25] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexType">
+>    <sch:assert test="exists(parent::xs:schema)"
+>      >A complex type definition MUST be top-level.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:complexType">
-   <sch:assert test="exists(parent::xs:schema)"
-     >A complex type definition MUST be top-level.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 Note that this implies that every `xs:complexType` element has a `name` attribute.
 
 #### Rule 9-26. Complex type has data definition
 
 > **[Rule 9-26] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexType">
+>    <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
+>                        string-length(normalize-space(string($definition))) &gt; 0"
+>      >A complex type MUST have a data definition.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:complexType">
-   <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
-                       string-length(normalize-space(string($definition))) &gt; 0"
-     >A complex type MUST have a data definition.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 This document defines the term _data definition_.
 
 #### No mixed content
@@ -2223,15 +2233,16 @@ This document defines the term _data definition_.
 ##### Rule 9-27. No mixed content on complex type
 
 > **[Rule 9-27] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexType[exists(@mixed)]">
+>    <sch:assert test="xs:boolean(@mixed) = false()"
+>      >A complex type definition MUST NOT have mixed content.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:complexType[exists(@mixed)]">
-   <sch:assert test="xs:boolean(@mixed) = false()"
-     >A complex type definition MUST NOT have mixed content.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 Mixed content allows the mixing of data tags with text. Languages such as XHTML use this syntax for markup of text. NIEM-conformant schemas define XML that is for data exchange, not text markup. Mixed content creates complexity in processing, defining, and constraining content.
 
 Well-defined markup languages exist outside NIEM and may be used with NIEM data. External schema documents may include mixed content and may be used with NIEM. However, mixed content must not be defined by NIEM-conformant schemas in keeping with _**[Principle 10]**, above_.
@@ -2239,29 +2250,31 @@ Well-defined markup languages exist outside NIEM and may be used with NIEM data.
 ##### Rule 9-28. No mixed content on complex content
 
 > **[Rule 9-28] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexContent[exists(@mixed)]">
+>    <sch:assert test="xs:boolean(@mixed) = false()"
+>      >A complex type definition with complex content MUST NOT have mixed content.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:complexContent[exists(@mixed)]">
-   <sch:assert test="xs:boolean(@mixed) = false()"
-     >A complex type definition with complex content MUST NOT have mixed content.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 See [Rule 9-27, _No mixed content on complex type_ (REF, EXT), above,](#rule-9-27-no-mixed-content-on-complex-type) for the rationale for this rule.
 
 #### Rule 9-29. Complex type content is explicitly simple or complex
 
 > **[Rule 9-29] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexType">
+>    <sch:assert test="exists(xs:simpleContent) or exists(xs:complexContent)"
+>      >An element xs:complexType MUST have a child element xs:simpleContent or xs:complexContent.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:complexType">
-   <sch:assert test="exists(xs:simpleContent) or exists(xs:complexContent)"
-     >An element xs:complexType MUST have a child element xs:simpleContent or xs:complexContent.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 XML Schema provides shorthand to defining complex content of a complex type, which is to define the complex type with immediate children that specify elements, or other groups, and attributes. In the desire to normalize schema representation of types and to be explicit, NIEM forbids the use of that shorthand.
 
 #### Complex content
@@ -2269,15 +2282,16 @@ XML Schema provides shorthand to defining complex content of a complex type, whi
 ##### Rule 9-30. Complex content uses extension
 
 > **[Rule 9-30] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexContent">
+>    <sch:assert test="exists(xs:extension)"
+>      >An element xs:complexContent MUST have a child xs:extension.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:complexContent">
-   <sch:assert test="exists(xs:extension)"
-     >An element xs:complexContent MUST have a child xs:extension.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 NIEM does not support the use of complex type restriction in reference schemas. The use of restriction in a reference schema would reduce the ability for that schema to be reused. Restriction may be used in extension schemas.
 
 ##### Base type of complex type with complex content has complex content
@@ -2286,95 +2300,97 @@ These two rules addresses a peculiarity of the _XML Schema definition language_,
 
 ##### Figure 9-1: Example of complex type with simple content that claims to have complex content
 
-```
-<xs:complexType name="TreeCountType">
- <xs:annotation>
-   <xs:documentation>A data type for a number of trees</xs:documentation>
- </xs:annotation>
- <xs:complexContent>
-   <xs:extension base="niem-xs:integer"/>
- </xs:complexContent>
-</xs:complexType>
-```
+> ```xml
+> <xs:complexType name="TreeCountType">
+>  <xs:annotation>
+>    <xs:documentation>A data type for a number of trees</xs:documentation>
+>  </xs:annotation>
+>  <xs:complexContent>
+>    <xs:extension base="niem-xs:integer"/>
+>  </xs:complexContent>
+> </xs:complexType>
+> ```
+
 The first rule handles cases that can be determined within a single schema document, while the SET version handles cases that require cross-schema resolution.
 
 ###### Rule 9-31. Base type of complex type with complex content must have complex content
 
 > **[Rule 9-31] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:complexType/xs:complexContent/xs:*[
-                      (self::xs:extension or self::xs:restriction)
-                      and (some $base-qname in resolve-QName(@base, .) satisfies
-                             namespace-uri-from-QName($base-qname) = nf:get-target-namespace(.))]">
-   <sch:assert test="some $base-type in nf:resolve-type(., resolve-QName(@base, .)) satisfies
-                       empty($base-type/self::xs:complexType/xs:simpleContent)"
-     >The base type of complex type that has complex content MUST be a complex type with complex content.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexType/xs:complexContent/xs:*[
+>                       (self::xs:extension or self::xs:restriction)
+>                       and (some $base-qname in resolve-QName(@base, .) satisfies
+>                              namespace-uri-from-QName($base-qname) = nf:get-target-namespace(.))]">
+>    <sch:assert test="some $base-type in nf:resolve-type(., resolve-QName(@base, .)) satisfies
+>                        empty($base-type/self::xs:complexType/xs:simpleContent)">
+>     The base type of complex type that has complex content MUST be a complex type with complex content.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ###### Rule 9-32. Base type of complex type with complex content must have complex content
 
 > **[Rule 9-32] ([SET](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:complexType[
-       nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument'))
-       or nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ExtensionSchemaDocument'))
-     ]/xs:complexContent">
-   <sch:assert test="some $derivation in xs:*[self::xs:extension or self::xs:restriction],
-                          $base-qname in resolve-QName($derivation/@base, $derivation),
-                          $base-type in nf:resolve-type($derivation, $base-qname) satisfies
-                        empty($base-type/self::xs:complexType/xs:simpleContent)"
-     >The base type of complex type that has complex content MUST have complex content.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexType[
+>        nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument'))
+>        or nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ExtensionSchemaDocument'))
+>      ]/xs:complexContent">
+>    <sch:assert test="some $derivation in xs:*[self::xs:extension or self::xs:restriction],
+>                           $base-qname in resolve-QName($derivation/@base, $derivation),
+>                           $base-type in nf:resolve-type($derivation, $base-qname) satisfies
+>                         empty($base-type/self::xs:complexType/xs:simpleContent)">
+>      The base type of complex type that has complex content MUST have complex content.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Simple content
 
 ##### Rule 9-33. Simple content uses extension
 
 > **[Rule 9-33] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:simpleContent">
+>    <sch:assert test="exists(xs:extension)">
+>      A complex type definition with simple content schema component MUST have a derivation method of extension.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:simpleContent">
-   <sch:assert test="exists(xs:extension)"
-     >A complex type definition with simple content schema component MUST have a derivation method of extension.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 This rule ensures that the definition of a complex type with simple content will use XML Schema extension. Under this rule, the structure of these types will be more uniform, as alternate formats are prohibited. The above rule allows for use of `xs:restriction` within `xs:simpleContent` in extension schemas.
 
 #### Rule 9-34. No complex type disallowed substitutions
 
 > **[Rule 9-34] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:complexType">
-   <sch:assert test="empty(@block)"
-     >An element xs:complexType MUST NOT have an attribute {}block.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexType">
+>    <sch:assert test="empty(@block)">
+>      An element xs:complexType MUST NOT have an attribute {}block.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-35. No complex type disallowed derivation
 
 > **[Rule 9-35] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:complexType">
-   <sch:assert test="empty(@final)"
-     >An element xs:complexType MUST NOT have an attribute {}final.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:complexType">
+>    <sch:assert test="empty(@final)">
+>      An element xs:complexType MUST NOT have an attribute {}final.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ## Declaration components
 
@@ -2389,68 +2405,72 @@ Within an element declaration, the attributes `fixed`, `nillable`, and `substitu
 #### Rule 9-36. Element declaration is top-level
 
 > **[Rule 9-36] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element[exists(@name)]">
+>    <sch:assert test="exists(parent::xs:schema)">
+>      An element declaration MUST be top-level.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:element[exists(@name)]">
-   <sch:assert test="exists(parent::xs:schema)"
-     >An element declaration MUST be top-level.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 All schema components defined by NIEM-conformant schemas must be named, accessible from outside the defining schema, and reusable across schemas. Local element declarations provide named elements that are not reusable outside the context in which they are defined. Requiring named NIEM elements to be top level ensures that they are globally reusable.
 
 #### Rule 9-37. Element declaration has data definition
 
 > **[Rule 9-37] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element[exists(@name)]">
+>    <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
+>                        string-length(normalize-space(string($definition))) &gt; 0">
+>      An element declaration MUST have a data definition.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:element[exists(@name)]">
-   <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
-                       string-length(normalize-space(string($definition))) &gt; 0"
-     >An element declaration MUST have a data definition.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 This document defines the term _data definition_.
 
 #### Rule 9-38. Untyped element is abstract
 
 > **[Rule 9-38] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:schema/xs:element[empty(@type)]">
+>    <sch:assert test="exists(@abstract)
+>                      and xs:boolean(@abstract) = true()">
+>      A top-level element declaration that does not set the {type definition} property via the attribute "type" MUST have the {abstract} property with a value of "true".</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:schema/xs:element[empty(@type)]">
-   <sch:assert test="exists(@abstract)
-                     and xs:boolean(@abstract) = true()"
-     >A top-level element declaration that does not set the {type definition} property via the attribute "type" MUST have the {abstract} property with a value of "true".</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 Untyped element declarations act as wildcards that may carry arbitrary data. By declaring such types abstract, NIEM allows the creation of type independent semantics without allowing arbitrary content to appear in XML instances.
 
 #### Rule 9-39. Element of type `xs:anySimpleType` is abstract
+
 The type `xs:anySimpleType` does not have any concrete semantics; The use of `xs:anySimpleType` is limited to the case where an abstract element is of type `xs:anySimpleType`, to act as a base for concrete implementations of the element.
 
 > **[Rule 9-39] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:element[exists(@type)
-                               and resolve-QName(@type, .) = xs:QName('xs:anySimpleType')]">
-   <sch:assert test="exists(@abstract)
-                     and xs:boolean(@abstract) = true()"
-               >An element declaration that has a type xs:anySimpleType MUST have the {abstract} property with a value of "true".</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element[exists(@type)
+>                                and resolve-QName(@type, .) = xs:QName('xs:anySimpleType')]">
+>    <sch:assert test="exists(@abstract)
+>                      and xs:boolean(@abstract) = true()">
+>                An element declaration that has a type xs:anySimpleType MUST have the {abstract} property with a value of "true".</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-40. Element type not in the XML Schema namespace
 
 > **[Rule 9-40] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
 
-```
+```xml
 <sch:pattern>
  <sch:rule context="xs:element[exists(@type)]">
    <sch:assert test="for $type-qname in resolve-QName(@type, .) return
@@ -2466,108 +2486,110 @@ The prohibition of element types having the XML Schema namespace subsumes a proh
 The XML namespace may be imported into a conformant schema document as if it were conformant. This specification does not enable a reference to any types that may be defined by any implementation of a schema for that namespace.
 
 > **[Rule 9-41] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:element[exists(@type)]">
-   <sch:assert test="namespace-uri-from-QName(resolve-QName(@type, .)) != 'http://www.w3.org/XML/1998/namespace'"
-     >An element type MUST NOT have a namespace name that is in the XML namespace.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element[exists(@type)]">
+>    <sch:assert test="namespace-uri-from-QName(resolve-QName(@type, .)) != 'http://www.w3.org/XML/1998/namespace'">
+>      An element type MUST NOT have a namespace name that is in the XML namespace.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-42. Element type is not simple type
 
 > **[Rule 9-42] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:element[@type]">
-   <sch:assert test="every $type-qname in resolve-QName(@type, .),
-                           $type-ns in namespace-uri-from-QName($type-qname),
-                           $type-local-name in local-name-from-QName($type-qname) satisfies (
-                       $type-qname = xs:QName('xs:anySimpleType')
-                       or (($type-ns = nf:get-target-namespace(.)
-                            or exists(nf:get-document-element(.)/xs:import[
-                                        xs:anyURI(@namespace) = $type-ns
-                                        and empty(@appinfo:externalImportIndicator)]))
-                           and not(ends-with($type-local-name, 'SimpleType'))))"
-     >An element type that is not xs:anySimpleType MUST NOT be a simple type.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element[@type]">
+>    <sch:assert test="every $type-qname in resolve-QName(@type, .),
+>                            $type-ns in namespace-uri-from-QName($type-qname),
+>                            $type-local-name in local-name-from-QName($type-qname) satisfies (
+>                        $type-qname = xs:QName('xs:anySimpleType')
+>                        or (($type-ns = nf:get-target-namespace(.)
+>                             or exists(nf:get-document-element(.)/xs:import[
+>                                         xs:anyURI(@namespace) = $type-ns
+>                                         and empty(@appinfo:externalImportIndicator)]))
+>                            and not(ends-with($type-local-name, 'SimpleType'))))">
+>      An element type that is not xs:anySimpleType MUST NOT be a simple type.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-43. No element disallowed substitutions 
 
 > **[Rule 9-43] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:element">
-   <sch:assert test="empty(@block)"
-     >An element xs:element MUST NOT have an attribute {}block.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element">
+>    <sch:assert test="empty(@block)">
+>      An element xs:element MUST NOT have an attribute {}block.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-44. No element disallowed derivation
 
 > **[Rule 9-44] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:element">
-   <sch:assert test="empty(@final)"
-     >An element xs:element MUST NOT have an attribute {}final.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element">
+>    <sch:assert test="empty(@final)">
+>      An element xs:element MUST NOT have an attribute {}final.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### No element value constraints
 
 ##### Rule 9-45. No element default value
 
 > **[Rule 9-45] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:element">
-   <sch:assert test="empty(@default)"
-     >An element xs:element MUST NOT have an attribute {}default.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element">
+>    <sch:assert test="empty(@default)"
+>      >An element xs:element MUST NOT have an attribute {}default.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-46. No element fixed value
 
 > **[Rule 9-46] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:element">
-   <sch:assert test="empty(@fixed)"
-     >An element xs:element MUST NOT have an attribute {}fixed.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element">
+>    <sch:assert test="empty(@fixed)"
+>      >An element xs:element MUST NOT have an attribute {}fixed.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-47. Element declaration is nillable
+
 All elements declared by reference schemas allow a nil value. This enables the ID/IDREF mechanism linking `structures:ref` and `structures:id`, as described by [Section 12.2, _Identifiers and references_, below](#identifiers-and-references).
 
 A developer may constrain the use of `nil` in an instance by setting `nillable` to false in subset schemas, or by use of non-XML Schema mechanisms, such as Schematron.
 
 > **[Rule 9-47] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:element[@name and (empty(@abstract)
+>                                           or xs:boolean(@abstract) = false())]">
+>    <sch:assert test="exists(@nillable)
+>                      and xs:boolean(@nillable) = true()"
+>      >An element declaration MUST have the {nillable} property with a value of true.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:element[@name and (empty(@abstract)
-                                          or xs:boolean(@abstract) = false())]">
-   <sch:assert test="exists(@nillable)
-                     and xs:boolean(@nillable) = true()"
-     >An element declaration MUST have the {nillable} property with a value of true.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 This document defines the term _element declaration_.
 
 ### Element substitution group
@@ -2581,44 +2603,47 @@ Within an attribute declaration, the attribute `form` is irrelevant to NIEM, as 
 #### Rule 9-48. Attribute declaration is top-level
 
 > **[Rule 9-48] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@name)]">
+>    <sch:assert test="exists(parent::xs:schema)"
+>      >An attribute declaration MUST be top-level.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@name)]">
-   <sch:assert test="exists(parent::xs:schema)"
-     >An attribute declaration MUST be top-level.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 All schema components defined by NIEM-conformant schemas are named, accessible from outside the defining schema, and reusable across schemas. Local attribute declarations provide named attributes that are not reusable outside the context in which they are defined. Requiring named NIEM attributes to be top level ensures that they are globally reusable.
 
 #### Rule 9-49. Attribute declaration has data definition
 
 > **[Rule 9-49] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@name)]">
+>    <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
+>                        string-length(normalize-space(string($definition))) &gt; 0"
+>      >An attribute declaration MUST have a data definition.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@name)]">
-   <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
-                       string-length(normalize-space(string($definition))) &gt; 0"
-     >An attribute declaration MUST have a data definition.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 This document defines the term _data definition_.
 
 #### Rule 9-50. Attribute declaration has type
 
 > **[Rule 9-50] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@name)]">
+>    <sch:assert test="exists(@type)"
+>      >A top-level attribute declaration MUST have a type.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@name)]">
-   <sch:assert test="exists(@type)"
-     >A top-level attribute declaration MUST have a type.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 Untyped XML Schema attributes allow arbitrary content, with no semantics. Attributes must have a type so that specific syntax and semantics will be provided.
 
 #### Prohibited attribute types
@@ -2630,115 +2655,118 @@ These types are only explicitly prohibited from attributes, not elements, becaus
 ##### Rule 9-51. No attribute type of `xs:ID`
 
 > **[Rule 9-51] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@type)]">
-   <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:ID')"
-     >A schema component MUST NOT have an attribute {}type with a value of xs:ID.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@type)]">
+>    <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:ID')"
+>      >A schema component MUST NOT have an attribute {}type with a value of xs:ID.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-52. No attribute type of `xs:IDREF`
 
 > **[Rule 9-52] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@type)]">
-   <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:IDREF')"
-     >A schema component MUST NOT have an attribute {}type with a value of xs:IDREF.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@type)]">
+>    <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:IDREF')"
+>      >A schema component MUST NOT have an attribute {}type with a value of xs:IDREF.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-53. No attribute type of `xs:IDREFS`
 
 > **[Rule 9-53] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@type)]">
-   <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:IDREFS')"
-     >A schema component MUST NOT have an attribute {}type with a value of xs:IDREFS.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@type)]">
+>    <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:IDREFS')"
+>      >A schema component MUST NOT have an attribute {}type with a value of xs:IDREFS.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-54. No attribute type of `xs:ENTITY`
 
 > **[Rule 9-54] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@type)]">
-   <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:ENTITY')"
-     >A schema component MUST NOT have an attribute {}type with a value of xs:ENTITY.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@type)]">
+>    <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:ENTITY')"
+>      >A schema component MUST NOT have an attribute {}type with a value of xs:ENTITY.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-55. No attribute type of `xs:ENTITIES`
 
 > **[Rule 9-55] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@type)]">
-   <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:ENTITIES')"
-     >A schema component MUST NOT have an attribute {}type with a value of xs:ENTITIES.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@type)]">
+>    <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:ENTITIES')"
+>      >A schema component MUST NOT have an attribute {}type with a value of xs:ENTITIES.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-56. No attribute type of `xs:anySimpleType`
 
 > **[Rule 9-56] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@type)]">
-   <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:anySimpleType')"
-     >A schema component MUST NOT have an attribute {}type with a value of xs:anySimpleType.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@type)]">
+>    <sch:assert test="resolve-QName(@type, .) != xs:QName('xs:anySimpleType')"
+>      >A schema component MUST NOT have an attribute {}type with a value of xs:anySimpleType.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### No attribute value constraints
 
 ##### Rule 9-57. No attribute default values
 
 > **[Rule 9-57] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute">
+>    <sch:assert test="empty(@default)"
+>      >An element xs:attribute MUST NOT have an attribute {}default.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:attribute">
-   <sch:assert test="empty(@default)"
-     >An element xs:attribute MUST NOT have an attribute {}default.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 This rule helps to ensure that schema processing does not alter processed data, as described in [Section 8.4, _Ensure XML parsing does not construct values_, above](#ensure-xml-parsing-does-not-construct-values).
 
 ##### Rule 9-58. No fixed values for optional attributes
+
 The `fixed` attribute is described by [XML Schema Structures](#Appendix-A-References)         [Section 3.2.1, _The Attribute Declaration Schema Component_](http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Attribute_Declaration_details):
 
 > _default_ specifies that the attribute is to appear unconditionally in the post-schema-validation infoset, with the supplied value used whenever the attribute is not actually present; _fixed_ indicates that the attribute value if present must equal the supplied constraint value, and if absent receives the supplied value as for _default_.
 
 > **[Rule 9-58] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attribute[exists(@ref) and @use eq 'required']">
+>    <sch:report test="false()" role="warning">This rule does not constrain attribute uses that are required</sch:report>
+>  </sch:rule>
+>  <sch:rule context="xs:attribute">
+>    <sch:assert test="empty(@fixed)"
+>      >An element xs:attribute that is not a required attribute use MUST NOT have an attribute {}fixed.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:attribute[exists(@ref) and @use eq 'required']">
-   <sch:report test="false()" role="warning">This rule does not constrain attribute uses that are required</sch:report>
- </sch:rule>
- <sch:rule context="xs:attribute">
-   <sch:assert test="empty(@fixed)"
-     >An element xs:attribute that is not a required attribute use MUST NOT have an attribute {}fixed.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 This rule helps to ensure that schema processing does not alter processed data, as described in [Section 8.4, _Ensure XML parsing does not construct values_, above](#ensure-xml-parsing-does-not-construct-values). The use of the `fixed` attribute may result in alteration of the post-schema-validation infoset, like the use of `default` does. This behavior is described by [XML Schema Structures](#Appendix-A-References)         [Section 3.2.1, _The Attribute Declaration Schema Component_](http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Attribute_Declaration_details).
 
 ### Notation declaration
@@ -2746,15 +2774,16 @@ This rule helps to ensure that schema processing does not alter processed data, 
 #### Rule 9-59. No use of element `xs:notation`
 
 > **[Rule 9-59] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:notation">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:notation.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:notation">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:notation.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 See [Rule 9-7, _No base type of `xs:NOTATION`_ (REF, EXT), above,](#rule-9-7-no-base-type-of-xs:notation) for comments about the use of notations.
 
 ## Model group components
@@ -2773,15 +2802,16 @@ XML Schema defines a **particle** as an occurrence of `xs:element`, `xs:sequence
 #### Rule 9-61. No `xs:all`
 
 > **[Rule 9-61] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:all">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:all</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:all">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:all</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 The element `xs:all` provides a set of particles (e.g., elements) that may be included in an instance, in no particular order. This compositor does not support a variety of cardinalities, has shown to be confusing in practice, and has functionality that overlaps with NIEM’s use of substitution groups. Use of substitution groups is the preferred method in NIEM schemas for obtaining flexible content models.
 
 #### Sequence
@@ -2789,43 +2819,44 @@ The element `xs:all` provides a set of particles (e.g., elements) that may be in
 ##### Rule 9-62. `xs:sequence` must be child of `xs:extension`
 
 > **[Rule 9-62] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:sequence">
-   <sch:assert test="exists(parent::xs:extension)"
-     >An element xs:sequence MUST be a child of element xs:extension.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:sequence">
+>    <sch:assert test="exists(parent::xs:extension)"
+>      >An element xs:sequence MUST be a child of element xs:extension.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-63. `xs:sequence` must be child of `xs:extension` or `xs:restriction`
 
 > **[Rule 9-63] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:sequence">
-   <sch:assert test="exists(parent::xs:extension) or exists(parent::xs:restriction)"
-     >An element xs:sequence MUST be a child of element xs:extension or xs:restriction.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:sequence">
+>    <sch:assert test="exists(parent::xs:extension) or exists(parent::xs:restriction)"
+>      >An element xs:sequence MUST be a child of element xs:extension or xs:restriction.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Choice
 
 ##### Rule 9-64. No `xs:choice`
 
 > **[Rule 9-64] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:choice">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:choice</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:choice">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:choice</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 The element `xs:choice` provides an exclusive set of particles, one of which may appear in an instance. This can greatly complicate processing and may be difficult to comprehend, satisfy, and reuse.
 
 The element `xs:choice` may be used in extension schemas, as it presents a simple way for a schema writer to represent a set of optional content.
@@ -2833,15 +2864,15 @@ The element `xs:choice` may be used in extension schemas, as it presents a simpl
 ##### Rule 9-65. `xs:choice` must be child of `xs:sequence`
 
 > **[Rule 9-65] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:choice">
-   <sch:assert test="exists(parent::xs:sequence)"
-     >An element xs:choice MUST be a child of element xs:sequence.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:choice">
+>    <sch:assert test="exists(parent::xs:sequence)"
+>      >An element xs:choice MUST be a child of element xs:sequence.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Particle
 
@@ -2858,58 +2889,58 @@ A schema developer who requires the instance syntax that would be obtained from 
 ##### Rule 9-66. Sequence has minimum cardinality 1
 
 > **[Rule 9-66] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:sequence">
-   <sch:assert test="empty(@minOccurs) or xs:integer(@minOccurs) = 1"
-     >An element xs:sequence MUST either not have the attribute {}minOccurs, or that attribute MUST have a value of 1.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:sequence">
+>    <sch:assert test="empty(@minOccurs) or xs:integer(@minOccurs) = 1"
+>      >An element xs:sequence MUST either not have the attribute {}minOccurs, or that attribute MUST have a value of 1.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-67. Sequence has maximum cardinality 1
 
 > **[Rule 9-67] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:sequence">
-   <sch:assert test="empty(@maxOccurs) or (@maxOccurs instance of xs:integer
-                                           and 1 = xs:integer(@maxOccurs))"
-     >An element xs:sequence MUST either not have the attribute {}maxOccurs, or that attribute MUST have a value of 1.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:sequence">
+>    <sch:assert test="empty(@maxOccurs) or (@maxOccurs instance of xs:integer
+>                                            and 1 = xs:integer(@maxOccurs))"
+>      >An element xs:sequence MUST either not have the attribute {}maxOccurs, or that attribute MUST have a value of 1.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Choice cardinality
 
 ##### Rule 9-68. Choice has minimum cardinality 1
 
 > **[Rule 9-68] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:choice">
-   <sch:assert test="empty(@minOccurs) or 1 = xs:integer(@minOccurs)"
-     >An element xs:choice MUST either not have the attribute {}minOccurs, or that attribute MUST have a value of 1.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:choice">
+>    <sch:assert test="empty(@minOccurs) or 1 = xs:integer(@minOccurs)"
+>      >An element xs:choice MUST either not have the attribute {}minOccurs, or that attribute MUST have a value of 1.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ##### Rule 9-69. Choice has maximum cardinality 1
 
 > **[Rule 9-69] ([EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:choice">
-   <sch:assert test="empty(@maxOccurs) or (@maxOccurs instance of xs:integer
-                                           and 1 = xs:integer(@maxOccurs))"
-     >An element xs:choice MUST either not have the attribute {}maxOccurs, or that attribute MUST have a value of 1.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:choice">
+>    <sch:assert test="empty(@maxOccurs) or (@maxOccurs instance of xs:integer
+>                                            and 1 = xs:integer(@maxOccurs))"
+>      >An element xs:choice MUST either not have the attribute {}maxOccurs, or that attribute MUST have a value of 1.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Attribute use
 
@@ -2920,29 +2951,31 @@ An attribute use has an {attribute declaration} property that is a top-level, na
 #### Rule 9-70. No use of `xs:any`
 
 > **[Rule 9-70] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:any">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:any.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:any">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:any.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 The `xs:any` particle (see Model Group Restrictions for an informative definition of particle) provides a wildcard that may carry arbitrary content. The particle `xs:any` may appear within an _extension schema document_.
 
 #### Rule 9-71. No use of `xs:anyAttribute`
 
 > **[Rule 9-71] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:anyAttribute">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:anyAttribute.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:anyAttribute">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:anyAttribute.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 The `xs:anyAttribute` element provides a wildcard, where arbitrary attributes may appear.
 
 ## Identity-constraint definition components
@@ -2954,41 +2987,41 @@ Note that there is no prohibition on the use of `xs:selector` and `xs:field`, si
 ### Rule 9-72. No use of `xs:unique`
 
 > **[Rule 9-72] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:unique">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:unique.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:unique">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:unique.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Rule 9-73. No use of `xs:key`
 
 > **[Rule 9-73] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:key">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:key.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:key">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:key.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Rule 9-74. No use of `xs:keyref`
 
 > **[Rule 9-74] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:keyref">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:keyref.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:keyref">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:keyref.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ## Group definition components
 
@@ -2997,15 +3030,15 @@ Note that there is no prohibition on the use of `xs:selector` and `xs:field`, si
 #### Rule 9-75. No use of `xs:group`
 
 > **[Rule 9-75] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:group">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:group.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:group">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:group.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 NIEM does not allow groups of elements to be named other than as named complex types. A group in XML Schema creates a named entity that may be included in multiple types, and which consists of a sequence of or choice between element particles. NIEM has not developed a semantic model for these components, and they are not integrated into NIEM’s design.
 
 ### Attribute group definition
@@ -3014,15 +3047,15 @@ NIEM does not allow groups of elements to be named other than as named complex t
 Per [Rule 11-23, _Schema uses only known attribute groups_ (REF, EXT), below](#rule-11-23-schema-uses-only-known-attribute-groups), the only attribute groups used in NIEM-conformant schemas are `structures:SimpleObjectAttributeGroup` and attribute groups defined by the IC-ISM and IC-NTK schemas. Therefore, NIEM-conformant schemas do not define additional attribute groups.
 
 > **[Rule 9-76] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:attributeGroup[@name]">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain an attribute group definition schema component.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:attributeGroup[@name]">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain an attribute group definition schema component.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ## Annotation components
 
@@ -3030,29 +3063,30 @@ Per [Rule 11-23, _Schema uses only known attribute groups_ (REF, EXT), below](#r
 Note that this rule is written with a context that is not as precise as it could be. Its context is the parent node of the comment node, in order to avoid error messages when executed with common Schematron implementations.
 
 > **[Rule 9-77] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="node()[comment()]">
+>    <sch:report test="true()" role="warning"
+>      >An XML Comment is not an XML Schema annotation component; an XML comment SHOULD NOT appear in the schema.</sch:report>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="node()[comment()]">
-   <sch:report test="true()" role="warning"
-     >An XML Comment is not an XML Schema annotation component; an XML comment SHOULD NOT appear in the schema.</sch:report>
- </sch:rule>
-</sch:pattern>
-```
-Since <a name="d3e8443">XML comment</a>s are not associated with any specific XML Schema construct, there is no standard way to interpret comments. XML Schema annotations should be preferred for meaningful information about components. NIEM specifically defines how information should be encapsulated in NIEM-conformant schemas via `xs:annotation` elements.
+Since XML comments are not associated with any specific XML Schema construct, there is no standard way to interpret comments. XML Schema annotations should be preferred for meaningful information about components. NIEM specifically defines how information should be encapsulated in NIEM-conformant schemas via `xs:annotation` elements.
 
 ### Rule 9-78. Documentation element has no element children
 
 > **[Rule 9-78] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:documentation/node()">
-   <sch:assert test="self::text() or self::comment()"
-     >A child of element xs:documentation MUST be text or an XML comment.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:documentation/node()">
+>    <sch:assert test="self::text() or self::comment()"
+>      >A child of element xs:documentation MUST be text or an XML comment.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Application information annotation
 
@@ -3061,45 +3095,48 @@ XML Schema provides special annotations for support of automatic processing. The
 #### Rule 9-79. `xs:appinfo` children are comments, elements, or whitespace
 
 > **[Rule 9-79] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:appinfo/node()">
+>    <sch:assert test="self::comment()
+>                      or self::element()
+>                      or self::text()[string-length(normalize-space(.)) = 0]"
+>      >A child of element xs:appinfo MUST be an element, a comment, or whitespace text.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:appinfo/node()">
-   <sch:assert test="self::comment()
-                     or self::element()
-                     or self::text()[string-length(normalize-space(.)) = 0]"
-     >A child of element xs:appinfo MUST be an element, a comment, or whitespace text.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 Application information elements are intended for automatic processing; the meaning of an appinfo annotation is provided via elements.
 
 #### Rule 9-80. Appinfo child elements have namespaces
 
 > **[Rule 9-80] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:appinfo/*">
+>    <sch:assert test="namespace-uri() != xs:anyURI('')"
+>      >An element that is a child of xs:appinfo MUST have a namespace name.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:appinfo/*">
-   <sch:assert test="namespace-uri() != xs:anyURI('')"
-     >An element that is a child of xs:appinfo MUST have a namespace name.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 The XML namespaces specification includes the concept of content not in a namespace. Use of elements without namespaces can lead to conflicting data definitions, and makes it difficult to identify relevant data definitions.
 
 #### Rule 9-81. Appinfo descendants are not XML Schema elements
 
 > **[Rule 9-81] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:appinfo//xs:*">
+>    <sch:assert test="false()"
+>      >An element with a namespace name of xs: MUST NOT have an ancestor element xs:appinfo.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:appinfo//xs:*">
-   <sch:assert test="false()"
-     >An element with a namespace name of xs: MUST NOT have an ancestor element xs:appinfo.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 NIEM-conformant schemas are designed to be very easily processed. Although uses of XML Schema elements as content of `xs:appinfo` elements could be contrived, it is not current practice and complicates the processing of XML elements by their namespaces and names. Forbidding the use of XML Schema elements outside valid uses of schema simplifies such processing.
 
 ## Schema as a whole
@@ -3109,29 +3146,30 @@ The XML Schema language defines that the document element `xs:schema` may contai
 ### Rule 9-82. Schema has data definition
 
 > **[Rule 9-82] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:schema">
-   <sch:assert test="some $definition in (xs:annotation/xs:documentation)[1] satisfies
-                       string-length(normalize-space(string($definition))) &gt; 0"
-     >An element xs:schema MUST have a data definition.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:schema">
+>    <sch:assert test="some $definition in (xs:annotation/xs:documentation)[1] satisfies
+>                        string-length(normalize-space(string($definition))) &gt; 0"
+>      >An element xs:schema MUST have a data definition.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Rule 9-83. Schema document defines target namespace
 
 > **[Rule 9-83] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:schema">
+>    <sch:assert test="exists(@targetNamespace)"
+>      >The schema MUST define a target namespace.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:schema">
-   <sch:assert test="exists(@targetNamespace)"
-     >The schema MUST define a target namespace.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 Schemas without defined namespaces provide definitions that are ambiguous, in that they are not universally identifiable.
 
 ### Rule 9-84. Target namespace is absolute URI
@@ -3142,6 +3180,7 @@ Schemas without defined namespaces provide definitions that are ambiguous, in th
 Absolute URIs are the only universally meaningful URIs. URIs include both URLs and URNs. Finding the target namespace using standard XML Base technology is complicated and not specified by XML Schema. Relative URIs are not universally identifiable, as they are context-specific. `&lt;absolute-URI&gt;` is a grammar production defined by [RFC 3986](#Appendix-A-References)       [Section 4.3, _Absolute URI_](http://tools.ietf.org/html/rfc3986#section-4.3). 
 
 ### Rule 9-85. Schema has version
+
 It is very useful to be able to tell one version of a schema from another. Apart from the use of namespaces for versioning, it is sometimes necessary to release multiple versions of schema documents. Such use might include:
 
 - Subset schemas and constraint schemas
@@ -3154,71 +3193,73 @@ In such cases, a different value for the `version` attribute implies a different
 An author of an application schema or exchange may use the `version` attribute for these purposes within their schemas.
 
 > **[Rule 9-85] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:schema">
-   <sch:assert test="some $version in @version satisfies
-                     string-length(normalize-space(@version)) &gt; 0"
-       >An element xs:schema MUST have an attribute {}version that MUST NOT be empty.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:schema">
+>    <sch:assert test="some $version in @version satisfies
+>                      string-length(normalize-space(@version)) &gt; 0"
+>        >An element xs:schema MUST have an attribute {}version that MUST NOT be empty.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Rule 9-86. No disallowed substitutions
 
 > **[Rule 9-86] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:schema">
-   <sch:assert test="empty(@blockDefault)"
-     >An element xs:schema MUST NOT have an attribute {}blockDefault.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:schema">
+>    <sch:assert test="empty(@blockDefault)"
+>      >An element xs:schema MUST NOT have an attribute {}blockDefault.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ### Rule 9-87. No disallowed derivations
 
 > **[Rule 9-87] ([REF](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:schema">
-   <sch:assert test="empty(@finalDefault)"
-     >An element xs:schema MUST NOT have an attribute {}finalDefault.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:schema">
+>    <sch:assert test="empty(@finalDefault)"
+>      >An element xs:schema MUST NOT have an attribute {}finalDefault.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 ## Schema assembly
 
 ### Rule 9-88. No use of `xs:redefine`
 
 > **[Rule 9-88] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:redefine">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:redefine.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:redefine">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:redefine.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 The `xs:redefine` element allows an XML Schema document to restrict and extend components from a namespace, in a separate schema document from the one that initially defined that namespace. Such redefinition introduces duplication of definitions, allowing multiple definitions to exist for components from a single namespace. This violates _**[Principle 9]**, above_, that a single reference schema defines a NIEM-conformant namespace.
 
 ### Rule 9-89. No use of `xs:include`
 
 > **[Rule 9-89] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:include">
+>    <sch:assert test="false()"
+>      >The schema MUST NOT contain the element xs:include.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:include">
-   <sch:assert test="false()"
-     >The schema MUST NOT contain the element xs:include.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 Element `xs:include` brings schemas defined in separate files into the current namespace. It breaks a namespace up into arbitrary partial schemas, which needlessly complicates the schema structure, making it harder to reuse and process, and also increases the likelihood of conflicting definitions.
 
 Inclusion of schemas that do not have namespaces also complicates schema understanding. This inclusion makes it difficult to find the realization of a specific schema artifact and create aliases for schema components that should be reused. Inclusion of schemas also violates _**[Principle 9]**, above_, as it uses multiple schemas to construct a namespace.
@@ -3226,15 +3267,16 @@ Inclusion of schemas that do not have namespaces also complicates schema underst
 ### Rule 9-90. `xs:import` must have namespace
 
 > **[Rule 9-90] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:import">
+>    <sch:assert test="exists(@namespace)"
+>      >An element xs:import MUST have an attribute {}namespace.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
-```
-<sch:pattern>
- <sch:rule context="xs:import">
-   <sch:assert test="exists(@namespace)"
-     >An element xs:import MUST have an attribute {}namespace.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
 An import that does not specify a namespace is enabling references to components without namespaces. NIEM requires that all components have a defined namespace. It is important that the namespace declared by a schema be universally defined and unambiguous.
 
 ### Rule 9-91. XML Schema document set must be complete
@@ -3252,97 +3294,97 @@ Some tools do not enforce this constraint; one such tool carries imports from a 
 #### Rule 9-92. Namespace referenced by attribute `type` is imported
 
 > **[Rule 9-92] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[@type]">
-   <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@type, .)) satisfies (
-                       $namespace = nf:get-target-namespace(.)
-                       or $namespace = xs:anyURI('http://www.w3.org/2001/XMLSchema')
-                       or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace])"
-               >The namespace of a type referenced by @type MUST be the target namespace, the XML Schema namespace, or be imported.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[@type]">
+>    <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@type, .)) satisfies (
+>                        $namespace = nf:get-target-namespace(.)
+>                        or $namespace = xs:anyURI('http://www.w3.org/2001/XMLSchema')
+>                        or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace])"
+>                >The namespace of a type referenced by @type MUST be the target namespace, the XML Schema namespace, or be imported.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-93. Namespace referenced by attribute `base` is imported
 
 > **[Rule 9-93] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[@base]">
-   <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@base, .)) satisfies (
-                       $namespace = nf:get-target-namespace(.)
-                       or $namespace = xs:anyURI('http://www.w3.org/2001/XMLSchema')
-                       or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace])"
-               >The namespace of a type referenced by @base MUST be the target namespace, the XML Schema namespace, or be imported.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[@base]">
+>    <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@base, .)) satisfies (
+>                        $namespace = nf:get-target-namespace(.)
+>                        or $namespace = xs:anyURI('http://www.w3.org/2001/XMLSchema')
+>                        or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace])"
+>                >The namespace of a type referenced by @base MUST be the target namespace, the XML Schema namespace, or be imported.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-94. Namespace referenced by attribute `itemType` is imported
 
 > **[Rule 9-94] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[@itemType]">
-   <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@itemType, .)) satisfies (
-                       $namespace = nf:get-target-namespace(.)
-                       or $namespace = xs:anyURI('http://www.w3.org/2001/XMLSchema')
-                       or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace])"
-               >The namespace of a type referenced by @itemType MUST be the target namespace, the XML Schema namespace, or be imported.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[@itemType]">
+>    <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@itemType, .)) satisfies (
+>                        $namespace = nf:get-target-namespace(.)
+>                        or $namespace = xs:anyURI('http://www.w3.org/2001/XMLSchema')
+>                        or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace])"
+>                >The namespace of a type referenced by @itemType MUST be the target namespace, the XML Schema namespace, or be imported.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-95. Namespaces referenced by attribute `memberTypes` is imported
 
 > **[Rule 9-95] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[@memberTypes]">
-   <sch:assert test="every $type in tokenize(normalize-space(@memberTypes), ' '),
-                           $namespace in namespace-uri-from-QName(resolve-QName($type, .)) satisfies (
-                       $namespace = nf:get-target-namespace(.)
-                       or $namespace = xs:anyURI('http://www.w3.org/2001/XMLSchema')
-                       or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace])"
-               >The namespace of a type referenced by @memberTypes MUST be the target namespace, the XML Schema namespace, or be imported.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[@memberTypes]">
+>    <sch:assert test="every $type in tokenize(normalize-space(@memberTypes), ' '),
+>                            $namespace in namespace-uri-from-QName(resolve-QName($type, .)) satisfies (
+>                        $namespace = nf:get-target-namespace(.)
+>                        or $namespace = xs:anyURI('http://www.w3.org/2001/XMLSchema')
+>                        or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace])"
+>                >The namespace of a type referenced by @memberTypes MUST be the target namespace, the XML Schema namespace, or be imported.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-96. Namespace referenced by attribute `ref` is imported
 
 > **[Rule 9-96] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[@ref]">
-   <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@ref, .)) satisfies
-                       $namespace = nf:get-target-namespace(.)
-                       or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace]"
-               >The namespace of a component referenced by @ref MUST be the target namespace or be imported.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[@ref]">
+>    <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@ref, .)) satisfies
+>                        $namespace = nf:get-target-namespace(.)
+>                        or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace]"
+>                >The namespace of a component referenced by @ref MUST be the target namespace or be imported.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 #### Rule 9-97. Namespace referenced by attribute `substitutionGroup` is imported
 
 > **[Rule 9-97] ([REF](#Applicability-of-rules-to-conformance-targets), [EXT](#Applicability-of-rules-to-conformance-targets)) (Constraint)**
-
-```
-<sch:pattern>
- <sch:rule context="xs:*[@substitutionGroup]">
-   <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@substitutionGroup, .)) satisfies
-                       $namespace = nf:get-target-namespace(.)
-                       or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace]"
-               >The namespace of a component referenced by @substitutionGroup MUST be the target namespace or be imported.</sch:assert>
- </sch:rule>
-</sch:pattern>
-```
+> 
+> ```xml
+> <sch:pattern>
+>  <sch:rule context="xs:*[@substitutionGroup]">
+>    <sch:assert test="every $namespace in namespace-uri-from-QName(resolve-QName(@substitutionGroup, .)) satisfies
+>                        $namespace = nf:get-target-namespace(.)
+>                        or nf:get-document-element(.)/xs:import[xs:anyURI(@namespace) = $namespace]"
+>                >The namespace of a component referenced by @substitutionGroup MUST be the target namespace or be imported.</sch:assert>
+>  </sch:rule>
+> </sch:pattern>
+> ```
 
 # Rules for NIEM modeling, by NIEM concept
 
